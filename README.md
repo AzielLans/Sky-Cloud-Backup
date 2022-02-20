@@ -8,6 +8,9 @@ Note: The app is in Alpha stage of development, features may ADDED OR REMOVE.
 
 Upload to Google drive is still in development.
 
+Download the  app [here](https://github.com/Involts/Sky-Cloud-Backup/releases).
+
+#Features
 
 # Backup Your World/s.
 It supports Both Bedrock and Java
