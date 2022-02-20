@@ -1,7 +1,7 @@
+<h1 align="center">Sky-Cloud-Backup</h1>
 <p align="center">
   <img src="https://user-images.githubusercontent.com/100028421/154840503-cc3b841f-3b86-45b2-993b-72a94f2b008f.png" />
 </p>
-<h1 align="center">Sky-Cloud-Backup</h1>
 A Minecraft Backup that supports both Bedrock and Java.
 
 Note: The app is in Alpha stage of development, features may ADDED OR REMOVE. 
