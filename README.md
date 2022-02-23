@@ -18,6 +18,7 @@ Download the  app [here](https://github.com/Involts/Sky-Cloud-Backup/releases).
 - Make it yours, by customizing it on the Personalization panel.
 - Continue what you're doing, using Always on top checkbox.
 - Save it later, using Minimize to tray Check box.
+- Start with Windows
 
 # Backup Your World/s.
 ![m2](https://user-images.githubusercontent.com/100028421/154808333-fac019da-a177-4d4b-a87b-13fd62895f7d.png)
