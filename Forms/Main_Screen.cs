@@ -15,6 +15,7 @@ namespace Sky_Cloud_Backup
         public Main_Screen ()
         {
             InitializeComponent();
+            Chk_atstarp_Backup();
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.EnforceBackcolorOnAllComponents = true;
             materialSkinManager.AddFormToManage(this);
@@ -54,8 +55,8 @@ namespace Sky_Cloud_Backup
                 else
                 {
                     Backup_Button.Enabled = false;
-                }
             }
+        }
             else
             {
                 Backup_Button.Enabled = false;
@@ -154,6 +155,7 @@ namespace Sky_Cloud_Backup
                         Main_Bedrock_Backup();
                     }
                     Backup_Button.Enabled = true;
+
                 }
             }
         }
@@ -261,22 +263,22 @@ namespace Sky_Cloud_Backup
         {
             try
             {
-                Directory.CreateDirectory(target.FullName);
-                // Copy each file into the new directory.
-                foreach (FileInfo fi in source.GetFiles())
-                {
+            Directory.CreateDirectory(target.FullName);
+            // Copy each file into the new directory.
+            foreach (FileInfo fi in source.GetFiles())
+            {
 
-                    fi.CopyTo(Path.Combine(target.FullName, fi.Name), true);
+                fi.CopyTo(Path.Combine(target.FullName, fi.Name), true);
 
-                }
+            }
 
-                // Copy each subdirectory using recursion.
-                foreach (DirectoryInfo diSourceSubDir in source.GetDirectories())
-                {
-                    DirectoryInfo nextTargetSubDir =
-                        target.CreateSubdirectory(diSourceSubDir.Name);
-                    CopyAll(diSourceSubDir, nextTargetSubDir);
-                }
+            // Copy each subdirectory using recursion.
+            foreach (DirectoryInfo diSourceSubDir in source.GetDirectories())
+            {
+                DirectoryInfo nextTargetSubDir =
+                    target.CreateSubdirectory(diSourceSubDir.Name);
+                CopyAll(diSourceSubDir, nextTargetSubDir);
+            }
             }
             catch (IOException exp)
             {
@@ -333,6 +335,14 @@ namespace Sky_Cloud_Backup
             var diSource = new DirectoryInfo(sourceDirectory);
             var diTarget = new DirectoryInfo(targetDirectory);
             CopyAll_Output(diSource, diTarget);
+            if (Edtitions.Checked)
+            {
+                Random_Name_Java();
+            }
+            else
+            {
+                Random_Name_Bedrock();
+            }
         }
 
         public static void CopyAll_Output ( DirectoryInfo source, DirectoryInfo target )
@@ -418,16 +428,16 @@ namespace Sky_Cloud_Backup
         {
             try
             {
-                if (File.Exists(@"Temp\Backup Java world.zip"))
-                {
-                    Copy_Output();
-                }
-                else
-                {
-                    string sourceDirectoryName = Properties.Settings.Default.World_Location = Open_Word_Text.Text;
-                    string destinationArchiveFileName = @"Temp\Backup Java world.zip";
-                    CreatFrDir_Java(sourceDirectoryName, destinationArchiveFileName);
-                }
+            if (File.Exists(@"Temp\Backup Java world.zip"))
+            {
+                Copy_Output();
+            }
+            else
+            {
+                string sourceDirectoryName = Properties.Settings.Default.World_Location = Open_Word_Text.Text;
+                string destinationArchiveFileName = @"Temp\Backup Java world.zip";
+                CreatFrDir_Java(sourceDirectoryName, destinationArchiveFileName);
+            }
 
             }
             catch (IOException exp)
