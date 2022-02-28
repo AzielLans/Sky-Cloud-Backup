@@ -7,7 +7,10 @@
 A Minecraft Backup that supports both Bedrock and Java. It is easy to backup your world with one click. You can personalize the app, using dark mode or light mode, currently the theme colors has 4 colors(Red, Green, Blue the default color and Pink) and the is more to come.
 
 Note: The app is in Alpha stage of development, features may ADDED OR REMOVE. 
-You need to download [.net 4.6.1](https://www.microsoft.com/en-us/download/details.aspx?id=49982) to use the app.
+
+If the app doesn't work you need to download [.net 4.6.1](https://www.microsoft.com/en-us/download/details.aspx?id=49982) to use the app.
+
+# As of Alpha 0.2, the Antivirus software especially Windows defender flags it as a Win32/Persistence.OR!ml this is not true.
 
 Upload to Google drive is still in development.
 
