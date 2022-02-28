@@ -7,11 +7,10 @@
 A Minecraft Backup that supports both Bedrock and Java. It is easy to backup your world with one click. You can personalize the app, using dark mode or light mode, currently the theme colors has 4 colors(Red, Green, Blue the default color and Pink) and the is more to come.
 
 Note: The app is in Alpha stage of development, features may ADDED OR REMOVE. 
-You need to download [.net 4.6.1](https://www.microsoft.com/en-us/download/details.aspx?id=49982) to use the app.
 
 Upload to Google drive is still in development.
 
-Download the app [here](https://github.com/Involts/Sky-Cloud-Backup/releases).
+Download the  app [here](https://github.com/Involts/Sky-Cloud-Backup/releases).
 
 # Feature Overview
 
@@ -19,7 +18,6 @@ Download the app [here](https://github.com/Involts/Sky-Cloud-Backup/releases).
 - Make it yours, by customizing it on the Personalization panel.
 - Continue what you're doing, using Always on top checkbox.
 - Save it later, using Minimize to tray Check box.
-- Start with Windows
 
 # Backup Your World/s.
 ![m2](https://user-images.githubusercontent.com/100028421/154808333-fac019da-a177-4d4b-a87b-13fd62895f7d.png)

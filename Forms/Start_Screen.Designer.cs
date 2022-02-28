@@ -88,11 +88,9 @@ namespace Sky_Cloud_Backup
             this.MinimizeBox = false;
             this.Name = "loading_screen";
             this.ShowIcon = false;
-            this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sky Cloud Backup";
-            this.TopMost = true;
             this.Load += new System.EventHandler(this.loading_screen_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.loading_screen_MouseDown);
             this.panel_bar.ResumeLayout(false);

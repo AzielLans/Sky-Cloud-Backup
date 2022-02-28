@@ -166,5 +166,29 @@ namespace Sky_Cloud_Backup.Properties {
                 this["strtwin"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool first_strtup {
+            get {
+                return ((bool)(this["first_strtup"]));
+            }
+            set {
+                this["first_strtup"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool Reset {
+            get {
+                return ((bool)(this["Reset"]));
+            }
+            set {
+                this["Reset"] = value;
+            }
+        }
     }
 }

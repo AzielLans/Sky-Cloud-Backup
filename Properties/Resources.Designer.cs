@@ -63,6 +63,36 @@ namespace Sky_Cloud_Backup.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap logo_128 {
+            get {
+                object obj = ResourceManager.GetObject("logo_128", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logo_258 {
+            get {
+                object obj = ResourceManager.GetObject("logo_258", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logo_64 {
+            get {
+                object obj = ResourceManager.GetObject("logo_64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap round_close_black_18dp1 {
             get {
                 object obj = ResourceManager.GetObject("round_close_black_18dp1", resourceCulture);
@@ -126,6 +156,56 @@ namespace Sky_Cloud_Backup.Properties {
         internal static System.Drawing.Bitmap Splash_Screen {
             get {
                 object obj = ResourceManager.GetObject("Splash_Screen", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap wiki_1 {
+            get {
+                object obj = ResourceManager.GetObject("wiki_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap wiki_2 {
+            get {
+                object obj = ResourceManager.GetObject("wiki_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap wiki_3 {
+            get {
+                object obj = ResourceManager.GetObject("wiki_3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap wiki_4 {
+            get {
+                object obj = ResourceManager.GetObject("wiki_4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap wiki_5 {
+            get {
+                object obj = ResourceManager.GetObject("wiki_5", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

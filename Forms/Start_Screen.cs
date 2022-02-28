@@ -15,8 +15,9 @@ namespace Sky_Cloud_Backup
             this.DoubleBuffered = true;
             this.FormBorderStyle = FormBorderStyle.None;
             load_timer.Start();
+            this.WindowState = FormWindowState.Normal;
+            this.Activate();
         }
-
         private static string AssemblyProductVersion
         {
             get
@@ -51,13 +52,45 @@ namespace Sky_Cloud_Backup
 
         private void load_timer_Tick ( object sender, EventArgs e )
         {
-            Load_Panel.Width += 3;
+            if (Properties.Settings.Default.Reset == true)
+            {
+                Load_Panel.Width += 4;
+            }
+            else
+            {
+                if (Properties.Settings.Default.first_strtup == false)
+                {
+                    Load_Panel.Width += 2;
+                }
+                else
+                {
+                    Load_Panel.Width += 4;
+                }
+            }
             if (Load_Panel.Width >= 591)
             {
                 load_timer.Stop();
-                Main_Screen f2 = new Main_Screen();
-                f2.Show();
-                this.Hide();
+                if (Properties.Settings.Default.Reset == true)
+                {
+                    Main_Screen f2 = new Main_Screen();
+                    f2.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    if (Properties.Settings.Default.first_strtup == false)
+                    {
+                        first_strtup f2 = new first_strtup();
+                        f2.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        Main_Screen f2 = new Main_Screen();
+                        f2.Show();
+                        this.Hide();
+                    }
+                }
             }
         }
 
