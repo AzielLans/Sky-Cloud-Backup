@@ -950,7 +950,7 @@ namespace Sky_Cloud_Backup
                 Minimize_Systray.Checked = false;
                 Edtitions.Checked = false;
                 Strt_Win.Checked = false;
-                //Properties.Settings.Default.Reset = true;
+                Properties.Settings.Default.Reset = true;
                 Properties.Settings.Default.first_strtup = false;
                 Properties.Settings.Default.Save();
                 this.Show();
