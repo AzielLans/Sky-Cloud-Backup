@@ -8,4 +8,4 @@ description: This is just another page
 
 _yay_
 
-[back](./)
+[back](./docs)
