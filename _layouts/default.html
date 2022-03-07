@@ -17,11 +17,11 @@
       <h1 class="Sky Cloud Backup">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
       <h2 class="A Minecraft Backup that supports both Bedrock and Java.">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
       {% if site.github.is_project_page %}
-        <a href="{{ Repository }}" class="btn">Repository</a>
+        <a href="{{ site.github.Repository }}" class="btn">Repository</a>
       {% endif %}
       {% if site.show_downloads %}
-        <a href="{{ latest_version }}" class="btn">Download the Latest Version</a>
-        <a href="{{ Older_versions }}" class="btn">Download Older Versions</a>
+        <a href="{{ site.github.latest_version }}" class="btn">Download the Latest Version</a>
+        <a href="{{ site.github.Older_versions }}" class="btn">Download Older Versions</a>
       {% endif %}
     </header>
 
@@ -29,9 +29,9 @@
       {{ content }}
 
       <footer class="site-footer">
-          <span class="btn"><a href="{{ latest_version }}"class="btn">Download the latest version</a> 
-            <a href="{{ Wiki }}" class="btn">wiki</a>
-            <a href="{{ Repository }}" class="btn">Repository</a>
+          <span><a href="{{ site.github.latest_version }}"class="btn">Download the latest version</a> 
+            <a href="{{ site.github.Wiki }}" class="btn">wiki</a>
+            <a href="{{ site.github.Repository }}" class="btn">Repository</a>
           </span>
       </footer>
     </main>
