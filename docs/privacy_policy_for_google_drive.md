@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: none
 title: Privacy policy 
 description: the Privacy policy for Google drive
 ---
