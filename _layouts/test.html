@@ -23,15 +23,18 @@
         </nav>
         <a class="Download" href="https://github.com/Involts/Sky-Cloud-Backup/releases/download/Alpha_0.3/Sky.Cloud.Backup.Alpha.0.3.zip"><button>Download</button></a>
     </header>
-    <main id="content" class="main-content" role="main" style="background-color: white;">
+    <main id="content" class="main-content" role="main">
         {{ content }}
+        
+        <footer class="site-footer">
+          {% if site.github.is_project_page %}
+          <span><a href="{{ site.github.latest_version }}" class="btn">Download the latest version</a>
+            <a href="{{ site.github.Wiki }}" class="btn">wiki</a>
+            <a href="{{ site.github.Repository }}" class="btn">Repository</a>
+          </span>
+            <span class="site-footer-owner"><a href="{{ site.github.repository_url }}">{{ site.github.repository_name }}</a>
+            is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a>.</span>
+          {% endif %}
+        </footer>
+      </main>
 </html>
-<!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
-
-<!-- Setup Google Analytics -->
-{% include head-custom-google-analytics.html %}
-
-<!-- You can set your favicon here -->
-<!-- link rel="shortcut icon" type="image/x-icon" href="{{ '/favicon.ico' | relative_url }}" -->
-
-<!-- end custom head snippets -->
