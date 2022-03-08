@@ -2,8 +2,7 @@ title: Sky Cloud Backup
 description: A Minecraft Backup that supports both Bedrock and Java.
 show_downloads: true
 google_analytics:
-theme: custom
-
+theme: jekyll-theme-cayman
 
 github:
   latest_version:  https://github.com/Involts/Sky-Cloud-Backup/releases/download/Alpha_0.3/Sky.Cloud.Backup.Alpha.0.3.zip 
