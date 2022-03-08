@@ -1,5 +1,7 @@
 ---
-layout: default
+layout: Home
+title: Sky Cloud Backup
+description: A Minecraft Backup that supports both Bedrock and Java.
 ---
 
 # About Sky Cloud Backup

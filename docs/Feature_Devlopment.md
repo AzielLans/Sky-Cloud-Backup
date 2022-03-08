@@ -1,9 +1,7 @@
 ---
-title:  This Feature is still in development 
-description: This Feature may be unstable or cause harm to your computer
 layout: default
-show_downloads: false
 ---
+
 <!DOCTYPE html>
 <html>
 <body style="background-color:black;">

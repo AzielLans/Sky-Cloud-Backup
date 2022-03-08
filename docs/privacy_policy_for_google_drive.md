@@ -1,7 +1,5 @@
 ---
-layout: none
-title: Privacy policy 
-description: the Privacy policy for Google drive
+layout: default
 ---
 
 # What we do to your Google Account 
