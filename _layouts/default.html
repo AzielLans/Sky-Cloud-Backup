@@ -32,13 +32,13 @@
   <main id="content" class="main-content" role="main">
     {{ content }}
 
-    <footer style="background-color: #696969;">
+    <footer style="background-color: #c0c0c0;">
       <span><a href="{{ site.github.latest_version }}" class="btn">Download the latest version</a>
         <a href="{{ site.github.Wiki }}" class="btn">wiki</a>
         <a href="{{ site.github.Repository }}" class="btn">Repository</a>
       </span>
       {% if site.github.is_project_page %}
-        <span class="site-footer-owner"><a href="{{ site.github.repository_url }}">{{ site.github.repository_name }}</a>
+        <span align="left" class="site-footer-owner"><a href="{{ site.github.repository_url }}">{{ site.github.repository_name }}</a>
         is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a>.</span>
       {% endif %}
     </footer>
