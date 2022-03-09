@@ -9,11 +9,12 @@
           type="text/css" crossorigin>
         <meta name="theme-color" content="#157878">
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     </head>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
-* {
+header {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
