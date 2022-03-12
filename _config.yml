@@ -1,12 +1,12 @@
 title: Sky Cloud Backup
+author: Involts
+name: Involts
 description: A Minecraft Backup that supports both Bedrock and Java.
-show_downloads: true
-google_analytics:
-theme: jekyll-theme-cayman
-
-github:
-  latest_version:  https://github.com/Involts/Sky-Cloud-Backup/releases/download/Alpha_0.3/Sky.Cloud.Backup.Alpha.0.3.zip 
-  Older_versions:  https://github.com/Involts/Sky-Cloud-Backup/releases
-  Wiki: https://github.com/Involts/Sky-Cloud-Backup/wiki
-  Repository: https://github.com/Involts/Sky-Cloud-Backup
-
+show_excerpts: true # set to true to show excerpts on the homepage
+minima:
+  date_format: "%b %-d, %Y"
+  social_links:
+    github:  Involts
+plugins:
+ - jekyll-feed
+ - jekyll-seo-tag

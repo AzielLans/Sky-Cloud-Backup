@@ -1,0 +1,20 @@
+I"w<p>Alpha 0.2 update</p>
+<h3 id="alpha-0-2-update">Alpha 0.2 update</h3>
+<h1 id="as-of-alpha-0-2-the-antivirus-software-especially-windows-defender-flags-it-as-a-win32-persistence-or-ml-this-is-not-true-">As of Alpha 0.2, the Antivirus software especially Windows defender flags it as a Win32/Persistence.OR!ml this is not true.</h1>
+<p><strong>Bug Fixes</strong></p>
+<ul>
+<li>Fix Java world doesn&#39;t recognize when Java mode Backup is on.</li>
+<li>Fix renaming every backup extension to .zip(if is java) or .mcworld(if is Bedrock).</li>
+</ul>
+<p><strong>Added Features</strong></p>
+<ul>
+<li>A &quot;You&#39;re world is backuping&quot; dialog will appear  when you Backup you&#39;re world(Bedrock and Java)</li>
+<li>You can now start the app with windows </li>
+<li>Ui changes</li>
+</ul>
+<p><span>
+    <button><a href="https://github.com/Involts/Sky-Cloud-Backup/commits/Alpha_0.2">More information</a></button>
+    <button><a href="https://github.com/Involts/Sky-Cloud-Backup/releases/download/Alpha_0.2/Sky.Cloud.Backup.Alpha.0.2.zip">Download</a></button>
+    <button><a href="http://localhost:4000/Releases">Back</a></button>
+</span></p>
+:ET

@@ -1,6 +1,8 @@
 ---
 layout: default
+Title: Sky Cloud Backup | A Minecraft Backup that supports both Bedrock and Java.
 ---
+
 # About Sky Cloud Backup
 A Minecraft Backup that supports both Bedrock and Java. It is easy to backup your world with one click. You can personalize the app, using dark mode or light mode, currently the theme colors has 4 colors(Red, Green, Blue the default color and Pink) and the is more to come.
 
@@ -29,4 +31,3 @@ Upload to Google drive is still in development.
 # Save it later
 ![m3](https://user-images.githubusercontent.com/100028421/154807559-78abcd49-2f2d-4ee1-815b-4e99322c16b9.png)
 
-[Link to another page](./docs/another-page.html).
