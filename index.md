@@ -1,33 +1,123 @@
 ---
 layout: default
-Title: Sky Cloud Backup | A Minecraft Backup that supports both Bedrock and Java.
 ---
 
-# About Sky Cloud Backup
-A Minecraft Backup that supports both Bedrock and Java. It is easy to backup your world with one click. You can personalize the app, using dark mode or light mode, currently the theme colors has 4 colors(Red, Green, Blue the default color and Pink) and the is more to come.
+Text can be **bold**, _italic_, or ~~strikethrough~~.
 
-Note: The app is in Alpha stage of development, features may ADDED OR REMOVE. 
+[Link to another page](./another-page.html).
 
-If the app doesn't work you need to download [.net 4.6.1](https://www.microsoft.com/en-us/download/details.aspx?id=49982) to use the app.
+There should be whitespace between paragraphs.
 
-Upload to Google drive is still in development.
+There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.
 
-[Need Help?]()
+# Header 1
 
-# Feature Overview
+This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.
 
-- Backup Your World/s. It suppors Both Bedrock and Java.
-- Make it yours, by customizing it on the Personalization panel.
-- Continue what you're doing, using Always on top checkbox.
-- Save it later, using Minimize to tray Check box.
-- Start the app with Windows
+## Header 2
 
-# Backup Your World/s.
-![m2](https://user-images.githubusercontent.com/100028421/154808333-fac019da-a177-4d4b-a87b-13fd62895f7d.png)
-# Make it yours....
-![My Video](https://user-images.githubusercontent.com/100028421/154807215-7383faca-9e89-4e56-820c-b785800bc6a4.gif)
-# Continue what you are doing
-![m4](https://user-images.githubusercontent.com/100028421/154807350-2574442f-65c2-4645-80a9-998ec1231a0b.png)
-# Save it later
-![m3](https://user-images.githubusercontent.com/100028421/154807559-78abcd49-2f2d-4ee1-815b-4e99322c16b9.png)
+> This is a blockquote following a header.
+>
+> When something is important enough, you do it even if the odds are not in your favor.
 
+### Header 3
+
+```js
+// Javascript code with syntax highlighting.
+var fun = function lang(l) {
+  dateformat.i18n = require('./lang/' + l)
+  return true;
+}
+```
+
+```ruby
+# Ruby code with syntax highlighting
+GitHubPages::Dependencies.gems.each do |gem, version|
+  s.add_dependency(gem, "= #{version}")
+end
+```
+
+#### Header 4
+
+*   This is an unordered list following a header.
+*   This is an unordered list following a header.
+*   This is an unordered list following a header.
+
+##### Header 5
+
+1.  This is an ordered list following a header.
+2.  This is an ordered list following a header.
+3.  This is an ordered list following a header.
+
+###### Header 6
+
+| head1        | head two          | three |
+|:-------------|:------------------|:------|
+| ok           | good swedish fish | nice  |
+| out of stock | good and plenty   | nice  |
+| ok           | good `oreos`      | hmm   |
+| ok           | good `zoute` drop | yumm  |
+
+### There's a horizontal rule below this.
+
+* * *
+
+### Here is an unordered list:
+
+*   Item foo
+*   Item bar
+*   Item baz
+*   Item zip
+
+### And an ordered list:
+
+1.  Item one
+1.  Item two
+1.  Item three
+1.  Item four
+
+### And a nested list:
+
+- level 1 item
+  - level 2 item
+  - level 2 item
+    - level 3 item
+    - level 3 item
+- level 1 item
+  - level 2 item
+  - level 2 item
+  - level 2 item
+- level 1 item
+  - level 2 item
+  - level 2 item
+- level 1 item
+
+### Small image
+
+![Octocat](https://github.githubassets.com/images/icons/emoji/octocat.png)
+
+### Large image
+
+![Branching](https://guides.github.com/activities/hello-world/branching.png)
+
+
+### Definition lists can be used with HTML syntax.
+
+<dl>
+<dt>Name</dt>
+<dd>Godzilla</dd>
+<dt>Born</dt>
+<dd>1952</dd>
+<dt>Birthplace</dt>
+<dd>Japan</dd>
+<dt>Color</dt>
+<dd>Green</dd>
+</dl>
+
+```
+Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
+```
+
+```
+The final element.
+```

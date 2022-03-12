@@ -1,15 +1,5 @@
-title: Sky Cloud Backup
-author: Involts
-name: Involts
-description: A Minecraft Backup that supports both Bedrock and Java.
-show_excerpts: true # set to true to show excerpts on the homepage
-url: involts.github.io
-baseurl: "Sky-Cloud-Backup/"
-theme: minima
-minima:
-  date_format: "%b %-d, %Y"
-  social_links:
-    github:  Involts
-plugins:
- - jekyll-feed
- - jekyll-seo-tag
+title: Cayman theme
+description: Cayman is a clean, responsive theme for GitHub Pages.
+show_downloads: true
+google_analytics:
+theme: jekyll-theme-cayman
