@@ -4,3 +4,11 @@
 @import
   "minima/skins/{{ site.minima.skin | default: 'classic' }}",
   "minima/initialize";
+  
+  .site-title::before {
+    content: url("logo_32.png");
+    display: inline-block;
+    position: relative;
+    width: 37px;
+    top: 7px;
+  }    
