@@ -1,18 +1,22 @@
 ---
 layout: page
-title: About
 permalink: /about/
+Title: About | Sky Cloud Backup
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+# About Sky Cloud Backup
+A Minecraft Backup that supports both Bedrock and Java. It is easy to backup your world with one click. You can personalize the app, using dark mode or light mode, currently the theme colors has 4 colors(Red, Green, Blue the default color and Pink) and the is more to come.
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+Note: The app is in Alpha stage of development, features may ADDED OR REMOVE. 
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+If the app doesn't work you need to download [.net 4.6.1](https://www.microsoft.com/en-us/download/details.aspx?id=49982) to use the app.
 
+Upload to Google drive is still in development.
 
-[jekyll-organization]: https://github.com/jekyll
+[Need Help?](404)
+
+You can find the source code for [Sky Cloud Backup](https://github.com/Involts/Sky-Cloud-Backup) at GitHub.
+
+You can Download the [lastet version](https://github.com/Involts/Sky-Cloud-Backup/releases/download/Alpha_0.3/Sky.Cloud.Backup.Alpha.0.3.zip) of Sky Cloud Backup.
+
+Report [bugs and fixes.](https://github.com/Involts/Sky-Cloud-Backup/issues)
