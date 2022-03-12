@@ -2,5 +2,5 @@
 ---
 
 @import
-  "minima/skins/Main-Skin",
+  "minima/skins/{{ site.minima.skin | default: 'classic' }}",
   "minima/initialize";
