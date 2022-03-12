@@ -1,7 +1,7 @@
 ---
 layout: default
 Title: Feature is in Development | Sky Cloud Backup
-permalink: /Development/
+permalink: Sky-Cloud-Backup/Development/
 ---
 
 <!DOCTYPE html>

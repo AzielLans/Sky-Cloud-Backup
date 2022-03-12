@@ -1,7 +1,7 @@
 ---
 layout: default
 Title: Privacy for Google Drive | Sky Cloud Backup
-permalink: /Privacy_Drive/
+permalink: Sky-Cloud-Backup/Privacy_Drive/
 ---
 
 # Privacy for Google Drive
