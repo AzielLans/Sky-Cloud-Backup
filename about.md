@@ -1,6 +1,6 @@
 ---
 layout: page
-permalink: Sky-Cloud-Backup/about/
+permalink: /about/
 Title: About | Sky Cloud Backup
 ---
 
