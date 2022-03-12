@@ -4,7 +4,7 @@ name: Involts
 description: A Minecraft Backup that supports both Bedrock and Java.
 show_excerpts: true # set to true to show excerpts on the homepage
 # refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this
-baseurl: "Sky-Cloud-Backup"
+url: "Sky-Cloud-Backup/"
 minima:
   date_format: "%b %-d, %Y"
 
