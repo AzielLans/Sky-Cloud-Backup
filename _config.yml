@@ -4,6 +4,7 @@ name: Involts
 description: A Minecraft Backup that supports both Bedrock and Java.
 show_excerpts: true # set to true to show excerpts on the homepage
 baseurl: "Sky-Cloud-Backup"
+theme: minima
 minima:
   date_format: "%b %-d, %Y"
   social_links:
