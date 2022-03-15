@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+      {%- include Head.html -%}
+    <body>
+        {%- include Header.html -%}
+
+        <header class="page-header" role="banner">
+            <div class="wrapper">
+                <p class="page-header-title">{{page.title}}</p>
+                <img src="{{site.baseurl}}{{page.head_pic}}">
+              </div>
+        </header>
+        <main class="page-content" aria-label="Content">
+            <div class="sidenav">
+                <a href="/Sky-Cloud-Backup/Wiki">Home</a>
+                <a href="/Sky-Cloud-Backup/Wiki/wiki-101/">How to use the app</a>
+              </div>
+          <div class="wrapper">
+            {{ content }}
+          </div>
+        </main>
+        {%- include Footer.html -%}
+   </body>
+</html>

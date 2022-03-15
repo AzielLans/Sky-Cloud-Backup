@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+      {%- include Head.html -%}
+    <body>
+        {%- include Header.html -%}
+        <main class="page-content" aria-label="Content">
+          <div class="wrapper">
+              {{content}}
+            {% for post in site.pages %}
+               <li><a href="{{ site.baseurl }}{{ post.url }}">{{post.list}}</a></li>
+            {% endfor %}
+            {% for post in site.post %}
+            <li><a href="{{ site.baseurl }}{{ post.url }}">{{post.list}}</a></li>
+            {% endfor %}
+          </div>
+        </main>
+        {%- include Footer.html -%}
+   </body>
+</html>

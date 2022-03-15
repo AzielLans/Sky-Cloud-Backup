@@ -1,53 +1,69 @@
 <footer class="site-footer h-card">
     <data class="u-url" href="{{ "/" | relative_url }}"></data>
-  
     <div class="wrapper">
   
       <div class="footer-col-wrapper">
+        
         <div class="footer-col">
-          <p class="feed-subscribe">
-            <a href="{{ 'https://github.com/Involts/Sky-Cloud-Backup' | relative_url }}">
-              <svg class="svg-icon black">
-                <use xlink:href="{{ 'assets/minima-social-icons.svg#github' | relative_url }}"></use>
-              </svg><span>Repository</span>
+          <li class="Links_footer">
+              </svg><span>On Github</span>
+          </a>
+          </li>
+            <li class="Links_footer">
+              <a href="https://github.com/Involts/Sky-Cloud-Backup">
+                <svg class="svg-icon black">
+                  <use xlink:href="{{ 'assets/minima-social-icons.svg#github' | relative_url }}"></use>
+                </svg><span>Repository</span>
+              </a>
+            </li>
+            <li class="Links_footer">
+              <a href="Releases">
+                <svg class="svg-icon black">
+                  <use xlink:href="{{ 'assets/minima-social-icons.svg#github' | relative_url }}"></use>
+                </svg><span>Releases</span>
             </a>
-          </p>
-        {%- if site.author %}
-          <ul class="contact-list">
-            {% if site.author.name -%}
-              <li class="p-name">{{ site.author.name | escape }}</li>
-            {% endif -%}
-            {% if site.author.email -%}
-              <li><a class="u-email" href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></li>
-            {%- endif %}
-          </ul>
-        {%- endif %}
-        </div>
-        <div class="footer-col">
-          <p class="feed-subscribe">
-            <a href="{{ 'https://github.com/Involts/Sky-Cloud-Backup/releases' | relative_url }}">
-              <svg class="svg-icon black">
-                <use xlink:href="{{ 'assets/minima-social-icons.svg#github' | relative_url }}"></use>
-              </svg><span>Releases</span>
+            </li>
+            <li class="Links_footer">
+              <a href="https://github.com/Involts/Sky-Cloud-Backup/issues">
+                <svg class="svg-icon black">
+                  <use xlink:href="{{ 'assets/minima-social-icons.svg#github' | relative_url }}"></use>
+                </svg>Report Bugs</span>
             </a>
-          </p>
-        {%- if site.author %}
-          <ul class="contact-list">
-            {% if site.author.name -%}
-              <li class="p-name">{{ site.author.name | escape }}</li>
-            {% endif -%}
-            {% if site.author.email -%}
-              <li><a class="u-email" href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></li>
-            {%- endif %}
-          </ul>
-        {%- endif %}
+            </li>
         </div>
-        <div class="footer-col">
-          <p>{{ site.description | escape }}</p>
+
+        <div class="footer-middle">
+          <li class="Links_footer">
+              </svg><span>Sky Cloud Backup</span>
+          </a>
+          </li>
+            <li class="Links_footer">
+              <a href="https://github.com/Involts/Sky-Cloud-Backup/releases/download/Alpha_0.3/Sky.Cloud.Backup.Alpha.0.3.zip">
+                <svg class="svg-icon black">
+                  <use xlink:href="{{ 'assets/minima-social-icons.svg#github' | relative_url }}"></use>
+                </svg><span>Download</span>
+              </a>
+            </li>
+            <li class="Links_footer">
+              <a href="">
+                <svg class="svg-icon black">
+                  <use xlink:href="{{ 'assets/minima-social-icons.svg#github' | relative_url }}"></use>
+                </svg><span>Wiki</span>
+            </a>
+            </li>
+            <li class="Links_footer">
+              <a href="About">
+                <svg class="svg-icon black">
+                  <use xlink:href="{{ 'assets/minima-social-icons.svg#github' | relative_url }}"></use>
+                </svg><span>About</span>
+            </a>
+            </li>
+            
         </div>
-      </div>
-  
-      <div class="social-links">
+        <div class="footer-last">
+          <li class="Product_footer"><a href="/Sky-Cloud-Backup/Index_page/">{{site.title}}</b></li>
+          <li class="Product_footer">{{site.description}}</li>
+        </div>
       </div>
     </div>
   

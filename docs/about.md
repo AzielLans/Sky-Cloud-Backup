@@ -1,7 +1,8 @@
 ---
-layout: page
+layout: About
 permalink: /about/
 Title: About | Sky Cloud Backup
+title: About Sky Cloud Backup
 ---
 
 # About Sky Cloud Backup
@@ -17,6 +18,6 @@ Upload to Google drive is still in development.
 
 You can find the source code for [Sky Cloud Backup](https://github.com/Involts/Sky-Cloud-Backup) at GitHub.
 
-You can Download the [lastet version](https://github.com/Involts/Sky-Cloud-Backup/releases/download/Alpha_0.3/Sky.Cloud.Backup.Alpha.0.3.zip) of Sky Cloud Backup.
+You can Download the [lastet version]({{site.Latest_version}}) of Sky Cloud Backup.
 
 Report [bugs and fixes.](https://github.com/Involts/Sky-Cloud-Backup/issues)
