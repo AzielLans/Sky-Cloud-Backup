@@ -1,7 +1,7 @@
 ---
 layout: Home_Screen
 Title: Sky Cloud Backup | A Minecraft Backup that supports both Bedrock and Java.
-list: Home
+index: Home
 ---
 
 # About Sky Cloud Backup
@@ -13,7 +13,7 @@ If the app doesn't work you need to download [.net 4.6.1](https://www.microsoft.
 
 Upload to Google drive is still in development.
 
-[Need Help?]()
+[Need Help?](/Sky-Cloud-Backup/Wiki/)
 
 # Feature Overview
 

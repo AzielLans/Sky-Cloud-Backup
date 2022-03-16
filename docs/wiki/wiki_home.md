@@ -1,8 +1,8 @@
 ---
-layout: Wiki_home
+layout: Wiki
 Title: Wiki | Sky Cloud Backup
 permalink: /Wiki/
-list: Wiki
+index: Wiki
 title: Welcome to Sky Cloud Backup wiki
 head_pic: "/assets/md1.png"
 ---

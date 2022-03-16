@@ -7,15 +7,16 @@
 
   <header class="page-header" role="banner">
     <div class="wrapper">
-      <p class="page-header-title">{{site.title}}</p>
-      <p class="page-header-description">{{site.description}}</p>
-      <img src="{{site.baseurl}}/assets/md1.png">
+      <p class="page-header-title">{{page.title}}</p>
+      <img src="{{site.baseurl}}{{page.head_pic}}" />
     </div>
   </header>
   <main class="page-content" aria-label="Content">
-    <div class="wrapper">
-      {{ content }}
+    <div class="sidenav">
+      <a href="/Sky-Cloud-Backup/Wiki">Home</a>
+      <a href="/Sky-Cloud-Backup/Wiki/wiki-101/">How to use the app</a>
     </div>
+    <div class="wrapper">{{ content }}</div>
   </main>
   {%- include Footer.html -%}
 </body>

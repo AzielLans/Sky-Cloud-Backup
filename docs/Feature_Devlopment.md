@@ -2,7 +2,7 @@
 layout: default
 Title: Feature is in Development | Sky Cloud Backup
 permalink: /Development/
-list: Feature is in Development
+index: Feature is in Development
 ---
   <h1 align="Center"> This Feature is still in development </h1>
   <h3 align="Center"> This Feature may be unstable or cause harm to your computer

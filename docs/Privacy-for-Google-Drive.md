@@ -2,7 +2,7 @@
 layout: default
 Title: Privacy for Google Drive | Sky Cloud Backup
 permalink: /Privacy_Drive/
-list: Privacy for Google Drive
+index: Privacy for Google Drive
 ---
 
 # Privacy for Google Drive
