@@ -1,7 +1,7 @@
 ---
 layout: Wiki
 Title: Sky Cloud Backup 101 | Sky Cloud Backup
-permalink: /Wiki/Wiki-101/
+permalink: /Wiki/Sky-Cloud-Backup_101/
 index: How to use the app
 title: Sky Cloud Backup 101
 head_pic: "/assets/wiki_5.png" 
