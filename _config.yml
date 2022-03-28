@@ -8,7 +8,6 @@ baseurl: /Sky-Cloud-Backup
 # Before publishing the site to github-pages, replace the varable of baseur
 # if you have brought a doman remove the varable above 
 # Links in Header
-theme: jekyll-theme-fica
 header:
   header_name_1: Download
   header_link_1: https://github.com/Involts/Sky-Cloud-Backup/releases/download/Alpha_0.3/Sky.Cloud.Backup.Alpha.0.3.zip
