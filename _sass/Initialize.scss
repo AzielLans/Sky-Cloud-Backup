@@ -66,7 +66,5 @@ $on-large:         $on-laptop !default;
 // Import pre-styling-overrides hook and style-partials.
 @import
   "Base",                 // Defines element resets.
-  "Layout",              // Defines structure and style based on CSS selectors.
-  "Custom-Variables",   // Override predefined variables.
-  "Custom-Styles"      // Override existing styles .
+  "Layout"              // Defines structure and style based on CSS selectors.
 ;
