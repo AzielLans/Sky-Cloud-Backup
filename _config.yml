@@ -1,0 +1,27 @@
+title: Fica Theme
+author: Involts
+name: Involts
+description: A modern theme with minimal look.
+google_analytics: true
+show_descriptions: true # set to true to show descriptions
+baseurl: /jekyll-theme-fica
+# Before publishing the site to github-pages, replace the varable of baseur
+# if you have brought a doman remove the varable above 
+# Links in Header
+header:
+  header_name_1: Download
+  header_link_1: https://github.com/Involts/jekyll-theme-fica/zipball/master
+  header_name_2: Post
+  header_link_2: /Post/
+  header_name_3: About
+  header_link_3: /About/
+fica:
+  date_format: "%b %-d, %Y"
+      
+plugins:
+ - jekyll-feed
+ - jekyll-seo-tag
+exclude:
+ - readme.md
+ - docs
+ - temp
