@@ -283,7 +283,6 @@
     color: $link-hover-color;
     text-decoration: none;
     
-    
   }
 }
 .Product_footer {
@@ -291,6 +290,7 @@
   color: #f0ffff;
   width: calc(100% - (#{$spacing-unit} / 2));
   padding: 0 ($spacing-unit / 2);
+  cursor: default;
 
   &:first-child {
     padding-right: $spacing-unit / 2;
@@ -299,6 +299,11 @@
     font-size: 0.6cm;
     color: #f0ffff;
     font-weight: 900;
+  }
+
+  :any-link {
+    color: #f0ffff;
+    cursor: default;
   }
 
   &:last-child:hover {
