@@ -3,5 +3,4 @@
 set -e
 
 gem install bundler
-gem install jekyll-theme-fica
 bundle install
