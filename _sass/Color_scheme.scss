@@ -1,17 +1,22 @@
 //Main Color Scheme
+// $background-color:      #191919  !default;
 $background-color:      #2b2b2b  !default;
 $text-color:            #ffffff !default;
-$wiki-bg-color:         darken($background-color, 1%) !default; 
+$wiki-bg-color:         darken($background-color, 2%) !default; 
 
 $help-bg-color:         #00cc99 !default; 
 $help-hover-color:      darken($help-bg-color, 10%) !default; 
+$help-wiki-hover-color: #000000 !default;
+
 
 $site-title-color:      #ffffff !default;
 $site-header-bg:        darken($background-color, 5%) !default; 
 
-$btn-bg-color:           #525252 !default;
-$btn-color-hover:        #353535 !default;
-$btn-text-hover-color:   darken($text-color, 20%) !default;
+// $btn-bg-color:           #525252 !default;
+// $btn-color-hover:        #353535 !default;
+$btn-bg-color:          lighten($background-color, 5%) !default;
+$btn-color-hover:       lighten($background-color, 5%) !default;
+$btn-text-hover-color:   darken($text-color, 50%) !default;
 
 $header-bg-color:        #80ffd4 !default;
 $home-header-title-color: darken($background-color, 3%) !default;
@@ -44,6 +49,7 @@ $table-header-border:   darken($background-color, 10%) !default;
 $table-border-color:    darken($background-color, 100%) !default;
 
 $footer-bg-color:       darken($background-color, 2%) !default;
+
 
 .highlight .hll { background-color: #515151 }
 /*.highlight  { background: #2d2d2d; color: #f2f0ec }*/
