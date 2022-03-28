@@ -23,4 +23,4 @@ plugins:
  - jekyll-feed
  - jekyll-seo-tag
 exclude:
- - readme.md
+ - README.md
