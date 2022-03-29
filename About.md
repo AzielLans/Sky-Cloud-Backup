@@ -1,17 +1,18 @@
 ---
-layout: default
-site-title: About
-permalink: /About/
+layout: page
+title: About
+permalink: /about/
 ---
 
-# About Fica Theme
+This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
 
-A modern theme with minimal look.
+You can find the source code for Minima at GitHub:
+[jekyll][jekyll-organization] /
+[minima](https://github.com/jekyll/minima)
 
-You can find the [source code for Fica](https://github.com/Involts/jekyll-theme-fica) at GitHub.
+You can find the source code for Jekyll at GitHub:
+[jekyll][jekyll-organization] /
+[jekyll](https://github.com/jekyll/jekyll)
 
-Released under [MIT]({{site.baseurl}}/License/) by [Involts](https://github.com/Involts).
 
-The theme is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
-
-Using `default` layout.
+[jekyll-organization]: https://github.com/jekyll

@@ -1,9 +1,9 @@
-# frozen_string_literal: true
-
 source "https://rubygems.org"
-gemspec
 
-gem "jekyll", ENV["JEKYLL_VERSION"] if ENV["JEKYLL_VERSION"]
-gem "kramdown-parser-gfm" if ENV["JEKYLL_VERSION"] == "~> 4.2.2"
-gem "jekyll-seo-tag", "~> 2.8.0"
-gem 'wdm', '>= 0.1.1' if Gem.win_platform?
+gem 'jekyll-theme-fica', '~> 0.1.5'
+platforms :mingw, :x64_mingw, :mswin, :jruby do
+  gem "tzinfo", "~> 1.2"
+  gem "tzinfo-data"
+end
+gem "wdm", "~> 0.1.1", :platforms => [:mingw, :x64_mingw, :mswin]
+gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
