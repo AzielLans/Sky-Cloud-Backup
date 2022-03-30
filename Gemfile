@@ -1,6 +1,7 @@
 source "https://rubygems.org"
 
 gem 'jekyll-theme-fica', '~> 0.1.5'
+gem 'github-pages', '~> 225'
 platforms :mingw, :x64_mingw, :mswin, :jruby do
   gem "tzinfo", "~> 1.2"
   gem "tzinfo-data"

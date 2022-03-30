@@ -1,16 +1,25 @@
-title: Your awesome title
-email: your-email@example.com
-description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
-
-# Build settings
-remote_theme: Involts/jekyll-theme-fica
+title: Sky Cloud Backup
+author: Involts
+name: Involts
+description: A Minecraft Backup that supports both Bedrock and Java.
+google_analytics: true
+show_descriptions: true # set to true to show descriptions
+baseurl: /Sky-Cloud-Backup
+theme: jekyll-theme-fica 
+# remote_theme: Involts/jekyll-theme-fica
+header:
+  header_name_1: Download
+  header_link_1: https://github.com/Involts/Sky-Cloud-Backup/releases/download/Alpha_0.3/Sky.Cloud.Backup.Alpha.0.3.zip
+  header_name_2: Releases
+  header_link_2: /Releases/
+  header_name_3: About
+  header_link_3: /About/
+fica:
+  date_format: "%b %-d, %Y"
+      
 plugins:
-  - jekyll-feed
+ - jekyll-feed
+ - jekyll-seo-tag
+exclude:
+ - README.md
 

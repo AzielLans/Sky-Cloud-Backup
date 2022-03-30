@@ -1,0 +1,13 @@
+---
+layout: default
+---
+    <body>
+        <main class="page-content" aria-label="Content">
+          <div class="wrapper">
+              {{content}}
+            {% for post in site.pages %}
+               <li><a href="{{ site.baseurl }}{{ post.url }}">{{post.index}}</a></li>
+            {% endfor %}
+          </div>
+        </main>
+   </body>

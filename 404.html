@@ -1,25 +1,18 @@
 ---
 permalink: /404.html
 layout: default
+site-title: 404
+index: 404 Error
 ---
 
-<style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
-
 <div class="container">
-  <h1>404</h1>
-
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
+  <svg >
+    <use xlink:href="{{ 'assets/ghost.svg#404_error' | relative_url }}"></use>
+  </svg>
+  <!-- <img src="{{site.baseurl}}/assets/img/ghost.png" width="120px" height="120px"> -->
+ <h1>Whoops!</h1>
+ <p>It seems like we couldn't</p>
+ <p>find the page you were</p>
+ <p>looking for</p>
+ <a class="btn-error" href="{{site.baseurl}}/">Home</a>
 </div>
