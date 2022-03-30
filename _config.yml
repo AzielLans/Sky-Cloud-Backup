@@ -5,8 +5,8 @@ description: A Minecraft Backup that supports both Bedrock and Java.
 google_analytics: true
 show_descriptions: true # set to true to show descriptions
 baseurl: /Sky-Cloud-Backup
-theme: jekyll-theme-fica 
-# remote_theme: Involts/jekyll-theme-fica
+# theme: jekyll-theme-fica 
+remote_theme: Involts/jekyll-theme-fica
 header:
   header_name_1: Download
   header_link_1: https://github.com/Involts/Sky-Cloud-Backup/releases/download/Alpha_0.3/Sky.Cloud.Backup.Alpha.0.3.zip
