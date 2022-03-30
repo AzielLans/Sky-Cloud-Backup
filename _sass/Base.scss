@@ -301,15 +301,21 @@ pre {
 }
 
 .wrapper_wiki {
-  padding-right: 50px;
-  padding-left: 50px;
-  @extend main;
- 
+  max-width: calc(#{$content-width} - (#{$spacing-unit}));
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: $spacing-unit / 2;
+  padding-left: $spacing-unit / 2;
+  @extend %clearfix;
+
   @media screen and (min-width: $on-large) {
-    padding-right: 400px;
-    padding-left: 400px;
+    max-width: calc(#{$content-width} - (#{$spacing-unit} * 2));
+    display: flex;
+    justify-content: center;
+    padding-right: $spacing-unit;
+    padding-left: $spacing-unit;
   }
- }
+}
 
 /**
 * Clearfix
@@ -442,24 +448,24 @@ dl {
   margin-bottom: 3px;
 }
 
- .btn-error {
-   padding: 8px 25px;
-   border-radius: 5px;
-   cursor: pointer;
-   color: $text-color;
-   background-color: $error-btn-bg-color;
-   border-color: $btn-bg-color;
-   transition: $transition-btn;
-   border-top: 10px;
-   &,
-   &:visited {
-     color: $text-color;
-   }
+.btn-error {
+  padding: 8px 25px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: $text-color;
+  background-color: $error-btn-bg-color;
+  border-color: $btn-bg-color;
+  transition: $transition-btn;
+  border-top: 10px;
+  &,
+  &:visited {
+    color: $text-color;
+  }
 
-   &:hover {
-     color: $btn-text-hover-color;
-     text-decoration: none;
-     background-color: $error-btn-hover-color;
-     border-color: $error-btn-hover-color;
-   }
- }
+  &:hover {
+    color: $btn-text-hover-color;
+    text-decoration: none;
+    background-color: $error-btn-hover-color;
+    border-color: $error-btn-hover-color;
+  }
+}
