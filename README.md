@@ -1,9 +1,17 @@
-<h1 align="center">Sky-Cloud-Backup</h1>
 <p align="center">
   <img src="https://user-images.githubusercontent.com/100028421/154840503-cc3b841f-3b86-45b2-993b-72a94f2b008f.png" />
 </p>
+<h1 align="center">Sky-Cloud-Backup</h1>
 
-We have a website [here](https://involts.github.io/Sky-Cloud-Backup/)
+* * *
+<p align="center">
+    <a href="https://github.com/Involts/Sky-Cloud-Backup/releases/download/Alpha_0.3/Sky.Cloud.Backup.Alpha.0.3.zip">Download</a> •
+    <a href="https://involts.github.io/Sky-Cloud-Backup/">Website</a> •
+    <a href="https://involts.github.io/Sky-Cloud-Backup/Wiki/">Wiki</a> •
+    <a href="CONTRIBUTING.md">Contributing</a> •
+</p>
+
+* * *
 
 # About Sky Cloud Backup
 A Minecraft Backup that supports both Bedrock and Java. It is easy to backup your world with one click. You can personalize the app, using dark mode or light mode, currently the theme colors has 4 colors(Red, Green, Blue the default color and Pink) and the is more to come.
@@ -14,7 +22,6 @@ If the app doesn't work you need to download [.net 4.6.1](https://www.microsoft.
 
 Upload to Google drive is still in development.
 
-Download the  app [here](https://github.com/Involts/Sky-Cloud-Backup/releases).
 
 # Feature Overview
 
@@ -23,6 +30,11 @@ Download the  app [here](https://github.com/Involts/Sky-Cloud-Backup/releases).
 - Continue what you're doing, using Always on top checkbox.
 - Save it later, using Minimize to tray Check box.
 - Start the app with Windows
+
+# Contributing
+Welcome to report bugs, improve code quality or submit a new feature. For more information, see [contributing guidelines](CONTRIBUTING.md).
+
+# Pictures
 
 # Backup Your World/s.
 ![m2](https://user-images.githubusercontent.com/100028421/154808333-fac019da-a177-4d4b-a87b-13fd62895f7d.png)
