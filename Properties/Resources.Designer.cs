@@ -153,9 +153,9 @@ namespace Sky_Cloud_Backup.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Splash_Screen {
+        internal static System.Drawing.Bitmap Splash_Screen_Alpha_0_4 {
             get {
-                object obj = ResourceManager.GetObject("Splash_Screen", resourceCulture);
+                object obj = ResourceManager.GetObject("Splash_Screen_Alpha_0.4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -206,6 +206,16 @@ namespace Sky_Cloud_Backup.Properties {
         internal static System.Drawing.Bitmap wiki_5 {
             get {
                 object obj = ResourceManager.GetObject("wiki_5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap wiki_a1_Alpha_0_4 {
+            get {
+                object obj = ResourceManager.GetObject("wiki-a1_Alpha_0.4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

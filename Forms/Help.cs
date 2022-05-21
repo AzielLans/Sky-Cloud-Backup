@@ -21,7 +21,6 @@ namespace Sky_Cloud_Backup
             materialSkinManager.EnforceBackcolorOnAllComponents = true;
             materialSkinManager.AddFormToManage(this);
         }
-
         MaterialSkinManager ThemeManager = MaterialSkinManager.Instance;
     }
 }

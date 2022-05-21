@@ -12,15 +12,14 @@ namespace Sky_Cloud_Backup
             InitializeComponent();
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
-            linkLabel1.LinkVisited = false;
         }
         MaterialSkinManager ThemeManager = MaterialSkinManager.Instance;
 
-        private void linkLabel1_LinkClicked ( object sender, LinkLabelLinkClickedEventArgs e )
+        private void Github_Click ( object sender, EventArgs e )
         {
             try
             {
-                VisitLink();
+                System.Diagnostics.Process.Start("https://github.com/Involts/Sky-Cloud-Backup");
             }
             catch (Exception ex)
             {
@@ -28,20 +27,33 @@ namespace Sky_Cloud_Backup
             }
         }
 
-        private void VisitLink ()
-        {
-            linkLabel1.LinkVisited = true;
-            System.Diagnostics.Process.Start("https://github.com/Involts/Sky-Cloud-Backup");
-        }
-
         private void Error_10 ( string text )
         {
             MessageBox.Show(text, "Sky Cloud Backup", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        private void About_Load ( object sender, EventArgs e )
+        private void Bugs_Click( object sender, EventArgs e )
         {
+            try
+            {
+               System.Diagnostics.Process.Start("https://github.com/Involts/Sky-Cloud-Backup/issues");
+            }
+            catch (Exception ex)
+            {
+                Error_10(ex.Message);
+            }
+        }
 
+        private void License_Click ( object sender, EventArgs e )
+        {
+            try
+            {
+                System.Diagnostics.Process.Start("https://github.com/Involts/Sky-Cloud-Backup/blob/master/LICENSE");
+            }
+            catch (Exception ex)
+            {
+                Error_10(ex.Message);
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
@@ -10,11 +11,13 @@ namespace Sky_Cloud_Backup
         public loading_screen ()
         {
             InitializeComponent();
-            this.Text = string.Empty;
+            
+            Dev_Mode_fle_chk();
+            this.Text = "Starting";
             this.ControlBox = false;
             this.DoubleBuffered = true;
             this.FormBorderStyle = FormBorderStyle.None;
-            load_timer.Start();
+            Cnl_fle_chk();
             this.WindowState = FormWindowState.Normal;
             this.Activate();
         }
@@ -31,9 +34,18 @@ namespace Sky_Cloud_Backup
             }
         }
 
-        private void ver_Click ( object sender, EventArgs e )
+        private void Cnl_fle_chk ()
         {
-
+            string chk_cnl = "Cancel";
+            if(File.Exists(chk_cnl))
+            {
+                File.Delete(chk_cnl);
+                Cancel_timer.Start();
+            }
+            else
+            {
+                load_timer.Start();
+            }
         }
 
         private void loading_screen_Load ( object sender, EventArgs e )
@@ -41,13 +53,42 @@ namespace Sky_Cloud_Backup
 
         }
 
-        private void pictureBox1_Click ( object sender, EventArgs e )
+        private void Dev_Mode_fle_chk ()
         {
-            Application.Exit();
-        }
-        private void pictureBox1_Click_1 ( object sender, EventArgs e )
-        {
-
+            string chk_cnl = "Cancel";
+            string chk_dev = @"Developer_Mode";
+            if (File.Exists(chk_dev))
+            {
+                Properties.Settings.Default.Dev_Mode = true;
+                Dev_Label.Show();
+                Ues_label.Show();
+                Reset_label.Show();
+                Cancel_backup_info.Show();
+                if(Properties.Settings.Default.Reset == true)
+                {
+                    Reset_label.Text = "Reset: Yes";
+                }
+                if (Properties.Settings.Default.first_strtup == false)
+                {
+                    Ues_label.Text = "Use type: first Startup";
+                }
+                else
+                {
+                    Ues_label.Text = "Use type: Used";
+                }
+                if (File.Exists(chk_cnl))
+                {
+                    Cancel_backup_info.Text = "Backup_Cancel: Yes";
+                }
+                else
+                {
+                    Cancel_backup_info.Hide();
+                }
+            }
+            else
+            {
+                Properties.Settings.Default.Dev_Mode = false;
+            }
         }
 
         private void load_timer_Tick ( object sender, EventArgs e )
@@ -102,6 +143,18 @@ namespace Sky_Cloud_Backup
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void Cancel_timer_Tick ( object sender, EventArgs e )
+        {
+            Load_Panel.Width += 591;
+            if (Load_Panel.Width >= 591)
+            {
+                Cancel_timer.Stop();
+                Main_Screen f2 = new Main_Screen();
+                f2.Show();
+                this.Hide();
+            }
         }
     }
 }

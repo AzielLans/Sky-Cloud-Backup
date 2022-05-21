@@ -16,6 +16,7 @@ namespace Sky_Cloud_Backup
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.LightBlue800, Primary.LightBlue900, Primary.LightBlue400, Accent.Cyan700, TextShade.WHITE);
+            Invalidate();
         }
 
         MaterialSkinManager ThemeManager = MaterialSkinManager.Instance;
@@ -29,37 +30,72 @@ namespace Sky_Cloud_Backup
         {
 
         }
+        About about = new About();
+        Help help = new Help();
 
         private void Default_Button_CheckedChanged ( object sender, EventArgs e )
         {
-            ThemeManager.ColorScheme = new ColorScheme(Primary.LightBlue800, Primary.LightBlue900, Primary.LightBlue400, Accent.Cyan700, TextShade.WHITE);
+            ThemeManager.ColorScheme = new ColorScheme(
+                Primary.LightBlue800,
+                Primary.LightBlue900,
+                Primary.LightBlue400,
+                Accent.Cyan700,
+                TextShade.WHITE);
+            Invalidate();
+            help.Refresh();
+            about.Refresh();
         }
 
         private void Green_Button_CheckedChanged ( object sender, EventArgs e )
         {
-            ThemeManager.ColorScheme = new ColorScheme(Primary.Green800, Primary.Green900, Primary.Green500, Accent.LightGreen400, TextShade.BLACK);
+            ThemeManager.ColorScheme = new ColorScheme(
+                Primary.Green800,
+                Primary.Green900,
+                Primary.Green500,
+                Accent.LightGreen400,
+                TextShade.BLACK);
+            Invalidate();
+            help.Refresh();
+            about.Refresh();
         }
 
         private void Pink_Button_CheckedChanged ( object sender, EventArgs e )
         {
-            ThemeManager.ColorScheme = new ColorScheme(Primary.Pink800, Primary.Pink900, Primary.Pink500, Accent.Pink200, TextShade.BLACK);
+            ThemeManager.ColorScheme = new ColorScheme(
+                Primary.Pink800,
+                Primary.Pink900,
+                Primary.Pink500,
+                Accent.Pink200,
+                TextShade.BLACK);
+            Invalidate();
+            help.Refresh();
+            about.Refresh();
         }
 
         private void Red_Button_CheckedChanged ( object sender, EventArgs e )
         {
-            ThemeManager.ColorScheme = new ColorScheme(Primary.Red800, Primary.Red900, Primary.Red500, Accent.Red200, TextShade.BLACK);
+            ThemeManager.ColorScheme = new ColorScheme(
+                Primary.Red800,
+                Primary.Red900,
+                Primary.Red500,
+                Accent.Red200,
+                TextShade.BLACK);
+            Invalidate();
+            help.Refresh();
+            about.Refresh();
         }
+
 
         private void Dark_mode_switch_CheckedChanged ( object sender, EventArgs e )
         {
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.Theme = materialSkinManager.Theme == MaterialSkinManager.Themes.DARK ? MaterialSkinManager.Themes.LIGHT : MaterialSkinManager.Themes.DARK;
             if (Dark_mode_switch.Checked)
             {
-                ThemeManager.Theme = MaterialSkinManager.Themes.DARK;
                 Dark_mode_switch.Text = "Dark Mode";
             }
             else
             {
-                ThemeManager.Theme = MaterialSkinManager.Themes.LIGHT;
                 Dark_mode_switch.Text = "Light Mode";
             }
         }

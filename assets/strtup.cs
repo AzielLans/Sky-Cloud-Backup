@@ -1,16 +1,16 @@
 ﻿using IWshRuntimeLibrary;
 using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Sky_Cloud_Backup
 {
-    public partial class strtup: UserControl
+    public partial class strtup
     {
-        public strtup ()
-        {
-            InitializeComponent();
-        }
         public void CreateStartupFolderShortcut ()
         {
             WshShellClass wshShell = new WshShellClass();

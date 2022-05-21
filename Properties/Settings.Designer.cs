@@ -190,5 +190,113 @@ namespace Sky_Cloud_Backup.Properties {
                 this["Reset"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool Chk_zip_mcowrld {
+            get {
+                return ((bool)(this["Chk_zip_mcowrld"]));
+            }
+            set {
+                this["Chk_zip_mcowrld"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool Amber {
+            get {
+                return ((bool)(this["Amber"]));
+            }
+            set {
+                this["Amber"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool Orange {
+            get {
+                return ((bool)(this["Orange"]));
+            }
+            set {
+                this["Orange"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool Deep_Purple {
+            get {
+                return ((bool)(this["Deep_Purple"]));
+            }
+            set {
+                this["Deep_Purple"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Defualt_name_textbox {
+            get {
+                return ((string)(this["Defualt_name_textbox"]));
+            }
+            set {
+                this["Defualt_name_textbox"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool Defualt_name_chkbx {
+            get {
+                return ((bool)(this["Defualt_name_chkbx"]));
+            }
+            set {
+                this["Defualt_name_chkbx"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool Backup_name_for {
+            get {
+                return ((bool)(this["Backup_name_for"]));
+            }
+            set {
+                this["Backup_name_for"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool Setting {
+            get {
+                return ((bool)(this["Setting"]));
+            }
+            set {
+                this["Setting"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool Dev_Mode {
+            get {
+                return ((bool)(this["Dev_Mode"]));
+            }
+            set {
+                this["Dev_Mode"] = value;
+            }
+        }
     }
 }
