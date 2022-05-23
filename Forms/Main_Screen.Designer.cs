@@ -903,7 +903,6 @@ namespace Sky_Cloud_Backup
         private MaterialSkin.Controls.MaterialCard Upload_to_Drive_Card;
         private MaterialSkin.Controls.MaterialButton Sigin_in_Button;
         private MaterialSkin.Controls.MaterialLabel Note;
-        private MaterialSkin.Controls.MaterialCheckbox Upload_to_Drive_CheckBox;
         private MaterialSkin.Controls.MaterialButton Save_World_Button;
         private MaterialSkin.Controls.MaterialCard Open_World_Card;
         private MaterialSkin.Controls.MaterialButton Open_World_Button;
@@ -946,5 +945,6 @@ namespace Sky_Cloud_Backup
         public MaterialSkin.Controls.MaterialCheckbox Deafualt_Backup_name;
         public MaterialSkin.Controls.MaterialTextBox Backup_Name;
         public MaterialSkin.Controls.MaterialCheckbox Strt_Win;
+        public MaterialSkin.Controls.MaterialCheckbox Upload_to_Drive_CheckBox;
     }
 }
