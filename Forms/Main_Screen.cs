@@ -36,64 +36,6 @@ namespace Sky_Cloud_Backup
 
         MaterialSkinManager ThemeManager = MaterialSkinManager.Instance;
 
-        private void Chk_Default_name ()
-        {
-            if (Deafualt_Backup_name.Checked)
-            {
-                Backup_name_for.Hide();
-                Backup_Name.Hide();
-            }
-            else
-            {
-                Backup_name_for.Show();
-                Backup_Name.Show();
-            }
-        }
-
-        private void Chk_Reset ()
-        {
-            if (Properties.Settings.Default.Reset == true)
-            {
-                MaterialDialog Reset = new MaterialDialog(this, "Sky Cloud Backup", "Reset Complete", "OK", true, "Cancel", true);
-                Reset.ShowDialog(this);
-                Properties.Settings.Default.Reset = false;
-                Properties.Settings.Default.Save();
-            }
-        }
-
-        private void Minto_strt ()
-        {
-            if (Strt_Win.Checked)
-            {
-                notify_tray.BalloonTipTitle = " The app is in System tray";
-                notify_tray.BalloonTipText = "To disable the app from starting, uncheck Start with Windows checkbox";
-                notify_tray.Visible = true;
-                notify_tray.ShowBalloonTip(500);
-                Hide();
-                this.ShowInTaskbar = false;
-            }
-        }
-
-        private void Nofrm_strt ()
-        {
-            Show();
-            notify_tray.Visible = false;
-            this.ShowInTaskbar = true;
-            this.Activate();
-        }
-
-        private void Chk_txtbx_fld_Op ()
-        {
-            if (!string.IsNullOrEmpty(Open_Word_Text.Text))
-            {
-                Backup_Button.Enabled = true;
-            }
-            else
-            {
-                Backup_Button.Enabled = false;
-            }
-        }
-
         private void Chk_atstarp_Backup ()
         {
             if (!string.IsNullOrEmpty(Open_Word_Text.Text))
@@ -301,7 +243,7 @@ namespace Sky_Cloud_Backup
             Application.Exit();
         }
         /////////////////////////////////////Saves///////////////////////////////////////////////////////////////////////
-        private void Main_Screen_Load ( object sender, EventArgs e )
+        public void Main_Screen_Load ( object sender, EventArgs e )
         {
             Dark_mode_switch.Checked = Properties.Settings.Default.Mode;
             Default_Button.Checked = Properties.Settings.Default.Default_Color;
@@ -414,7 +356,7 @@ namespace Sky_Cloud_Backup
             {
                 foreach (var filename in Directory.GetFiles(path))
                 {
-                    string suffix = DateTime.Now.ToString(" dddd, dd MMMM yyyy lllll").ToString(CultureInfo.InvariantCulture);
+                    string suffix = DateTime.Now.ToString(" dddd, dd MMMM yyyy ").ToString(CultureInfo.InvariantCulture);
                     var fileNameWithoutExtension = Path.GetFileNameWithoutExtension(filename);
                     var newFilename = string.Format("{0}({1}).zip", fileNameWithoutExtension, suffix);
                     var newFullFilename = Path.Combine(path, newFilename);
@@ -1077,10 +1019,6 @@ namespace Sky_Cloud_Backup
                 var newFullFilename = Path.Combine(@"Temp", newFilename);
                 File.Move(filename, newFullFilename);
             }
-        }
-
-        private void Backup_Name_TabStopChanged ( object sender, EventArgs e )
-        {
         }
     }
 
