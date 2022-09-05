@@ -1,14 +1,11 @@
 ﻿using MaterialSkin;
 using MaterialSkin.Controls;
-using Sky_Cloud_Backup.assets;
-using Sky_Cloud_Backup.assets.Backup;
 using System;
 using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
-using System.Threading;
 using System.Windows.Forms;
 
 namespace Sky_Cloud_Backup
@@ -36,11 +33,9 @@ namespace Sky_Cloud_Backup
             Chk_Default_name();
         }
 
-        strtup stup = new strtup();
+        private static readonly strtup stup = new strtup();
         gle_div gle_div = new gle_div();
-        Main_Backup_Bedrock bedrock = new Main_Backup_Bedrock();
-        Main_Backup_Java java = new Main_Backup_Java();
-        Error GetError = new Error();
+
 
         MaterialSkinManager ThemeManager = MaterialSkinManager.Instance;
         private void Upload_to_Drive_CheckBox_CheckedChanged ( object sender, EventArgs e )
@@ -82,11 +77,11 @@ namespace Sky_Cloud_Backup
 
         public void Chk_Reset ()
         {
-            if (Properties.Settings.Default.Reset == true)
+            if (Properties.Settings.Default.Resets == true)
             {
                 MaterialDialog Reset = new MaterialDialog(this, "Sky Cloud Backup", "Reset Complete", "OK", true, "Cancel", true);
                 Reset.ShowDialog(this);
-                Properties.Settings.Default.Reset = false;
+                Properties.Settings.Default.Resets = false;
                 Properties.Settings.Default.Save();
             }
         }
@@ -194,7 +189,7 @@ namespace Sky_Cloud_Backup
                 notify_tray.Visible = false;
                 this.Show();
                 string Error_txt = "The Textbox is empty";
-                GetError.Dialog_error(Error_txt);
+                Dialog_error(Error_txt);
                 this.Hide();
                 notify_tray.Visible = true;
                 this.ShowInTaskbar = false;
@@ -206,16 +201,18 @@ namespace Sky_Cloud_Backup
                     Backup_Button.Enabled = false;
                     if (Edtitions.Checked)
                     {
-                        java.Main_Java_Backup();
+                        Main_Java_Backup();
                     }
                     else
                     {
-                        bedrock.Main_Bedrock_Backup();
+                        Main_Bedrock_Backup();
                     }
                     Backup_Button.Enabled = true;
                 }
             }
         }
+
+
         /////////////////////////////////////Color Schemes///////////////////////////////////////////////////////////////////////
 
         About about = new About();
@@ -346,6 +343,390 @@ namespace Sky_Cloud_Backup
 
         }
 
+        private void Main_Bedrock_Backup ()
+        {
+            string sourceDirectory = Properties.Settings.Default.World_Location = Open_Word_Text.Text;
+            string targetDirectory = @"Temp";
+            Copy(sourceDirectory, targetDirectory);
+            if (!Directory.Exists(targetDirectory))
+            {
+                Copy(sourceDirectory, targetDirectory);
+                Chk_World_Bedrock();
+            }
+            else
+            {
+                string folderName = @"Temp";
+                string pathString = Path.Combine(folderName, "");
+                System.IO.Directory.CreateDirectory(pathString);
+                Copy(sourceDirectory, targetDirectory);
+                Chk_World_Bedrock();
+            }
+            Backup_Button.Enabled = true;
+        }
+        public void Arcfilecreat ()
+        {
+            try
+            {
+                if (zip_mcworld.Checked)
+                {
+                    if (File.Exists(@"Temp\Backup Bedrock world.zip"))
+                    {
+                        Random_Name_Bedrock();
+                    }
+                    else
+                    {
+                        string sourceDirectoryName = Properties.Settings.Default.World_Location = Open_Word_Text.Text;
+                        string destinationArchiveFileName = @"Temp\Backup Bedrock world.zip";
+                        CreatFrDir(sourceDirectoryName, destinationArchiveFileName);
+                    }
+                }
+                else
+                {
+                    if (File.Exists(@"Temp\Backup Bedrock world.mcworld"))
+                    {
+                        Random_Name_Bedrock();
+                    }
+                    else
+                    {
+                        string sourceDirectoryName = Properties.Settings.Default.World_Location = Open_Word_Text.Text;
+                        string destinationArchiveFileName = @"Temp\Backup Bedrock world.mcworld";
+                        CreatFrDir(sourceDirectoryName, destinationArchiveFileName);
+                    }
+                }
+            }
+            catch (IOException exp)
+            {
+                string Error_txt = exp.Message;
+                Dialog_error(Error_txt);
+            }
+        }
+        private void CreatFrDir ( string sourceDirectoryName, string destinationArchiveFileName )
+        {
+            ZipFile.CreateFromDirectory(sourceDirectoryName, destinationArchiveFileName);
+            Random_Name_Bedrock();
+        }
+        private void Random_Name_Bedrock ()
+        {
+            Rename_Backup_Customs_Main();
+            RenameMcworldFiles(@"Temp");
+            Copy_Output();
+        }
+        private void RenameMcworldFiles ( string path )
+        {
+            if (zip_mcworld.Checked)
+            {
+                foreach (var filename in Directory.GetFiles(path))
+                {
+                    string suffix = DateTime.Now.ToString(" dddd, dd MMMM yyyy ").ToString(CultureInfo.InvariantCulture);
+                    var fileNameWithoutExtension = Path.GetFileNameWithoutExtension(filename);
+                    var newFilename = string.Format("{0}({1}).zip", fileNameWithoutExtension, suffix);
+                    var newFullFilename = Path.Combine(path, newFilename);
+                    File.Move(filename, newFullFilename);
+                }
+            }
+            else
+            {
+                foreach (var filename in Directory.GetFiles(path))
+                {
+                    string suffix = ( DateTime.Now.ToString(" dddd, dd MMMM yyyy ") ).ToString(CultureInfo.InvariantCulture);
+                    var fileNameWithoutExtension = Path.GetFileNameWithoutExtension(filename);
+                    var newFilename = string.Format("{0}({1}).mcworld", fileNameWithoutExtension, suffix);
+                    var newFullFilename = Path.Combine(path, newFilename);
+                    File.Move(filename, newFullFilename);
+                }
+            }
+
+        }
+        /////////////////////////////////////Copy_Input_Backup///////////////////////////////////////////////////////////////////////
+
+        public static void Copy ( string sourceDirectory, string targetDirectory )
+        {
+            var diSource = new DirectoryInfo(sourceDirectory);
+            var diTarget = new DirectoryInfo(targetDirectory);
+
+            CopyAll(diSource, diTarget);
+        }
+
+        public static void CopyAll ( DirectoryInfo source, DirectoryInfo target )
+        {
+            try
+            {
+                Directory.CreateDirectory(target.FullName);
+                // Copy each file into the new directory.
+                foreach (FileInfo fi in source.GetFiles())
+                {
+
+                    fi.CopyTo(Path.Combine(target.FullName, fi.Name), true);
+
+                }
+
+                // Copy each subdirectory using recursion.
+                foreach (DirectoryInfo diSourceSubDir in source.GetDirectories())
+                {
+                    DirectoryInfo nextTargetSubDir =
+                        target.CreateSubdirectory(diSourceSubDir.Name);
+                    CopyAll(diSourceSubDir, nextTargetSubDir);
+                }
+            }
+            catch (IOException exp)
+            {
+                MessageBox.Show(exp.Message);
+            }
+        }
+
+        /////////////////////////////////////Copy_Output_Backup////////////////////llllll///////////////////////////////////////////////////
+        public void Copy_Output ()
+        {
+            string sourceDirectory = @"Temp\";
+            string targetDirectory = Properties.Settings.Default.Save_Location = Save_World_TextBox.Text;
+            var diSource = new DirectoryInfo(sourceDirectory);
+            var diTarget = new DirectoryInfo(targetDirectory);
+            CopyAll(diSource, diTarget);
+        }
+        /////////////////////////////////////Java_Backup///////////////////////////////////////////////////////////////////////
+
+        private void Main_Java_Backup ()
+        {
+            string sourceDirectory = Properties.Settings.Default.World_Location = Open_Word_Text.Text;
+            string targetDirectory = @"Temp";
+            Copy(sourceDirectory, targetDirectory);
+            if (!Directory.Exists(targetDirectory))
+            {
+                Copy(sourceDirectory, targetDirectory);
+                Chk_World_Java();
+            }
+            else
+            {
+                string folderName = @"Temp";
+                string pathString = Path.Combine(folderName, "");
+                System.IO.Directory.CreateDirectory(pathString);
+                Copy(sourceDirectory, targetDirectory);
+                Chk_World_Java();
+            }
+            Backup_Button.Enabled = true;
+        }
+        private void Arcfilecreat_Java ()
+        {
+            try
+            {
+                if (File.Exists(@"Temp\Backup Java world.zip"))
+                {
+                    Copy_Output();
+                }
+                else
+                {
+                    string sourceDirectoryName = Properties.Settings.Default.World_Location = Open_Word_Text.Text;
+                    string destinationArchiveFileName = @"Temp\Backup Java world.zip";
+                    CreatFrDir_Java(sourceDirectoryName, destinationArchiveFileName);
+                }
+
+            }
+            catch (IOException exp)
+            {
+                string Error_txt = exp.Message;
+                Dialog_error(Error_txt);
+            }
+        }
+        private void CreatFrDir_Java ( string sourceDirectoryName, string destinationArchiveFileName )
+        {
+            ZipFile.CreateFromDirectory(sourceDirectoryName, destinationArchiveFileName);
+            Rename_Backup_Customs_Main();
+            Random_Name_Java();
+        }
+        private void Random_Name_Java ()
+        {
+            Rename_Backup_Customs_Main();
+            RenameJavaFiles(@"Temp");
+            Copy_Output();
+        }
+        private static void RenameJavaFiles ( string path )
+        {
+            foreach (var filename in Directory.GetFiles(path))
+            {
+                string suffix = DateTime.Now.ToString(" dddd, dd MMMM yyyy ").ToString(CultureInfo.InvariantCulture);
+                var fileNameWithoutExtension = Path.GetFileNameWithoutExtension(filename);
+                var newFilename = string.Format("{0}({1}).zip", fileNameWithoutExtension, suffix);
+                var newFullFilename = Path.Combine(path, newFilename);
+                File.Move(filename, newFullFilename);
+            }
+        }
+        /////////////////////////////////////Check_Worlds///////////////////////////////////////////////////////////////////////
+        private void Chk_World_Bedrock ()
+        {
+            string pth_name = @"Temp\levelname.txt";
+            string pth_db = @"Temp\db";
+            string pth_level_data = @"Temp\level.dat";
+            string pth_level_data_old = @"Temp\level.dat_old";
+            if (File.Exists(pth_name))
+            {
+                if (Directory.Exists(pth_db))
+                {
+                    if (File.Exists(pth_level_data))
+                    {
+                        if (File.Exists(pth_level_data_old))
+                        {
+                            notify_Backup_Bedrock.BalloonTipTitle = "Bedrock Backup";
+                            notify_Backup_Bedrock.BalloonTipText = "You're Bedrock world is Backuping";
+                            notify_Backup_Bedrock.Visible = true;
+                            ProcessStartInfo startInfo = new ProcessStartInfo();
+                            startInfo.FileName = "Backup_Loading_Screen.exe";
+                            Process process = new Process();
+                            process.StartInfo = startInfo;
+                            process.Start();
+                            Directory.Delete(@"Temp", true);
+                            string folderName = @"Temp\";
+                            System.IO.Directory.CreateDirectory(folderName);
+                            Arcfilecreat();
+                            notify_Backup_Bedrock.Visible = false;
+                            process.Kill();
+                            Directory.Delete(@"Temp", true);
+                            System.IO.Directory.CreateDirectory(folderName);
+                            MaterialSnackBar finish_Bedrock = new MaterialSnackBar("You're Bedrock world is backup", "OK", true);
+                            finish_Bedrock.Show(this);
+                        }
+                        else
+                        {
+                            string txt = "The File Selected isn't a valid Bedrock Minecraft World, Please try again";
+                            Backup_error(txt);
+
+                        }
+
+                    }
+                    else
+                    {
+                        string txt = "The File Selected isn't a valid Bedrock Minecraft World, Please try again";
+                        Backup_error(txt);
+                    }
+                }
+                else
+                {
+                    string txt = "The File Selected isn't a valid Bedrock Minecraft World, Please try again";
+                    Backup_error(txt);
+                }
+            }
+            else
+            {
+                string txt = "The File Selected isn't a valid Bedrock Minecraft World, Please try again";
+                Backup_error(txt);
+            }
+        }
+
+        private void Chk_World_Java ()
+        {
+            string pth_icon = @"Temp\icon.png";
+            string pth_level = @"Temp\level.dat";
+            string pth_level_dat = @"Temp\level.dat_old";
+            string pth_session_lock = @"Temp\session.lock";
+            if (File.Exists(pth_icon))
+            {
+                if (File.Exists(pth_level))
+                {
+                    if (File.Exists(pth_level_dat))
+                    {
+                        if (File.Exists(pth_session_lock))
+                        {
+                            notify_Backup_Java.BalloonTipTitle = "Java Backup";
+                            notify_Backup_Java.BalloonTipText = "You're Java world is Backuping";
+                            notify_Backup_Java.Visible = true;
+                            notify_Backup_Java.ShowBalloonTip(500);
+                            ProcessStartInfo startInfo = new ProcessStartInfo();
+                            startInfo.FileName = "Backup_Loading_Screen.exe";
+                            Process process = new Process();
+                            process.StartInfo = startInfo;
+                            process.Start();
+                            Directory.Delete(@"Temp", true);
+                            string folderName = @"Temp\";
+                            System.IO.Directory.CreateDirectory(folderName);
+                            notify_Backup_Java.Visible = false;
+                            Arcfilecreat_Java();
+                            process.Kill();
+                            Directory.Delete(@"Temp", true);
+                            System.IO.Directory.CreateDirectory(folderName);
+                            MaterialSnackBar finish_Java = new MaterialSnackBar("You're Java world is backup", "OK", true);
+                            finish_Java.Show(this);
+                        }
+                        else
+                        {
+                            string txt = "The File Selected isn't a valid Java Minecraft World, Please try again";
+                            Backup_error(txt);
+                        }
+                    }
+                    else
+                    {
+                        string txt = "The File Selected isn't a valid Java Minecraft World, Please try again";
+                        Backup_error(txt);
+                    }
+                }
+                else
+                {
+                    string txt = "The File Selected isn't a valid Java Minecraft World, Please try again";
+                    Backup_error(txt);
+                }
+            }
+            else
+            {
+                string txt = "The File Selected isn't a valid Java Minecraft World, Please try again";
+                Backup_error(txt);
+            }
+
+        }
+        /////////////////////////////////////CustomRename///////////////////////////////////////////////////////////////////////
+        public void Rename_Backup_Customs_Main ()
+        {
+            if (!string.IsNullOrEmpty(Backup_Name.Text))
+            {
+                if (Backup_name_for.Checked)
+                {
+                    if (!string.IsNullOrEmpty(Backup_Name.Text))
+                    {
+                        if (Edtitions.Checked)
+                        {
+                            Rename_Backup_Custom_Java(Properties.Settings.Default.Defualt_name_textbox = Backup_Name.Text);
+                        }
+                    }
+                }
+                else
+                {
+                    if (!string.IsNullOrEmpty(Backup_Name.Text))
+                    {
+                        Rename_Backup_Custom_Bedrock(Properties.Settings.Default.Defualt_name_textbox = Backup_Name.Text);
+                    }
+                }
+            }
+        }
+
+        public void Rename_Backup_Custom_Bedrock ( string name )
+        {
+            if (zip_mcworld.Checked)
+            {
+                foreach (var filename in Directory.GetFiles(@"Temp"))
+                {
+                    var newFilename = string.Format("{0}.mcworld", name);
+                    var newFullFilename = Path.Combine(@"Temp", newFilename);
+                    File.Move(filename, newFullFilename);
+                }
+            }
+            else
+            {
+                foreach (var filename in Directory.GetFiles(@"Temp"))
+                {
+                    var newFilename = string.Format("{0}.zip", name);
+                    var newFullFilename = Path.Combine(@"Temp", newFilename);
+                    File.Move(filename, newFullFilename);
+                }
+            }
+        }
+
+        public void Rename_Backup_Custom_Java ( string name )
+        {
+            foreach (var filename in Directory.GetFiles(@"Temp"))
+            {
+                var newFilename = string.Format("{0}.zip", name);
+                var newFullFilename = Path.Combine(@"Temp", newFilename);
+                File.Move(filename, newFullFilename);
+            }
+        }
+
 
         /////////////////////////////////////Resize to form///////////////////////////////////////////////////////////////////////
 
@@ -436,7 +817,7 @@ namespace Sky_Cloud_Backup
             if (Open_Word_Text.Text.Length == 0)
             {
                 string Error_txt = "The Textbox is empty";
-                GetError.Dialog_error(Error_txt);
+                Dialog_error(Error_txt);
             }
             else
             {
@@ -445,11 +826,11 @@ namespace Sky_Cloud_Backup
                     Backup_Button.Enabled = false;
                     if (Edtitions.Checked)
                     {
-                        java.Main_Java_Backup();
+                        Main_Java_Backup();
                     }
                     else
                     {
-                        bedrock.Main_Bedrock_Backup();
+                        Main_Bedrock_Backup();
                     }
                     Backup_Button.Enabled = true;
                 }
@@ -552,7 +933,7 @@ namespace Sky_Cloud_Backup
                         Minimize_Systray.Checked = false;
                         Edtitions.Checked = false;
                         Strt_Win.Checked = false;
-                        Properties.Settings.Default.Reset = true;
+                        Properties.Settings.Default.Resets = true;
                         Properties.Settings.Default.first_strtup = false;
                         zip_mcworld.Checked = false;
                         Backup_Name.Clear();
@@ -602,7 +983,7 @@ namespace Sky_Cloud_Backup
                     Minimize_Systray.Checked = false;
                     Edtitions.Checked = false;
                     Strt_Win.Checked = false;
-                    Properties.Settings.Default.Reset = true;
+                    Properties.Settings.Default.Resets = true;
                     Properties.Settings.Default.first_strtup = false;
                     zip_mcworld.Checked = false;
                     Backup_Name.Clear();
@@ -662,6 +1043,32 @@ namespace Sky_Cloud_Backup
             {
                 Backup_name_for.Text = "for Bedrock";
             }
+        }
+
+        /////////////////////////////////////Error///////////////////////////////////////////////////////////////////////
+        public void Dialog_error ( string Error_txt )
+        {
+
+            MaterialDialog Error = new MaterialDialog(this, "Sky Cloud Backup", Error_txt, "Ok");
+            Error.ShowDialog(this);
+        }
+
+        public void Backup_error ( string txt )
+        {
+            WindowState = FormWindowState.Normal;
+            notify_tray.Visible = false;
+            ShowInTaskbar = true;
+            Show();
+            Activate();
+            string Error_txt = txt;
+            Dialog_error(Error_txt);
+            Backup_Button.Enabled = false;
+            Directory.Delete(@"Temp", true);
+            string folderName = @"Temp\";
+            System.IO.Directory.CreateDirectory(folderName);
+            Hide();
+            notify_tray.Visible = true;
+            ShowInTaskbar = false;
         }
 
     }

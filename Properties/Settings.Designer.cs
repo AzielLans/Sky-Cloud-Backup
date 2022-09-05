@@ -182,12 +182,12 @@ namespace Sky_Cloud_Backup.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool Reset {
+        public bool Resets {
             get {
-                return ((bool)(this["Reset"]));
+                return ((bool)(this["Resets"]));
             }
             set {
-                this["Reset"] = value;
+                this["Resets"] = value;
             }
         }
         

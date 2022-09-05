@@ -11,7 +11,7 @@ namespace Sky_Cloud_Backup
         public loading_screen ()
         {
             InitializeComponent();
-            
+
             Dev_Mode_fle_chk();
             this.Text = "Starting";
             this.ControlBox = false;
@@ -37,7 +37,7 @@ namespace Sky_Cloud_Backup
         private void Cnl_fle_chk ()
         {
             string chk_cnl = "Cancel";
-            if(File.Exists(chk_cnl))
+            if (File.Exists(chk_cnl))
             {
                 File.Delete(chk_cnl);
                 Cancel_timer.Start();
@@ -64,7 +64,7 @@ namespace Sky_Cloud_Backup
                 Ues_label.Show();
                 Reset_label.Show();
                 Cancel_backup_info.Show();
-                if(Properties.Settings.Default.Reset == true)
+                if (Properties.Settings.Default.Resets == true)
                 {
                     Reset_label.Text = "Reset: Yes";
                 }
@@ -93,7 +93,7 @@ namespace Sky_Cloud_Backup
 
         private void load_timer_Tick ( object sender, EventArgs e )
         {
-            if (Properties.Settings.Default.Reset == true)
+            if (Properties.Settings.Default.Resets == true)
             {
                 Load_Panel.Width += 4;
             }
@@ -111,7 +111,7 @@ namespace Sky_Cloud_Backup
             if (Load_Panel.Width >= 591)
             {
                 load_timer.Stop();
-                if (Properties.Settings.Default.Reset == true)
+                if (Properties.Settings.Default.Resets == true)
                 {
                     Main_Screen f2 = new Main_Screen();
                     f2.Show();
@@ -151,9 +151,19 @@ namespace Sky_Cloud_Backup
             if (Load_Panel.Width >= 591)
             {
                 Cancel_timer.Stop();
-                Main_Screen f2 = new Main_Screen();
-                f2.Show();
+                if (Properties.Settings.Default.first_strtup == false)
+                {
+                    first_strtup first = new first_strtup();
+                    first.Show();
+                }
+                else
+                {
+                    Main_Screen f2 = new Main_Screen();
+                    f2.Show();
+                }
                 this.Hide();
+
+
             }
         }
     }
