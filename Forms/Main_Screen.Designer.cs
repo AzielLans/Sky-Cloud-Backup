@@ -771,7 +771,6 @@ namespace Sky_Cloud_Backup
             this.Backup_Name.Text = "";
             this.Backup_Name.TrailingIcon = null;
             this.Backup_Name.UseTallSize = false;
-            this.Backup_Name.TabStopChanged += new System.EventHandler(this.Backup_Name_TabStopChanged);
             // 
             // zip_mcworld
             // 
@@ -904,7 +903,6 @@ namespace Sky_Cloud_Backup
         private MaterialSkin.Controls.MaterialCard Upload_to_Drive_Card;
         private MaterialSkin.Controls.MaterialButton Sigin_in_Button;
         private MaterialSkin.Controls.MaterialLabel Note;
-        private MaterialSkin.Controls.MaterialCheckbox Upload_to_Drive_CheckBox;
         private MaterialSkin.Controls.MaterialButton Save_World_Button;
         private MaterialSkin.Controls.MaterialCard Open_World_Card;
         private MaterialSkin.Controls.MaterialButton Open_World_Button;
@@ -922,7 +920,6 @@ namespace Sky_Cloud_Backup
         private System.Windows.Forms.ContextMenuStrip Tray_Menu;
         private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
-        private MaterialSkin.Controls.MaterialCheckbox Strt_Win;
         private System.Windows.Forms.ToolStripMenuItem backupToolStripMenuItem;
         private MaterialSkin.Controls.MaterialCheckedListBox materialCheckedListBox1;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
@@ -944,8 +941,10 @@ namespace Sky_Cloud_Backup
         public MaterialSkin.Controls.MaterialTextBox Save_World_TextBox;
         public MaterialSkin.Controls.MaterialSwitch zip_mcworld;
         public MaterialSkin.Controls.MaterialSwitch Edtitions;
-        private MaterialSkin.Controls.MaterialCheckbox Deafualt_Backup_name;
-        private MaterialSkin.Controls.MaterialTextBox Backup_Name;
-        private MaterialSkin.Controls.MaterialSwitch Backup_name_for;
+        public MaterialSkin.Controls.MaterialSwitch Backup_name_for;
+        public MaterialSkin.Controls.MaterialCheckbox Deafualt_Backup_name;
+        public MaterialSkin.Controls.MaterialTextBox Backup_Name;
+        public MaterialSkin.Controls.MaterialCheckbox Strt_Win;
+        public MaterialSkin.Controls.MaterialCheckbox Upload_to_Drive_CheckBox;
     }
 }
