@@ -24,7 +24,7 @@ namespace Sky_Cloud_Backup
             using (var stream = new FileStream("client_secret.json", FileMode.Open, FileAccess.Read))
             {
                 string creadPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-                creadPath = Path.Combine(creadPath, "driveApiCredentials", "drive-credentials.json");
+                creadPath = Path.Combine(creadPath, "driveApiCredentials");
 
 
                 return GoogleWebAuthorizationBroker.AuthorizeAsync(

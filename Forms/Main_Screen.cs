@@ -34,10 +34,15 @@ namespace Sky_Cloud_Backup
             System.IO.Directory.CreateDirectory(pathString);
             Backup_Button.Enabled = false;
             Chk_Default_name();
+            chk_signin();
         }
 
         private static readonly strtup stup = new strtup();
         gle_div gle_div = new gle_div();
+
+        public static string environment = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+        public static string file_path = @"driveApiCredentials/Google.Apis.Auth.OAuth2.Responses.TokenResponse-User";
+        public static string path = Path.Combine(environment, file_path);
 
 
         MaterialSkinManager ThemeManager = MaterialSkinManager.Instance;
@@ -47,7 +52,11 @@ namespace Sky_Cloud_Backup
             {
                 Save_World_TextBox.Enabled = false;
                 Save_World_Button.Enabled = false;
-                Sigin_in_Button.Enabled = true;
+                if (!File.Exists(path))
+                {
+                    Sigin_in_Button.Enabled = true;
+                }
+
                 Chk_txtbx_fld_Op();
             }
             else
@@ -62,7 +71,9 @@ namespace Sky_Cloud_Backup
 
         }
 
-
+        //
+        // Check SCB stats
+        //
         public void Chk_Default_name ()
         {
             MaterialSkinManager ThemeManager = MaterialSkinManager.Instance;
@@ -139,6 +150,20 @@ namespace Sky_Cloud_Backup
             else
             {
                 Backup_Button.Enabled = false;
+            }
+        }
+
+        public void chk_signin ()
+        {
+            if (File.Exists(path))
+            {
+                sign_out_btn.Enabled = true;
+                Sigin_in_Button.Enabled = false;
+            }
+            else
+            {
+                sign_out_btn.Enabled = false;
+                Sigin_in_Button.Enabled = true;
             }
         }
 
@@ -238,14 +263,14 @@ namespace Sky_Cloud_Backup
                             var newFullFilename = Path.Combine(@"upload", newFilename);
                             File.Move(filename, newFullFilename);
                         }
-                        credential = gle_div.GetUserCredential();
+                        credential = gle_div.credential;
 
                         var service = new DriveService(new BaseClientService.Initializer()
                         {
                             HttpClientInitializer = credential,
                             ApplicationName = gle_div.ApplicationName,
                         });
-                         gle_div.Upload_to_Drive(service, "Backup Bedrock world", @"upload/Backup Bedrock world.zip");
+                        gle_div.Upload_to_Drive(service, "Backup Bedrock world", @"upload/Backup Bedrock world.zip");
 
                     }
                     string folderName = @"upload\";
@@ -253,7 +278,7 @@ namespace Sky_Cloud_Backup
                     System.IO.Directory.CreateDirectory(folderName);
                     Save_World_TextBox.Clear();
                     Save_World_TextBox.Text = Properties.Settings.Default.Save_Location;
-                    MaterialDialog messageBox = new MaterialDialog(this,"Sky Cloud Backup","upload complete");
+                    MaterialDialog messageBox = new MaterialDialog(this, "Sky Cloud Backup", "upload complete");
                     messageBox.ShowDialog(this);
 
                     Backup_Button.Enabled = true;
@@ -1049,13 +1074,19 @@ namespace Sky_Cloud_Backup
 
         private void Sigin_in_Button_Click ( object sender, EventArgs e )
         {
-            // System.Diagnostics.Process.Start("https://involts.github.io/Sky-Cloud-Backup/Development/");
-            MaterialDialog Com = new MaterialDialog(this, "Sky Cloud Backup", "Are you sure that you Continue to sign in to google drive, Google didn't verifed by Google", "OK", true, "Never mind", true);
-            DialogResult result = Com.ShowDialog(this);
-            if (result == DialogResult.OK)
+
+            if (!File.Exists(path))
             {
-                gle_div.GetUserCredential();
+                MaterialDialog Com = new MaterialDialog(this, "Sky Cloud Backup", "Are you sure that you Continue to sign in to google drive, Google didn't verifed by Google", "OK", true, "Never mind", true);
+                DialogResult result = Com.ShowDialog(this);
+                if (result == DialogResult.OK)
+                {
+                    gle_div.GetUserCredential();
+                    chk_signin();
+                }
             }
+            // System.Diagnostics.Process.Start("https://involts.github.io/Sky-Cloud-Backup/Development/");
+
         }
 
         private void zip_mcworld_CheckedChanged ( object sender, EventArgs e )
@@ -1122,6 +1153,19 @@ namespace Sky_Cloud_Backup
             ShowInTaskbar = false;
         }
 
+        private void sign_out_btn_Click ( object sender, EventArgs e )
+        {
+            if (File.Exists(path))
+            {
+                MaterialDialog Com = new MaterialDialog(this, "Sky Cloud Backup", "Are you sure that you want sign out to google drive", "OK", true, "Never mind", true);
+                DialogResult result = Com.ShowDialog(this);
+                if (result == DialogResult.OK)
+                {
+                    File.Delete(path);
+                    chk_signin();
+                }
+            }
+        }
     }
 }
 

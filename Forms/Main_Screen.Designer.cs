@@ -75,6 +75,7 @@ namespace Sky_Cloud_Backup
             this.Reset_Btn = new MaterialSkin.Controls.MaterialButton();
             this.More_label = new MaterialSkin.Controls.MaterialLabel();
             this.Edtitions = new MaterialSkin.Controls.MaterialSwitch();
+            this.sign_out_btn = new MaterialSkin.Controls.MaterialButton();
             this.Open_World_Card.SuspendLayout();
             this.Upload_to_Drive_Card.SuspendLayout();
             this.Personalization_Card.SuspendLayout();
@@ -200,6 +201,7 @@ namespace Sky_Cloud_Backup
             this.Upload_to_Drive_Card.AutoSize = true;
             this.Upload_to_Drive_Card.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Upload_to_Drive_Card.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.Upload_to_Drive_Card.Controls.Add(this.sign_out_btn);
             this.Upload_to_Drive_Card.Controls.Add(this.Sigin_in_Button);
             this.Upload_to_Drive_Card.Controls.Add(this.Note);
             this.Upload_to_Drive_Card.Controls.Add(this.Upload_to_Drive_CheckBox);
@@ -211,12 +213,13 @@ namespace Sky_Cloud_Backup
             this.Upload_to_Drive_Card.MouseState = MaterialSkin.MouseState.HOVER;
             this.Upload_to_Drive_Card.Name = "Upload_to_Drive_Card";
             this.Upload_to_Drive_Card.Padding = new System.Windows.Forms.Padding(14);
-            this.Upload_to_Drive_Card.Size = new System.Drawing.Size(302, 154);
+            this.Upload_to_Drive_Card.Size = new System.Drawing.Size(318, 153);
             this.Upload_to_Drive_Card.TabIndex = 2;
             // 
             // Sigin_in_Button
             // 
             this.Sigin_in_Button.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.Sigin_in_Button.AutoSize = false;
             this.Sigin_in_Button.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Sigin_in_Button.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.Sigin_in_Button.Depth = 0;
@@ -224,14 +227,14 @@ namespace Sky_Cloud_Backup
             this.Sigin_in_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Sigin_in_Button.HighEmphasis = true;
             this.Sigin_in_Button.Icon = null;
-            this.Sigin_in_Button.Location = new System.Drawing.Point(14, 98);
+            this.Sigin_in_Button.Location = new System.Drawing.Point(20, 97);
             this.Sigin_in_Button.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Sigin_in_Button.MouseState = MaterialSkin.MouseState.HOVER;
             this.Sigin_in_Button.Name = "Sigin_in_Button";
             this.Sigin_in_Button.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.Sigin_in_Button.Size = new System.Drawing.Size(270, 36);
+            this.Sigin_in_Button.Size = new System.Drawing.Size(120, 36);
             this.Sigin_in_Button.TabIndex = 2;
-            this.Sigin_in_Button.Text = "Sign in to your Google Account";
+            this.Sigin_in_Button.Text = "Sign in";
             this.Sigin_in_Button.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.Sigin_in_Button.UseAccentColor = true;
             this.Sigin_in_Button.UseVisualStyleBackColor = true;
@@ -274,7 +277,7 @@ namespace Sky_Cloud_Backup
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialLabel1.HighEmphasis = true;
-            this.materialLabel1.Location = new System.Drawing.Point(85, 8);
+            this.materialLabel1.Location = new System.Drawing.Point(85, 7);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(113, 19);
@@ -852,6 +855,29 @@ namespace Sky_Cloud_Backup
             this.Edtitions.UseVisualStyleBackColor = true;
             this.Edtitions.CheckedChanged += new System.EventHandler(this.Edtitions_CheckedChanged);
             // 
+            // sign_out_btn
+            // 
+            this.sign_out_btn.AutoSize = false;
+            this.sign_out_btn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.sign_out_btn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.sign_out_btn.Depth = 0;
+            this.sign_out_btn.DrawShadows = false;
+            this.sign_out_btn.Enabled = false;
+            this.sign_out_btn.HighEmphasis = false;
+            this.sign_out_btn.Icon = null;
+            this.sign_out_btn.Location = new System.Drawing.Point(163, 97);
+            this.sign_out_btn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.sign_out_btn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.sign_out_btn.Name = "sign_out_btn";
+            this.sign_out_btn.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.sign_out_btn.Size = new System.Drawing.Size(120, 36);
+            this.sign_out_btn.TabIndex = 5;
+            this.sign_out_btn.Text = "SIGN OUT";
+            this.sign_out_btn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.sign_out_btn.UseAccentColor = true;
+            this.sign_out_btn.UseVisualStyleBackColor = true;
+            this.sign_out_btn.Click += new System.EventHandler(this.sign_out_btn_Click);
+            // 
             // Main_Screen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -946,5 +972,6 @@ namespace Sky_Cloud_Backup
         public MaterialSkin.Controls.MaterialTextBox Backup_Name;
         public MaterialSkin.Controls.MaterialCheckbox Strt_Win;
         public MaterialSkin.Controls.MaterialCheckbox Upload_to_Drive_CheckBox;
+        private MaterialSkin.Controls.MaterialButton sign_out_btn;
     }
 }
