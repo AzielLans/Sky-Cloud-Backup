@@ -34,6 +34,7 @@ namespace Sky_Cloud_Backup
             this.Save_World_TextBox = new MaterialSkin.Controls.MaterialTextBox();
             this.Open_Word_Text = new MaterialSkin.Controls.MaterialTextBox();
             this.Upload_to_Drive_Card = new MaterialSkin.Controls.MaterialCard();
+            this.sign_out_btn = new MaterialSkin.Controls.MaterialButton();
             this.Sigin_in_Button = new MaterialSkin.Controls.MaterialButton();
             this.Note = new MaterialSkin.Controls.MaterialLabel();
             this.Upload_to_Drive_CheckBox = new MaterialSkin.Controls.MaterialCheckbox();
@@ -75,7 +76,6 @@ namespace Sky_Cloud_Backup
             this.Reset_Btn = new MaterialSkin.Controls.MaterialButton();
             this.More_label = new MaterialSkin.Controls.MaterialLabel();
             this.Edtitions = new MaterialSkin.Controls.MaterialSwitch();
-            this.sign_out_btn = new MaterialSkin.Controls.MaterialButton();
             this.Open_World_Card.SuspendLayout();
             this.Upload_to_Drive_Card.SuspendLayout();
             this.Personalization_Card.SuspendLayout();
@@ -213,8 +213,31 @@ namespace Sky_Cloud_Backup
             this.Upload_to_Drive_Card.MouseState = MaterialSkin.MouseState.HOVER;
             this.Upload_to_Drive_Card.Name = "Upload_to_Drive_Card";
             this.Upload_to_Drive_Card.Padding = new System.Windows.Forms.Padding(14);
-            this.Upload_to_Drive_Card.Size = new System.Drawing.Size(318, 153);
+            this.Upload_to_Drive_Card.Size = new System.Drawing.Size(295, 153);
             this.Upload_to_Drive_Card.TabIndex = 2;
+            // 
+            // sign_out_btn
+            // 
+            this.sign_out_btn.AutoSize = false;
+            this.sign_out_btn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.sign_out_btn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.sign_out_btn.Depth = 0;
+            this.sign_out_btn.DrawShadows = false;
+            this.sign_out_btn.Enabled = false;
+            this.sign_out_btn.HighEmphasis = false;
+            this.sign_out_btn.Icon = null;
+            this.sign_out_btn.Location = new System.Drawing.Point(146, 97);
+            this.sign_out_btn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.sign_out_btn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.sign_out_btn.Name = "sign_out_btn";
+            this.sign_out_btn.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.sign_out_btn.Size = new System.Drawing.Size(120, 36);
+            this.sign_out_btn.TabIndex = 5;
+            this.sign_out_btn.Text = "SIGN OUT";
+            this.sign_out_btn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.sign_out_btn.UseAccentColor = true;
+            this.sign_out_btn.UseVisualStyleBackColor = true;
+            this.sign_out_btn.Click += new System.EventHandler(this.sign_out_btn_Click);
             // 
             // Sigin_in_Button
             // 
@@ -227,7 +250,7 @@ namespace Sky_Cloud_Backup
             this.Sigin_in_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Sigin_in_Button.HighEmphasis = true;
             this.Sigin_in_Button.Icon = null;
-            this.Sigin_in_Button.Location = new System.Drawing.Point(20, 97);
+            this.Sigin_in_Button.Location = new System.Drawing.Point(18, 97);
             this.Sigin_in_Button.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Sigin_in_Button.MouseState = MaterialSkin.MouseState.HOVER;
             this.Sigin_in_Button.Name = "Sigin_in_Button";
@@ -854,29 +877,6 @@ namespace Sky_Cloud_Backup
             this.Edtitions.Text = "Bedrock";
             this.Edtitions.UseVisualStyleBackColor = true;
             this.Edtitions.CheckedChanged += new System.EventHandler(this.Edtitions_CheckedChanged);
-            // 
-            // sign_out_btn
-            // 
-            this.sign_out_btn.AutoSize = false;
-            this.sign_out_btn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.sign_out_btn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.sign_out_btn.Depth = 0;
-            this.sign_out_btn.DrawShadows = false;
-            this.sign_out_btn.Enabled = false;
-            this.sign_out_btn.HighEmphasis = false;
-            this.sign_out_btn.Icon = null;
-            this.sign_out_btn.Location = new System.Drawing.Point(163, 97);
-            this.sign_out_btn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.sign_out_btn.MouseState = MaterialSkin.MouseState.HOVER;
-            this.sign_out_btn.Name = "sign_out_btn";
-            this.sign_out_btn.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.sign_out_btn.Size = new System.Drawing.Size(120, 36);
-            this.sign_out_btn.TabIndex = 5;
-            this.sign_out_btn.Text = "SIGN OUT";
-            this.sign_out_btn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.sign_out_btn.UseAccentColor = true;
-            this.sign_out_btn.UseVisualStyleBackColor = true;
-            this.sign_out_btn.Click += new System.EventHandler(this.sign_out_btn_Click);
             // 
             // Main_Screen
             // 
