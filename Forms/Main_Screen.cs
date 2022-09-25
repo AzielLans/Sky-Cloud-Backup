@@ -3,6 +3,7 @@ using Google.Apis.Drive.v3;
 using Google.Apis.Services;
 using MaterialSkin;
 using MaterialSkin.Controls;
+using Newtonsoft.Json;
 using Sky_Cloud_Backup.assets;
 using System;
 using System.Diagnostics;
@@ -10,7 +11,6 @@ using System.Globalization;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
-using System.Threading;
 using System.Windows.Forms;
 
 namespace Sky_Cloud_Backup
@@ -196,8 +196,6 @@ namespace Sky_Cloud_Backup
         {
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.Theme = materialSkinManager.Theme == MaterialSkinManager.Themes.DARK ? MaterialSkinManager.Themes.LIGHT : MaterialSkinManager.Themes.DARK;
-            Properties.Settings.Default.Mode = Dark_mode_switch.Checked;
-            Properties.Settings.Default.Save();
             if (Dark_mode_switch.Checked)
             {
                 Dark_mode_switch.Text = "Dark Mode";
@@ -380,48 +378,59 @@ namespace Sky_Cloud_Backup
         /////////////////////////////////////Saves///////////////////////////////////////////////////////////////////////
         private void Main_Screen_FormClosing ( object sender, FormClosingEventArgs e )
         {
-            Properties.Settings.Default.Default_Color = Default_Button.Checked;
-            Properties.Settings.Default.Green = Green_Button.Checked;
-            Properties.Settings.Default.Pink = Pink_Button.Checked;
-            Properties.Settings.Default.Red = Red_Button.Checked;
-            Properties.Settings.Default.Amber = Amber_Button.Checked;
-            Properties.Settings.Default.Orange = Orange_Button.Checked;
-            Properties.Settings.Default.Deep_Purple = Deep_Purple_Button.Checked;
-            Properties.Settings.Default.Upload_To_Drive = Upload_to_Drive_CheckBox.Checked;
-            Properties.Settings.Default.World_Location = Open_Word_Text.Text;
-            Properties.Settings.Default.Save_Location = Save_World_TextBox.Text;
-            Properties.Settings.Default.Always_on_top = Always_Top.Checked;
-            Properties.Settings.Default.Minimize_to_Form = Minimize_Systray.Checked;
-            Properties.Settings.Default.Editions = Edtitions.Checked;
-            Properties.Settings.Default.strtwin = Strt_Win.Checked;
-            Properties.Settings.Default.Chk_zip_mcowrld = zip_mcworld.Checked;
-            Properties.Settings.Default.Defualt_name_textbox = Backup_Name.Text;
-            Properties.Settings.Default.Defualt_name_chkbx = Deafualt_Backup_name.Checked;
-            Properties.Settings.Default.Backup_name_for = Backup_name_for.Checked;
-            Properties.Settings.Default.Save();
+            setsetting sjs = new setsetting()
+            {
+                Mode = Dark_mode_switch.Checked,
+                Default_Color = Default_Button.Checked,
+                Green = Green_Button.Checked,
+                Pink = Pink_Button.Checked,
+                Red = Red_Button.Checked,
+                Amber = Amber_Button.Checked,
+                Orange = Orange_Button.Checked,
+                Deep_Purple = Deep_Purple_Button.Checked,
+                Upload_To_Drive = Upload_to_Drive_CheckBox.Checked,
+                World_Location = Open_Word_Text.Text,
+                Save_Location = Save_World_TextBox.Text,
+                Always_on_top = Always_Top.Checked,
+                Minimize_to_Form = Minimize_Systray.Checked,
+                Editions = Edtitions.Checked,
+                strtwin = Strt_Win.Checked,
+                Chk_zip_mcowrld = zip_mcworld.Checked,
+                Defualt_name_textbox = Backup_Name.Text,
+                Defualt_name_chkbx = Deafualt_Backup_name.Checked,
+                Backup_name_for = Backup_name_for.Checked,
+
+            };
+            string stringjson = JsonConvert.SerializeObject(sjs);
+            File.WriteAllText(@"settings.json", stringjson);
             Application.Exit();
         }
         public void Main_Screen_Load ( object sender, EventArgs e )
         {
-            Dark_mode_switch.Checked = Properties.Settings.Default.Mode;
-            Default_Button.Checked = Properties.Settings.Default.Default_Color;
-            Green_Button.Checked = Properties.Settings.Default.Green;
-            Pink_Button.Checked = Properties.Settings.Default.Pink;
-            Red_Button.Checked = Properties.Settings.Default.Red;
-            Amber_Button.Checked = Properties.Settings.Default.Amber;
-            Orange_Button.Checked = Properties.Settings.Default.Orange;
-            Deep_Purple_Button.Checked = Properties.Settings.Default.Deep_Purple;
-            Upload_to_Drive_CheckBox.Checked = Properties.Settings.Default.Upload_To_Drive;
-            Open_Word_Text.Text = Properties.Settings.Default.World_Location;
-            Save_World_TextBox.Text = Properties.Settings.Default.Save_Location;
-            Always_Top.Checked = Properties.Settings.Default.Always_on_top;
-            Minimize_Systray.Checked = Properties.Settings.Default.Minimize_to_Form;
-            Edtitions.Checked = Properties.Settings.Default.Editions;
-            Strt_Win.Checked = Properties.Settings.Default.strtwin;
-            zip_mcworld.Checked = Properties.Settings.Default.Chk_zip_mcowrld;
-            Backup_Name.Text = Properties.Settings.Default.Defualt_name_textbox;
-            Deafualt_Backup_name.Checked = Properties.Settings.Default.Defualt_name_chkbx;
-            Backup_name_for.Checked = Properties.Settings.Default.Backup_name_for;
+            using (StreamReader r = new StreamReader(@"settings.json"))
+            {
+                string json = r.ReadToEnd();
+                setsetting account = JsonConvert.DeserializeObject<setsetting>(json);
+                Dark_mode_switch.Checked = account.Mode;
+                Default_Button.Checked = account.Default_Color;
+                Green_Button.Checked = account.Green;
+                Pink_Button.Checked = account.Pink;
+                Red_Button.Checked = account.Red;
+                Amber_Button.Checked = account.Amber;
+                Orange_Button.Checked = account.Orange;
+                Deep_Purple_Button.Checked = account.Deep_Purple;
+                Upload_to_Drive_CheckBox.Checked = account.Upload_To_Drive;
+                Open_Word_Text.Text = account.World_Location;
+                Save_World_TextBox.Text = account.Save_Location;
+                Always_Top.Checked = account.Always_on_top;
+                Minimize_Systray.Checked = account.Minimize_to_Form;
+                Edtitions.Checked = account.Editions;
+                Strt_Win.Checked = account.strtwin;
+                zip_mcworld.Checked = account.Chk_zip_mcowrld;
+                Backup_Name.Text = account.Defualt_name_textbox;
+                Deafualt_Backup_name.Checked = account.Defualt_name_chkbx;
+                Backup_name_for.Checked = account.Backup_name_for;
+            }
             Minto_strt();
             Chk_atstarp_Backup();
             Chk_Reset();
@@ -991,85 +1000,33 @@ namespace Sky_Cloud_Backup
             DialogResult result = Reset.ShowDialog(this);
             if (result == DialogResult.OK)
             {
-                if (Properties.Settings.Default.Dev_Mode == true)
+                File.Delete(@"settings.json");
+                setsetting sjs = new setsetting()
                 {
-                    MaterialDialog Dev_reset = new MaterialDialog(this, "Sky Cloud Backup", "hard Reset(OK), Reset(Cancel) ", "OK", true, "Cancel", true);
-                    DialogResult Dev_result = Dev_reset.ShowDialog(this);
-                    if (Dev_result == DialogResult.Cancel)
-                    {
-                        this.Hide();
-                        Dark_mode_switch.Checked = false;
-                        Default_Button.Checked = true;
-                        Green_Button.Checked = false;
-                        Pink_Button.Checked = false;
-                        Red_Button.Checked = false;
-                        Upload_to_Drive_CheckBox.Checked = false;
-                        Open_Word_Text.Clear();
-                        Save_World_TextBox.Clear();
-                        Always_Top.Checked = false;
-                        Minimize_Systray.Checked = false;
-                        Edtitions.Checked = false;
-                        Strt_Win.Checked = false;
-                        Properties.Settings.Default.Resets = true;
-                        Properties.Settings.Default.first_strtup = false;
-                        zip_mcworld.Checked = false;
-                        Backup_Name.Clear();
-                        Deafualt_Backup_name.Checked = true;
-                        Backup_name_for.Checked = false;
-                        Properties.Settings.Default.Save();
-                        this.Show();
-                        Application.Restart();
-                    }
-                    if (Dev_result == DialogResult.OK)
-                    {
-                        this.Hide();
-                        Dark_mode_switch.Checked = false;
-                        Default_Button.Checked = true;
-                        Green_Button.Checked = false;
-                        Pink_Button.Checked = false;
-                        Red_Button.Checked = false;
-                        Upload_to_Drive_CheckBox.Checked = false;
-                        Open_Word_Text.Clear();
-                        Save_World_TextBox.Clear();
-                        Always_Top.Checked = false;
-                        Minimize_Systray.Checked = false;
-                        Edtitions.Checked = false;
-                        Strt_Win.Checked = false;
-                        Properties.Settings.Default.first_strtup = false;
-                        zip_mcworld.Checked = false;
-                        Backup_Name.Clear();
-                        Deafualt_Backup_name.Checked = true;
-                        Backup_name_for.Checked = false;
-                        Properties.Settings.Default.Save();
-                        this.Show();
-                        Application.Restart();
-                    }
-                }
-                else
-                {
-                    this.Hide();
-                    Dark_mode_switch.Checked = false;
-                    Default_Button.Checked = true;
-                    Green_Button.Checked = false;
-                    Pink_Button.Checked = false;
-                    Red_Button.Checked = false;
-                    Upload_to_Drive_CheckBox.Checked = false;
-                    Open_Word_Text.Clear();
-                    Save_World_TextBox.Clear();
-                    Always_Top.Checked = false;
-                    Minimize_Systray.Checked = false;
-                    Edtitions.Checked = false;
-                    Strt_Win.Checked = false;
-                    Properties.Settings.Default.Resets = true;
-                    Properties.Settings.Default.first_strtup = false;
-                    zip_mcworld.Checked = false;
-                    Backup_Name.Clear();
-                    Deafualt_Backup_name.Checked = true;
-                    Backup_name_for.Checked = false;
-                    Properties.Settings.Default.Save();
-                    this.Show();
-                    Application.Restart();
-                }
+                    Mode = Dark_mode_switch.Checked,
+                    Default_Color = Default_Button.Checked,
+                    Green = Green_Button.Checked,
+                    Pink = Pink_Button.Checked,
+                    Red = Red_Button.Checked,
+                    Amber = Amber_Button.Checked,
+                    Orange = Orange_Button.Checked,
+                    Deep_Purple = Deep_Purple_Button.Checked,
+                    Upload_To_Drive = Upload_to_Drive_CheckBox.Checked,
+                    World_Location = Open_Word_Text.Text,
+                    Save_Location = Save_World_TextBox.Text,
+                    Always_on_top = Always_Top.Checked,
+                    Minimize_to_Form = Minimize_Systray.Checked,
+                    Editions = Edtitions.Checked,
+                    strtwin = Strt_Win.Checked,
+                    Chk_zip_mcowrld = zip_mcworld.Checked,
+                    Defualt_name_textbox = Backup_Name.Text,
+                    Defualt_name_chkbx = Deafualt_Backup_name.Checked,
+                    Backup_name_for = Backup_name_for.Checked,
+
+                };
+                string stringjson = JsonConvert.SerializeObject(sjs);
+                File.WriteAllText(@"settings.json", stringjson);
+                Application.Restart();
             }
         }
 

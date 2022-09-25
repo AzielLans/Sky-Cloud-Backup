@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Sky_Cloud_Backup
@@ -13,7 +14,15 @@ namespace Sky_Cloud_Backup
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new loading_screen());
+            if (File.Exists(@"Developer_Mode"))
+            {
+                Application.Run(new Main_Screen());
+            }
+            else
+            {
+                Application.Run(new loading_screen());
+            }
+
         }
     }
 }

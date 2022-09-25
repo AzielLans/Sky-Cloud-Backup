@@ -935,14 +935,7 @@ namespace Sky_Cloud_Backup
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialCard Personalization_Card;
-        private MaterialSkin.Controls.MaterialSwitch Dark_mode_switch;
-        private MaterialSkin.Controls.MaterialRadioButton Red_Button;
-        private MaterialSkin.Controls.MaterialRadioButton Pink_Button;
-        private MaterialSkin.Controls.MaterialRadioButton Green_Button;
-        private MaterialSkin.Controls.MaterialRadioButton Default_Button;
         private System.Windows.Forms.FolderBrowserDialog Save_World;
-        private MaterialSkin.Controls.MaterialCheckbox Always_Top;
-        private MaterialSkin.Controls.MaterialCheckbox Minimize_Systray;
         private System.Windows.Forms.ContextMenuStrip Tray_Menu;
         private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
@@ -953,9 +946,6 @@ namespace Sky_Cloud_Backup
         private MaterialSkin.Controls.MaterialButton About_Button;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.FolderBrowserDialog Open_World;
-        private MaterialSkin.Controls.MaterialRadioButton Orange_Button;
-        private MaterialSkin.Controls.MaterialRadioButton Amber_Button;
-        private MaterialSkin.Controls.MaterialRadioButton Deep_Purple_Button;
         private MaterialSkin.Controls.MaterialCard Add_Settings;
         private MaterialSkin.Controls.MaterialButton Reset_Btn;
         private MaterialSkin.Controls.MaterialLabel More_label;
@@ -973,5 +963,15 @@ namespace Sky_Cloud_Backup
         public MaterialSkin.Controls.MaterialCheckbox Strt_Win;
         public MaterialSkin.Controls.MaterialCheckbox Upload_to_Drive_CheckBox;
         private MaterialSkin.Controls.MaterialButton sign_out_btn;
+        public MaterialSkin.Controls.MaterialSwitch Dark_mode_switch;
+        public MaterialSkin.Controls.MaterialRadioButton Red_Button;
+        public MaterialSkin.Controls.MaterialRadioButton Pink_Button;
+        public MaterialSkin.Controls.MaterialRadioButton Green_Button;
+        public MaterialSkin.Controls.MaterialRadioButton Default_Button;
+        public MaterialSkin.Controls.MaterialRadioButton Orange_Button;
+        public MaterialSkin.Controls.MaterialRadioButton Deep_Purple_Button;
+        public MaterialSkin.Controls.MaterialCheckbox Always_Top;
+        public MaterialSkin.Controls.MaterialCheckbox Minimize_Systray;
+        public MaterialSkin.Controls.MaterialRadioButton Amber_Button;
     }
 }
