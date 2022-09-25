@@ -250,6 +250,12 @@ namespace Sky_Cloud_Backup
             if (Edtitions.Checked)
             {
                 Main_Java_Backup();
+                ProcessStartInfo startInfo = new ProcessStartInfo();
+                startInfo.FileName = "Backup_Loading_Screen.exe";
+                Process process = new Process();
+                process.StartInfo = startInfo;
+                process.StartInfo.Arguments = "true";
+                process.Start();
                 foreach (var filename in Directory.GetFiles(@"upload"))
                 {
                     var newFilename = string.Format("{0}.zip", "Backup Java world");
@@ -266,11 +272,17 @@ namespace Sky_Cloud_Backup
                 });
 
                 gle_div.Upload_to_Drive(service, "Backup Java world" + DateTime.Now.ToString("dddd, dd MMMM yyyy"), @"upload");
+                process.Kill();
             }
             else
             {
                 Main_Bedrock_Backup();
-
+                ProcessStartInfo startInfo = new ProcessStartInfo();
+                startInfo.FileName = "Backup_Loading_Screen.exe";
+                Process process = new Process();
+                process.StartInfo = startInfo;
+                process.StartInfo.Arguments = "true";
+                process.Start();
                 string name = "Backup Bedrock world";
                 foreach (var filename in Directory.GetFiles(@"upload"))
                 {
@@ -286,7 +298,7 @@ namespace Sky_Cloud_Backup
                     ApplicationName = gle_div.ApplicationName,
                 });
                 gle_div.Upload_to_Drive(service, "Backup Bedrock world " + DateTime.Now.ToString("dddd, dd MMMM yyyy"), @"upload/Backup Bedrock world.zip");
-
+                process.Kill();
             }
             add.filedelete(@"upload", true);
             MaterialDialog messageBox = new MaterialDialog(this, "Sky Cloud Backup", "upload complete");
@@ -378,6 +390,12 @@ namespace Sky_Cloud_Backup
         /////////////////////////////////////Saves///////////////////////////////////////////////////////////////////////
         private void Main_Screen_FormClosing ( object sender, FormClosingEventArgs e )
         {
+            jsonload_comp();
+            Application.Exit();
+        }
+        
+        private void jsonload_comp()
+        {
             setsetting sjs = new setsetting()
             {
                 Mode = Dark_mode_switch.Checked,
@@ -399,11 +417,12 @@ namespace Sky_Cloud_Backup
                 Defualt_name_textbox = Backup_Name.Text,
                 Defualt_name_chkbx = Deafualt_Backup_name.Checked,
                 Backup_name_for = Backup_name_for.Checked,
+                backupdialog = backupdialog.Checked,
+                AutoSave = automaticsave.Checked
 
             };
             string stringjson = JsonConvert.SerializeObject(sjs);
             File.WriteAllText(@"settings.json", stringjson);
-            Application.Exit();
         }
         public void Main_Screen_Load ( object sender, EventArgs e )
         {
@@ -430,6 +449,8 @@ namespace Sky_Cloud_Backup
                 Backup_Name.Text = account.Defualt_name_textbox;
                 Deafualt_Backup_name.Checked = account.Defualt_name_chkbx;
                 Backup_name_for.Checked = account.Backup_name_for;
+                backupdialog.Checked = account.backupdialog;
+                automaticsave.Checked = account.AutoSave;
             }
             Minto_strt();
             Chk_atstarp_Backup();
@@ -664,6 +685,7 @@ namespace Sky_Cloud_Backup
                             startInfo.FileName = "Backup_Loading_Screen.exe";
                             Process process = new Process();
                             process.StartInfo = startInfo;
+                            process.StartInfo.Arguments = "false";
                             process.Start();
                             add.filedelete(@"Temp", true);
                             Arcfilecreat();
@@ -722,6 +744,7 @@ namespace Sky_Cloud_Backup
                             startInfo.FileName = "Backup_Loading_Screen.exe";
                             Process process = new Process();
                             process.StartInfo = startInfo;
+                            process.StartInfo.Arguments = "false";
                             process.Start();
                             add.filedelete(@"Temp", true);
                             notify_Backup_Java.Visible = false;
@@ -1026,6 +1049,7 @@ namespace Sky_Cloud_Backup
                 };
                 string stringjson = JsonConvert.SerializeObject(sjs);
                 File.WriteAllText(@"settings.json", stringjson);
+                Application.Exit();
                 Application.Restart();
             }
         }
@@ -1104,7 +1128,6 @@ namespace Sky_Cloud_Backup
             Dialog_error(Error_txt);
             Backup_Button.Enabled = false;
             add.filedelete(@"Temp", true);
-            Hide();
             notify_tray.Visible = true;
             ShowInTaskbar = false;
         }
@@ -1120,6 +1143,23 @@ namespace Sky_Cloud_Backup
                     File.Delete(path);
                     chk_signin();
                 }
+            }
+        }
+
+        private void autosave_Tick ( object sender, EventArgs e )
+        {
+            jsonload_comp();
+        }
+
+        private void automaticsave_CheckedChanged ( object sender, EventArgs e )
+        {
+            if (automaticsave.Checked)
+            {
+                autosave.Start();
+            }
+            else
+            {
+                autosave.Stop();
             }
         }
     }

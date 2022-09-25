@@ -32,5 +32,8 @@ namespace Sky_Cloud_Backup.assets
         public bool strtwin { get; set; }
         public bool Always_on_top { get; set; }
         public bool Minimize_to_Form { get; set; }
+        public bool backupdialog { get; set; }
+        public bool AutoSave { get; set; }
+
     }
 }

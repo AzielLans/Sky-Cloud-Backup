@@ -52,6 +52,8 @@ namespace Sky_Cloud_Backup
             this.Green_Button = new MaterialSkin.Controls.MaterialRadioButton();
             this.Dark_mode_switch = new MaterialSkin.Controls.MaterialSwitch();
             this.materialCheckedListBox1 = new MaterialSkin.Controls.MaterialCheckedListBox();
+            this.automaticsave = new MaterialSkin.Controls.MaterialCheckbox();
+            this.backupdialog = new MaterialSkin.Controls.MaterialCheckbox();
             this.Strt_Win = new MaterialSkin.Controls.MaterialCheckbox();
             this.Always_Top = new MaterialSkin.Controls.MaterialCheckbox();
             this.Minimize_Systray = new MaterialSkin.Controls.MaterialCheckbox();
@@ -76,6 +78,7 @@ namespace Sky_Cloud_Backup
             this.Reset_Btn = new MaterialSkin.Controls.MaterialButton();
             this.More_label = new MaterialSkin.Controls.MaterialLabel();
             this.Edtitions = new MaterialSkin.Controls.MaterialSwitch();
+            this.autosave = new System.Windows.Forms.Timer(this.components);
             this.Open_World_Card.SuspendLayout();
             this.Upload_to_Drive_Card.SuspendLayout();
             this.Personalization_Card.SuspendLayout();
@@ -524,23 +527,58 @@ namespace Sky_Cloud_Backup
             // 
             this.materialCheckedListBox1.AutoScroll = true;
             this.materialCheckedListBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCheckedListBox1.Controls.Add(this.automaticsave);
+            this.materialCheckedListBox1.Controls.Add(this.backupdialog);
             this.materialCheckedListBox1.Controls.Add(this.Strt_Win);
             this.materialCheckedListBox1.Controls.Add(this.Always_Top);
             this.materialCheckedListBox1.Controls.Add(this.Minimize_Systray);
             this.materialCheckedListBox1.Depth = 0;
-            this.materialCheckedListBox1.Location = new System.Drawing.Point(201, 37);
+            this.materialCheckedListBox1.Location = new System.Drawing.Point(207, 31);
             this.materialCheckedListBox1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCheckedListBox1.Name = "materialCheckedListBox1";
-            this.materialCheckedListBox1.Size = new System.Drawing.Size(183, 123);
+            this.materialCheckedListBox1.Size = new System.Drawing.Size(183, 197);
             this.materialCheckedListBox1.Striped = false;
             this.materialCheckedListBox1.StripeDarkColor = System.Drawing.Color.Black;
             this.materialCheckedListBox1.TabIndex = 10;
+            // 
+            // automaticsave
+            // 
+            this.automaticsave.AutoSize = true;
+            this.automaticsave.Depth = 0;
+            this.automaticsave.Location = new System.Drawing.Point(6, 154);
+            this.automaticsave.Margin = new System.Windows.Forms.Padding(0);
+            this.automaticsave.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.automaticsave.MouseState = MaterialSkin.MouseState.HOVER;
+            this.automaticsave.Name = "automaticsave";
+            this.automaticsave.ReadOnly = false;
+            this.automaticsave.Ripple = true;
+            this.automaticsave.Size = new System.Drawing.Size(103, 37);
+            this.automaticsave.TabIndex = 10;
+            this.automaticsave.Text = "AutoSave";
+            this.automaticsave.UseVisualStyleBackColor = true;
+            this.automaticsave.CheckedChanged += new System.EventHandler(this.automaticsave_CheckedChanged);
+            // 
+            // backupdialog
+            // 
+            this.backupdialog.AutoSize = true;
+            this.backupdialog.Depth = 0;
+            this.backupdialog.Location = new System.Drawing.Point(6, 121);
+            this.backupdialog.Margin = new System.Windows.Forms.Padding(0);
+            this.backupdialog.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.backupdialog.MouseState = MaterialSkin.MouseState.HOVER;
+            this.backupdialog.Name = "backupdialog";
+            this.backupdialog.ReadOnly = false;
+            this.backupdialog.Ripple = true;
+            this.backupdialog.Size = new System.Drawing.Size(138, 37);
+            this.backupdialog.TabIndex = 9;
+            this.backupdialog.Text = "Backup Dialog";
+            this.backupdialog.UseVisualStyleBackColor = true;
             // 
             // Strt_Win
             // 
             this.Strt_Win.AutoSize = true;
             this.Strt_Win.Depth = 0;
-            this.Strt_Win.Location = new System.Drawing.Point(10, 84);
+            this.Strt_Win.Location = new System.Drawing.Point(6, 84);
             this.Strt_Win.Margin = new System.Windows.Forms.Padding(0);
             this.Strt_Win.MouseLocation = new System.Drawing.Point(-1, -1);
             this.Strt_Win.MouseState = MaterialSkin.MouseState.HOVER;
@@ -557,7 +595,7 @@ namespace Sky_Cloud_Backup
             // 
             this.Always_Top.AutoSize = true;
             this.Always_Top.Depth = 0;
-            this.Always_Top.Location = new System.Drawing.Point(10, 10);
+            this.Always_Top.Location = new System.Drawing.Point(6, 10);
             this.Always_Top.Margin = new System.Windows.Forms.Padding(0);
             this.Always_Top.MouseLocation = new System.Drawing.Point(-1, -1);
             this.Always_Top.MouseState = MaterialSkin.MouseState.HOVER;
@@ -574,7 +612,7 @@ namespace Sky_Cloud_Backup
             // 
             this.Minimize_Systray.AutoSize = true;
             this.Minimize_Systray.Depth = 0;
-            this.Minimize_Systray.Location = new System.Drawing.Point(10, 47);
+            this.Minimize_Systray.Location = new System.Drawing.Point(6, 47);
             this.Minimize_Systray.Margin = new System.Windows.Forms.Padding(0);
             this.Minimize_Systray.MouseLocation = new System.Drawing.Point(-1, -1);
             this.Minimize_Systray.MouseState = MaterialSkin.MouseState.HOVER;
@@ -583,7 +621,7 @@ namespace Sky_Cloud_Backup
             this.Minimize_Systray.Ripple = true;
             this.Minimize_Systray.Size = new System.Drawing.Size(149, 37);
             this.Minimize_Systray.TabIndex = 5;
-            this.Minimize_Systray.Text = "minimize to tray";
+            this.Minimize_Systray.Text = "Minimize to tray";
             this.Minimize_Systray.UseVisualStyleBackColor = true;
             // 
             // notify_tray
@@ -878,6 +916,11 @@ namespace Sky_Cloud_Backup
             this.Edtitions.UseVisualStyleBackColor = true;
             this.Edtitions.CheckedChanged += new System.EventHandler(this.Edtitions_CheckedChanged);
             // 
+            // autosave
+            // 
+            this.autosave.Interval = 3000;
+            this.autosave.Tick += new System.EventHandler(this.autosave_Tick);
+            // 
             // Main_Screen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -973,5 +1016,8 @@ namespace Sky_Cloud_Backup
         public MaterialSkin.Controls.MaterialCheckbox Always_Top;
         public MaterialSkin.Controls.MaterialCheckbox Minimize_Systray;
         public MaterialSkin.Controls.MaterialRadioButton Amber_Button;
+        private System.Windows.Forms.Timer autosave;
+        private MaterialSkin.Controls.MaterialCheckbox automaticsave;
+        private MaterialSkin.Controls.MaterialCheckbox backupdialog;
     }
 }
