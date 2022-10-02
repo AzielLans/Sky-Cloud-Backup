@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 source "https://rubygems.org"
 
-gem 'jekyll-theme-fica', '~> 0.1.5'
-gem 'github-pages', '~> 225'
-platforms :mingw, :x64_mingw, :mswin, :jruby do
-  gem "tzinfo", "~> 1.2"
-  gem "tzinfo-data"
-end
-gem "wdm", "~> 0.1.1", :platforms => [:mingw, :x64_mingw, :mswin]
-gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
+
+gem "jekyll", ENV["JEKYLL_VERSION"] if ENV["JEKYLL_VERSION"]
+gem "jekyll-seo-tag", "~> 2.8.0"
+gem 'wdm', '>= 0.1.1' if Gem.win_platform?
+gem 'jekyll-paginate', '~> 1.1'
+gem "webrick", "~> 1.7"
+gem "kramdown-parser-gfm", "~> 1.1"
+gem "jekyll-theme-fica", "~> 0.2.2"

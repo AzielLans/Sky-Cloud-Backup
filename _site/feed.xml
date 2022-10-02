@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/jekyll-theme-fica/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/jekyll-theme-fica/" rel="alternate" type="text/html" /><updated>2022-10-02T23:28:40+08:00</updated><id>http://localhost:4000/jekyll-theme-fica/feed.xml</id><title type="html">Sky Cloud Backup</title><subtitle>A modern theme with minimal look.</subtitle><entry><title type="html">Alpha 03</title><link href="http://localhost:4000/jekyll-theme-fica/Release/Alpha-03/" rel="alternate" type="text/html" title="Alpha 03" /><published>2022-03-02T00:00:00+08:00</published><updated>2022-03-02T00:00:00+08:00</updated><id>http://localhost:4000/jekyll-theme-fica/Release/Alpha-03</id><content type="html" xml:base="http://localhost:4000/jekyll-theme-fica/Release/Alpha-03/"><![CDATA[<h3 id="alpha-0-3-update">Alpha 0.3 update</h3>
+
+<h3 id="bug-fixes">Bug Fixes</h3>
+
+<ul>
+<li>Fixed the Antivirus software especially Windows defender flags it as a Win32/Persistence.OR!ml </li>
+<li>Fixed the Home Screen not Centered.</li>
+</ul>
+
+<h3 id="features">Features</h3>
+<ul>
+<li>Added Thank you when the app is first shown</li>
+<li>Updated Help with pictures</li>
+<li>Added About Screen</li>
+<li>Updated Error Dialogs</li>
+<li>Updated Backuping You&#39;re World Dialog dark mode by default</li>
+<li>Check and guess what type of edition is your world is (BETA)</li>
+</ul>]]></content><author><name>Involts</name></author><summary type="html"><![CDATA[Alpha 0.3 update]]></summary></entry><entry><title type="html">Alpha 0.2</title><link href="http://localhost:4000/jekyll-theme-fica/Release/Alpha-0.2/" rel="alternate" type="text/html" title="Alpha 0.2" /><published>2022-02-23T00:00:00+08:00</published><updated>2022-02-23T00:00:00+08:00</updated><id>http://localhost:4000/jekyll-theme-fica/Release/Alpha-0.2</id><content type="html" xml:base="http://localhost:4000/jekyll-theme-fica/Release/Alpha-0.2/"><![CDATA[<h3 id="alpha-02-update">Alpha 0.2 update</h3>
+
+<blockquote class="prompt-warning">
+  <p>As of Alpha 0.2, the Antivirus software especially Windows defender flags it as a Win32/Persistence.OR!ml this is not true.</p>
+</blockquote>
+
+<h4 id="bug-fixes"><em>Bug Fixes</em></h4>
+
+<ul>
+  <li>Fix Java world doesn’t recognize when Java mode Backup is on.</li>
+  <li>Fix renaming every backup extension to .zip(if is java) or .mcworld(if is Bedrock).</li>
+</ul>
+
+<h4 id="added-features"><em>Added Features</em></h4>
+<ul>
+  <li>A “You’re world is backuping” dialog will appear  when you Backup you’re world(Bedrock and Java)</li>
+  <li>You can now start the app with windows</li>
+  <li>Ui changes</li>
+</ul>]]></content><author><name>Involts</name></author><summary type="html"><![CDATA[Alpha 0.2 update]]></summary></entry><entry><title type="html">Alpha 0.1</title><link href="http://localhost:4000/jekyll-theme-fica/Release/Alpha-0.1/" rel="alternate" type="text/html" title="Alpha 0.1" /><published>2022-02-20T00:00:00+08:00</published><updated>2022-02-20T00:00:00+08:00</updated><id>http://localhost:4000/jekyll-theme-fica/Release/Alpha-0.1</id><content type="html" xml:base="http://localhost:4000/jekyll-theme-fica/Release/Alpha-0.1/"><![CDATA[<h3>Welcome to Sky Cloud Backup Alpha 0.1</h3>
+
+<b1>Added:</b1>
+
+<ul>
+  <li>Main Backup for Bedrock and java</li>
+  <li>Personalization</li>
+  <li>Always on top ans</li>
+  <li>minimize when the app is closed</li>
+</ul>]]></content><author><name>Involts</name></author><summary type="html"><![CDATA[Welcome to Sky Cloud Backup Alpha 0.1 Added:]]></summary></entry></feed>

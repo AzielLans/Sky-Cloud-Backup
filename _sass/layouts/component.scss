@@ -1,0 +1,253 @@
+//
+// Prompts
+//
+.prompt-tip {
+  @include prompt(
+    "tips_and_updates",
+    $prompt-tip-icon-color,
+    $prompt-tip-bg-color,
+    "Material Icons Outlined"
+  );
+}
+
+.prompt-tip {
+  @include prompt(
+    "tips_and_updates",
+    $prompt-tip-icon-color,
+    $prompt-tip-bg-color,
+    "Material Icons Outlined"
+  );
+}
+
+.prompt-info {
+  @include prompt(
+    "info",
+    $prompt-info-icon-color,
+    $prompt-info-bg-color,
+    "Material Icons Outlined"
+  );
+}
+
+.prompt-warning {
+  @include prompt(
+    "warning",
+    $prompt-warning-icon-color,
+    $prompt-warning-bg-color,
+    "Material Icons Round"
+  );
+}
+
+.prompt-danger {
+  @include prompt(
+    "dangerous",
+    $prompt-danger-icon-color,
+    $prompt-danger-bg-color,
+    "Material Icons Round"
+  );
+}
+
+//
+//  Tables
+//
+table {
+  margin-bottom: $font-spacing;
+  width: 100%;
+  text-align: $table-text-align;
+  color: $table-text-color;
+  border-collapse: collapse;
+
+  @include horizontal-scroll();
+
+  tr {
+    &:nth-child(even) {
+      background-color: $table-zebra-color;
+    }
+  }
+
+  th {
+    padding: ($font-spacing / 3) ($font-spacing / 2);
+    border-bottom: 3px solid $text-color;
+    border-left: 1px solid $border-color;
+    border-right: 1px solid $border-color;
+  }
+
+  td {
+    padding: ($font-spacing / 3) ($font-spacing / 2);
+    border-left: 1px solid $border-color;
+    border-right: 1px solid $border-color;
+  }
+
+  th {
+    background-color: $table-header-bg-color;
+  }
+}
+
+
+.btn {
+  padding: 8px 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: $text-color;
+  background-color: $btn-bg-color;
+  transition: $transition-btn;
+
+  &,
+  &:visited {
+    color: $text-color;
+  }
+
+  &:hover {
+    color: $btn-text-hover-color;
+    text-decoration: none;
+    background-color: $btn-color-hover;
+    border-color: $btn-color-hover;
+  }
+}
+
+//
+// Back to top(BTT)
+//
+#back-to-top {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: $BTT-bg-color;
+  color: $BTT-svg-color;
+  border: 2px solid $BTT-bg-color;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 50%;
+  text-align: center;
+  transition: $transition-btn;
+  z-index: 2;
+
+  > i {
+    // padding-top: 3px;
+    font-size: 48px;
+    font-weight: 700;
+  }
+
+  &:hover {
+    bottom: 30px;
+  }
+}
+
+.BTT-Entrance {
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+  animation-name: BTT-Entrance;
+}
+
+.BTT-Exit {
+  animation-duration: 0.25s;
+  animation-fill-mode: both;
+  animation-name: BTT-Exit;
+}
+
+.post-nav {
+  padding-top: 5px;
+  display: inline;
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 80px;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: 0px;
+
+  @media screen and (min-width: $mobile-width) {
+    gap: 100px;
+  }
+}
+
+.post-nav-svg {
+  color: $footer-links-color;
+  transition: $tansitions-page-bar;
+  padding: 8px;
+  border-radius: 50px;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+.disable-svg {
+  cursor: not-allowed;
+  color: $text-mute-color;
+}
+
+.post-nav-num {
+  user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+  cursor: default;
+  display: inline;
+  @include text-muted;
+}
+
+//
+// Post footer
+//
+.post-footer {
+  padding-top: 13px;
+  border-top: 3px solid $border-color;
+  margin: 0px;
+}
+
+
+// 
+// Table Of Contents(Toc)
+// 
+.post-toc {
+  flex: 0 0 20%;
+  border-left: 1px solid $text-color;
+  margin-left: 10px;
+  padding-left: 10px;
+  display: none;
+  height: 10%;
+
+  ul, li {
+    list-style: none;
+    width: 100%;
+    margin-left: 0px;
+    padding: 4px 20px;
+
+    >a {
+      color: $text-mute-color;
+      font-size: 15px;
+      font-weight: 400;
+      word-spacing: 0px;
+
+      &:visited {
+        color: $text-mute-color;
+      }
+
+      &:hover {
+        color: $text-color;
+      }
+    }
+  }
+
+  ul {
+    padding: 0;
+  }
+
+  li {
+    padding-bottom: 5px;
+  }
+
+  h2 {
+    font-size: 20px;
+    padding-left: 5px;
+  }
+
+  @media screen and (min-width: 1111px) {
+    display: block;
+  }
+}

@@ -1,0 +1,132 @@
+// 
+// Dark Theme
+// 
+
+//                                                   //
+//-------------Basic settings-----------------------//
+//                                                 //
+$primary_color: #001014 !default;
+$link-color: lighten($primary_color, 30%) !default;
+$text-color: #E6E1E5 !default;
+$text-mute-color: darken($text-color, 35%) !default;
+
+//                                                     //
+//-------------Advance settings-----------------------//
+//                                                   //
+// 
+// Header
+// 
+$header-link-color: darken($text-color, 40%) !default;
+$site-header-bg: lighten($primary_color, 8%) !default;
+
+// 
+// Site Home Banner
+// 
+$header-bg-color: $link-color  !default;
+$home-header-title-color: lighten($primary_color, 7%) !default;
+$btn-download-bg-color: darken($home-header-title-color, 1%) !default;
+$btn-download-hover-color: darken($btn-download-bg-color, 2%) !default;
+
+// 
+// Site Nav
+// 
+$menu-bdr-color: lighten($primary_color, 6%) !default;
+$menu-color: $text-color  !default;
+$menu-bg-color-chae: lighten($primary_color, 6%) !default;
+
+// 
+// Site Footer
+// 
+$footer-bg-color: lighten($primary_color, 8%) !default;
+$footer-info-bg-color: darken($footer-bg-color, 2%) !default;
+$footer-links-color: darken($text-color, 10%) !default;
+$footer-links-hover-color: darken($footer-links-color, 30%) !default;
+
+// 
+// Error Pages
+// 
+$error-div-bg-color: darken($primary_color, 2%) !default;
+$error-btn-svg-color: $primary_color  !default;
+$error-btn-bg-color: $primary_color  !default;
+$error-btn-hover-color: darken($error-btn-bg-color, 7%) !default;
+
+// 
+// Page bar
+// 
+$page-bar-top-bar-color: darken($primary_color, 5%) !default;
+$page-bar-btn-bg-color: darken($primary_color, 2%) !default;
+$page-bar-svg-color: $text-color  !default;
+$page-bar-btn-hover-color: darken($page-bar-btn-bg-color, 5%) !default;
+$page-bar-svg-hover-color: darken($page-bar-svg-color, 30%) !default;
+$page-bar-btn-disabled: lighten($page-bar-btn-bg-color, 5%) !default;
+
+// 
+// Button
+// 
+// $btn-bg-color:           #525252 !default;
+// $btn-color-hover:        #353535 !default;
+$btn-bg-color: lighten($primary_color, 8%) !default;
+$btn-color-hover: lighten($link-color, 33%) !default;
+$btn-text-hover-color: darken($text-color, 50%) !default;
+
+// 
+// Highlight
+// 
+$highlight-bg-color: darken($link-color, 20%) !default;
+$highlight-text-color: darken($text-color, 100%) !default;
+
+// 
+// Prompt Tip
+// 
+$prompt-tip-icon-color: #395021 !default;
+$prompt-tip-bg-color: #5a8034 !default;
+
+// 
+//  Prompt Info
+// 
+$prompt-info-icon-color: #12447d !default;
+$prompt-info-bg-color: #01689C !default;
+
+// 
+//  Prompt Warning
+// 
+$prompt-warning-icon-color: #754e12 !default;
+$prompt-warning-bg-color: #b3761a !default;
+
+// 
+// Prompt Danger
+// s
+$prompt-danger-icon-color: #670e0e !default;
+$prompt-danger-bg-color: #b31a1a !default;
+
+// 
+// Code
+// 
+$code-background-color: lighten($primary_color, 6%) !default;
+$code-text-color: darken($text-color, 20%) !default;
+$blockquote-text-color: darken($text-color, 40%) !default;
+
+// 
+// links
+// 
+$link-visited-color: $link-color  !default;
+$link-hover-color: lighten($link-color, 33%) !default;
+
+// 
+// Table
+// 
+$table-text-color: $text-color  !default;
+$table-zebra-color: lighten($primary_color, 2%) !default;
+$table-header-bg-color: lighten($primary_color, 3%) !default;
+
+$Github: #f0f6fc !default;
+
+$border-color: lighten($primary_color, 3%) !default;
+
+// 
+// Back to Top
+// 
+$BTT-bg-color:  lighten($link-color, 50%) !default;
+$BTT-svg-color: rgba(0, 0, 0, 0.54) !default;
+
+@import "colors/dark-theme/highlight"

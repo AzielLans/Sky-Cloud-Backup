@@ -1,0 +1,12 @@
+---
+---
+
+@import "jekyll-theme-fica";
+
+.logo::before {
+  content: url("{{site.baseurl}}/logo.png");
+  display: inline-block;
+  position: relative;
+  width: 37px;
+  top: 7px;
+}

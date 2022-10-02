@@ -1,25 +1,89 @@
-title: Sky Cloud Backup
-author: Involts
-name: Involts
-description: A Minecraft Backup that supports both Bedrock and Java.
-google_analytics: true
-show_descriptions: true # set to true to show descriptions
-baseurl: /Sky-Cloud-Backup
-# theme: jekyll-theme-fica 
+#
+# The Site Configuration
+#
+
+# if you run it locally:
+# theme: jekyll-theme-fica
+
+#  if you using GitHub-Pages:
 remote_theme: Involts/jekyll-theme-fica
+
+# Change the following value to '/PROJECT_NAME' ONLY IF your site type is GitHub Pages Project sites
+# and doesn't have a custom domain.
+baseurl: /jekyll-theme-fica
+
+title: Sky Cloud Backup
+
+description: A Minecraft Backup that supports both Bedrock and Java.
+
+show_descriptions: true # set to true to show descriptions in posts
+show_comments: true # set to true to show comments in posts
+
+show-footer-copyright: true # set to true to show footer copyright
+
+permalink: /Release/:title/
+date_format: "%b %-d, %Y"
+
 header:
-  header_name_1: Download
-  header_link_1: https://github.com/Involts/Sky-Cloud-Backup/releases/download/Alpha_0.3/Sky.Cloud.Backup.Alpha.0.3.zip
-  header_name_2: Releases
-  header_link_2: /Releases/
-  header_name_3: About
-  header_link_3: /About/
-fica:
-  date_format: "%b %-d, %Y"
-      
+    header_name_1: Download
+    header_link_1: https://github.com/Involts/jekyll-theme-fica/zipball/master
+
+    header_name_2: Releases
+    header_link_2: /Releases/
+    
+    header_name_3: About
+    header_link_3: /About/
+
+google_analytics: 
+  enabled: true # if false, it disables Google Analytics
+  id:           # fill in your Google Analytics ID    
+
+socials:
+  # Change Involts to your full name.
+  name: Involts
+  # it also be the copyright owner's link
+  auther-link: https://github.com/Involts
+
+
+# Pagination
+paginate: true
+paginate: 3
+paginate_path: "/Releases/page:num/"
+
+
 plugins:
- - jekyll-feed
- - jekyll-seo-tag
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-paginate
+
+url: 'https://involts.github.io/'  
+
+collections:
+  tabs:
+    output: true
+    sort_by: order
+
 exclude:
- - README.md
+  - "*.gem"
+  - "*.gemspec"
+  - bin
+  - README.md
+  - LICENSE
+  - docs
+  - RubyGems
+  - gm_bld
+  - gitignore
+
+  #---------------The options BELLOW are not recommended to be modified------------------#
+
+kramdown:
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:   # Rouge Options › https://github.com/jneen/rouge#full-options
+    css_class: highlight
+    # default_lang: console
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
 

@@ -1,70 +1,75 @@
-<footer class="site-footer h-card">
-  <data class="u-url" href="{{ " {{site.baseurl}}/" | relative_url }}"></data>
-  <div class="wrapper_footer">
-
-    <div class="footer-col-wrapper">
+<footer class="site-footer">
+  <div class="footer-wrapper">
+    <div class="site-footer-wrapper">
       <div class="footer-col">
-        <li class="Links_footer">
-          </svg><span>On Github</span>
-          </a>
+        <li class="footer-product">{{site.title}}</li>
+        <li class="footer-product">{{site.description}}</li>
+      </div>
+      <div class="footer-col">
+        <li class="links-footer">
+          <span>On Github</span>
         </li>
-        <li class="Links_footer">
+        <li class="links-footer">
           <a href="https://github.com/Involts/Sky-Cloud-Backup">
             <svg class="svg-icon github">
-              <use xlink:href="{{ 'assets/fica-icons.svg#github' | relative_url }}"></use>
-            </svg><span>Repository</span>
+              <use xlink:href="{{ 'assets/fica-icons.svg#github' | relative_url }}"></use></svg
+            ><span class="Links-space">Repository</span>
           </a>
         </li>
-        <li class="Links_footer">
-          <a href="{{site.baseurl}}/Releases">
-            <svg class="svg-icon github">
-              <use xlink:href="{{ 'assets/fica-icons.svg#Releases' | relative_url }}"></use>
-            </svg><span>Releases</span>
+        <li class="links-footer">
+          <a href="{{ Releases | relative_url }}">
+            <span class="material-icons-round material-style"> new_releases </span>
+            <span class="Links-space">Releases</span>
           </a>
         </li>
-        <li class="Links_footer">
+        <li class="links-footer">
           <a href="https://github.com/Involts/Sky-Cloud-Backup/issues">
-            <svg class="svg-icon github">
-              <use xlink:href="{{ 'assets/fica-icons.svg#bug' | relative_url }}"></use>
-            </svg>Report Bugs</span>
+            <span class="material-icons-round material-style"> bug_report </span>
+            <span>Report Bugs</span>
           </a>
         </li>
       </div>
-
-      <div class="footer-middle">
-        <li class="Links_footer">
-          </svg><span>Sky Cloud Backup</span>
+      <div class="footer-col">
+        <li class="links-footer">
+          <span>Sky Cloud Backup</span>
+        </li>
+        <li class="links-footer">
+          <a href="{{site.header.header_link_1 | relative_url }}">
+            <span class="material-icons-round material-style"> download </span>
+            <span>Download</span>
           </a>
         </li>
-        <li class="Links_footer">
-          <a
-            href="https://github.com/Involts/Sky-Cloud-Backup/releases/download/{{site.header.version}}/Sky.Cloud.Backup.{{site.header.download_version}}.zip">
+        <li class="links-footer">
+          <a href="{{ /Wiki | relative_url }}">
+            <span class="material-icons-round material-style"> menu_book </span>
+            <span class="Links-space">Wiki</span>
+          </a>
+        </li>
+        <li class="links-footer">
+          <a href="{{ /About | relative_url }}">
             <svg class="svg-icon github">
-              <use xlink:href="{{ 'assets/fica-icons.svg#download' | relative_url }}"></use>
-            </svg><span>Download</span>
+              <use xlink:href="{{ 'assets/fica-icons.svg#github' | relative_url }}"></use></svg
+            ><span class="Links-space">About</span>
           </a>
         </li>
-        <li class="Links_footer">
-          <a href="{{site.baseurl}}/Wiki">
-            <svg class="svg-icon github">
-              <use xlink:href="{{ 'assets/fica-icons.svg#github' | relative_url }}"></use>
-            </svg><span>Wiki</span>
-          </a>
-        </li>
-        <li class="Links_footer">
-          <a href="{{site.baseurl}}/About">
-            <svg class="svg-icon github">
-              <use xlink:href="{{ 'assets/fica-icons.svg#github' | relative_url }}"></use>
-            </svg><span>About</span>
-          </a>
-        </li>
-
-      </div>
-      <div class="footer-last">
-        <li class="Product_footer"><a href="{{site.baseurl}}/Index/" class="footer-title">{{site.title}}</a></li>
-        <li class="Product_footer">{{site.description}}</li>
       </div>
     </div>
   </div>
-
+  {%- if site.show-footer-copyright -%}
+  <div class="footer-info text-muted">
+    <span>
+      © {{ 'now' | date: "%Y " }}
+      <a href="{{ site.socials.auther-link }}"> {{ site.socials.name }}</a>
+      Some rights reserved.
+    </span>
+    <span>
+      Powered by
+      <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a>
+      with
+      <a href="https://github.com/Involts/jekyll-theme-fica" target="_blank" rel="noopener"
+        >jekyll-theme-fica</a
+      >
+    </span>
+  </div>
+  {%- endif -%}
 </footer>

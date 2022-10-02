@@ -1,13 +1,17 @@
 html {
-  font-size: $base-font-size;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+
   ::selection {
-    background-color: $highlight_color;
-    color: $highlight_bg_color;
+    background-color: $highlight-bg-color;
+    color: $highlight-text-color;
   }
 }
-/**
-* Reset some basic elements
-*/
+
+//
+// Reseting elements
+//
+
 body,
 h1,
 h2,
@@ -28,40 +32,7 @@ figure {
   padding: 0;
 }
 
-body {
-  font: $base-font-weight #{$base-font-size}/#{$base-line-height}
-    $base-font-family;
-  color: $text-color;
-  background-color: $background-color;
-  -webkit-text-size-adjust: 100%;
-  -webkit-font-feature-settings: "kern" 1;
-  -moz-font-feature-settings: "kern" 1;
-  -o-font-feature-settings: "kern" 1;
-  font-feature-settings: "kern" 1;
-  font-kerning: normal;
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-  overflow-wrap: break-word;
-
-  &::-webkit-scrollbar {
-    width: 7px;
-    height: 4px;
-  }
-
-  &::-webkit-scrollbar-track {
-    background-color: $background-color;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background: $scroll_bar_bg_color;
-    border-radius: 4px;
-  }
-}
-
-/**
-* Set `margin-bottom` to maintain vertical rhythm
-*/
+//  set `margin-bottom` to maintain vertical alignment
 h1,
 h2,
 h3,
@@ -73,75 +44,152 @@ blockquote,
 pre,
 ul,
 ol,
-dl,
 figure,
 %vertical-rhythm {
-  margin-bottom: $spacing-unit / 2;
+  margin-bottom: $font-spacing - 15;
 }
 
-hr {
-  margin-top: $spacing-unit;
-  margin-bottom: $spacing-unit;
-  background: $text-color;
-}
+//
+// body
+//
+body {
+  font: $font-weight #{$font-size}/#{$line-height} $font-family;
+  color: $text-color;
+  background-color: $primary_color;
+  -webkit-text-size-adjust: 100%;
+  font-kerning: normal;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 
-/**
-* `main` element
-*/
-main {
-  display: block;
-  /* Default value of `display` of `main` element is 'inline' in IE 11. */
-  animation-name: text_trans;
-  animation-duration: 1s;
-  -webkit-animation-timing-function: ease-in;
-  animation-timing-function: ease-in;
-  @keyframes text_trans {
-    0% {
-      opacity: 0%;
-    }
-    20% {
-      opacity: 20%;
-    }
-    50% {
-      opacity: 50%;
-    }
-    70% {
-      opacity: 70%;
-    }
-    90% {
-      opacity: 90%;
-    }
-    100% {
-      opacity: 100%;
+  &::-webkit-scrollbar {
+    height: 16px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(128, 134, 139, 0.2);
+    background-clip: padding-box;
+    border: 4px solid transparent;
+    border-radius: 10px;
+    box-sizing: border-box;
+
+    &:hover {
+      background: rgba(128, 134, 139, 0.4);
+      box-sizing: border-box;
+      background-clip: padding-box;
     }
   }
 }
 
-/**
-* Images
-*/
-img {
-  max-width: 100%;
-  vertical-align: middle;
+//
+// line
+//
+hr {
+  margin-top: $font-spacing;
+  margin-bottom: $font-spacing;
+  border: 0;
+  border-top: 2px solid $text-mute-color;
+  border-radius: 7px;
 }
 
-/**
-* Figures
-*/
-figure > img {
-  display: block;
+//
+// wrapper
+//
+.wrapper {
+  padding: 0 $font-spacing - 5 0 $font-spacing - 5;
+  margin: 0 auto 0 auto;
+  max-width: $content-width + 100;
 }
 
-figcaption {
-  font-size: $small-font-size;
+.footer-wrapper {
+    padding: 0 $font-spacing - 5 0 $font-spacing - 5;
+    margin: 0 auto 0 auto;
+    max-width: 1168px;
+  }
+
+
+.post-wrapper {
+  padding: 0 $font-spacing - 5 0 $font-spacing - 5;
+  margin: 0 auto 0 auto;
+  max-width: $content-width + 100;
+
+  @media screen and (min-width: 1111px) {
+    display: flex;
+    justify-content: center;
+  }
 }
 
-/**
-* Lists
-*/
+.content {
+  padding: 30px 0 30px;
+  flex: 1 0 auto;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(3rem);
+  animation: 208.898ms linear 0s 1 normal forwards running slide-up;
+  animation-delay: 252.00568990042672ms;
+}
+
+//
+// Headers
+//
+h1 {
+  font-size: $font-size + 31;
+  line-height: 1.5;
+}
+
+h2 {
+  font-size: $font-size + 26;
+  line-height: 1.5;
+}
+
+h3 {
+  font-size: $font-size + 21;
+  line-height: 1.5;
+}
+
+h4 {
+  font-size: $font-size + 16;
+  line-height: 1.5;
+}
+
+h5 {
+  font-size: $font-size + 11;
+  line-height: 1.5;
+}
+
+h6 {
+  font-size: $font-size + 6;
+  line-height: 1.5;
+}
+
+//
+// Lists
+//
 ul,
 ol {
-  margin-left: $spacing-unit;
+  margin-left: $font-spacing;
+}
+
+//
+// Links
+//
+a {
+  text-decoration: none;
+  transition: $transition-links;
+  color: $link-visited-color;
+  font-weight: 700;
+
+  &:hover {
+    color: $link-hover-color;
+    text-decoration: none;
+  }
 }
 
 li {
@@ -151,47 +199,40 @@ li {
   }
 }
 
-/**
-* Headings
-*/
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: 650;
-  font-family: $base-font-family;
+//
+// Image
+//
+img {
+  max-width: 100%;
+  height: auto;
 }
 
-h1 {
-  font-weight: 700;
-  font-family: $base-font-family;
-  font-size: 35px;
+//
+// BOLD
+//
+strong {
+  font-weight: 900;
+  font-size: 18px;
 }
 
-/**
-* Links
-*/
-a {
-  color: $link-base-color;
-  text-decoration: none;
-  transition: $transition-links;
-  &:visited {
-    color: $link-visited-color;
-  }
-
-  &:hover {
-    color: $link-hover-color;
-  }
+//
+// Figures
+//
+figure > img {
+  display: block;
 }
 
-/**
-* Blockquotes
-*/
+figcaption {
+  font-size: $small-font-size;
+}
+
+//
+//  Blockquotes
+//
 blockquote {
   color: $blockquote-text-color;
   border-left: 4px solid $code-background-color;
-  padding-left: $spacing-unit / 2;
+  padding-left: $font-spacing / 2;
   @include relative-font-size(1.125);
   font-style: italic;
 
@@ -205,39 +246,32 @@ blockquote {
   }
 }
 
-/**
-* Code formatting
-*/
+//
+//  Code format
+//
 pre,
 code {
-  font-family: $code-font-family;
-  font-size: 0.9375em;
+  font-size: inherit;
   border: 1px solid $code-background-color;
   border-radius: 4px;
-  font-weight: bold;
+  font-weight: 700;
   background-color: $code-background-color;
+  color: $code-text-color;
 
-  &::-webkit-scrollbar {
-    width: 7px;
-    height: 9px;
-  }
-
-  &::-webkit-scrollbar-track {
-    background-color: $code-background-color;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background: $scroll_bar_bg_color;
-    border-radius: 4px;
-  }
+  @include horizontal-scroll();
 }
 
 code {
   padding: 1px 5px;
+
+  a {
+    color: inherit !important;
+    border-bottom: none !important;
+    pointer-events: none;
+  }
 }
 
 pre {
-  padding: 8px 12px;
   overflow-x: auto;
 
   > code {
@@ -247,100 +281,110 @@ pre {
   }
 }
 
+.rouge-table {
+  width: 0%;
+
+  .rouge-gutter {
+    padding: 0px;
+    border: 0px;
+  }
+
+  td.rouge-code {
+    padding-left: 1rem;
+    border: 0px;
+  }
+
+  border: 0px;
+  margin-bottom: 0px;
+}
+
 .highlight {
-  border-radius: 3px;
+  border-radius: 5px;
   background: $code-background-color;
+  border: 0px;
   @extend %vertical-rhythm;
+
+  pre {
+    margin-bottom: 0;
+    font-size: $code-font-family;
+    line-height: 1.5rem;
+    word-wrap: normal;
+    /* Fixed Safari overflow-x */
+  }
+
+  .lineno {
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 7px;
+    padding-right: 0px;
+    width: 1%;
+
+    min-width: 20px;
+    text-align: right;
+    color: $text-mute-color;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+  }
+
+  //  set the dollar sign to non-selectable
+  .gp {
+    user-select: none;
+  }
+
+  table {
+    td pre {
+      overflow: visible; // Fixed iOS safari overflow-x
+      word-break: normal; // Fixed iOS safari linenos code break
+    }
+  }
 
   .highlighter-rouge & {
     background: $code-background-color;
   }
 }
 
-/**
-* Wrapper
-*/
-.wrapper {
-  max-width: calc(#{$content-width} - (#{$spacing-unit}));
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: $spacing-unit / 2;
-  padding-left: $spacing-unit / 2;
-  @extend %clearfix;
+// Removes the line numbers default snippets
+div {
+  &[class^="highlighter-rouge"],
+  &.language-plaintext.highlighter-rouge,
+  &.language-console.highlighter-rouge,
+  &.language-terminal.highlighter-rouge,
+  &.nolineno {
+    pre.lineno {
+      display: none;
+    }
 
-  @media screen and (min-width: $on-large) {
-    max-width: calc(#{$content-width} - (#{$spacing-unit} * 2));
-    padding-right: $spacing-unit;
-    padding-left: $spacing-unit;
+    td.rouge-code {
+      padding: 8px 12px;
+    }
+
+    pre.highlight {
+      padding: 0px;
+      padding-bottom: 0px;
+    }
   }
 }
 
-.wrapper_header {
-  padding-left: 20px;
-  padding-right: auto;
-  @extend %clearfix;
-  @media screen and (min-width: $on-medium) {
-    padding-right: 70px;
-    padding-left: 70px;
-  }
-}
+//
+//  Icons
+//
 
-.wrapper_footer {
-  max-width: calc(#{$content-width} - (#{$spacing-unit}));
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: $spacing-unit / 2;
-  padding-left: $spacing-unit / 2;
-  @extend %clearfix;
+// .stackoverflow {
+//   color: #f66a0a;
+// }
 
-  @media screen and (min-width: $on-large) {
-    max-width: calc(#{$content-width} - (#{$spacing-unit} * 2));
-    padding-right: $spacing-unit;
-    padding-left: $spacing-unit;
-  }
-}
+// .youtube {
+//   color: #dd0505;
+// }
 
-.wrapper_wiki {
-  max-width: calc(#{$content-width} - (#{$spacing-unit}));
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: $spacing-unit / 2;
-  padding-left: $spacing-unit / 2;
-  @extend %clearfix;
+// .github {
+//   color: $Github;
 
-  @media screen and (min-width: $on-large) {
-    max-width: calc(#{$content-width} - (#{$spacing-unit} * 2));
-    display: flex;
-    justify-content: center;
-    padding-right: $spacing-unit;
-    padding-left: $spacing-unit;
-  }
-}
-
-/**
-* Clearfix
-*/
-%clearfix:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/**
-* Icons
-*/
-
-.stackoverflow {
-  color: #f66a0a;
-}
-
-.youtube {
-  color: #dd0505;
-}
-
-.github {
-  color: $Github;
-}
+// }
 
 .svg-icon {
   width: 16px;
@@ -350,70 +394,18 @@ pre {
   padding: 5px 3px 2px 5px;
   vertical-align: text-bottom;
 }
-.svg-icon-404 {
-  margin-left: auto;
-  margin-right: auto;
-}
 
 .gitlab {
   color: $Github;
 }
 
-/**
-* Tables
-*/
-table {
-  margin-bottom: $spacing-unit;
-  width: 100%;
-  text-align: $table-text-align;
-  color: $table-text-color;
-  border-collapse: collapse;
-  border: 1px solid $table-border-color;
-
-  &::-webkit-scrollbar {
-    width: 7px;
-    height: 9px;
-  }
-
-  &::-webkit-scrollbar-track {
-    background-color: $background-color;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background: $scroll_bar_bg_color;
-    border-radius: 4px;
-  }
-  tr {
-    &:nth-child(even) {
-      background-color: $table-zebra-color;
-    }
-  }
-  th,
-  td {
-    padding: ($spacing-unit / 3) ($spacing-unit / 2);
-  }
-  th {
-    background-color: $table-header-bg-color;
-    border: 1px solid $table-header-border;
-  }
-  td {
-    border: 1px solid $table-border-color;
-  }
-
-  @include media-query($on-laptop) {
-    display: block;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    -ms-overflow-style: -ms-autohiding-scrollbar;
-  }
-}
 dl {
   padding: 0;
 
   dt {
     padding: 0;
     margin-top: 1rem;
-    font-size: $base-font-size;
+    font-size: $font-size;
     font-weight: 690;
   }
 
@@ -422,7 +414,9 @@ dl {
   }
 }
 
+//
 // Error page
+//
 .container {
   margin: 10px auto;
   max-width: 400px;
@@ -430,33 +424,40 @@ dl {
   background-color: $error-div-bg-color;
   border-radius: 20px;
   align-content: center;
-  height: 500px;
-}
-.container svg {
-  height: 220px;
-  width: auto;
-  margin-top: 5px;
-  margin-left: 100px;
-  margin-top: 50px;
+
+  > svg {
+    height: 220px;
+    width: 220px;
+    margin-left: 3px;
+    margin-right: 5px;
+    margin-top: 50px;
+    fill: $error-btn-svg-color;
+  }
 }
 
-.container h1 {
-  font-weight: bolder;
-}
+.error-pagh {
+  > p {
+    margin-bottom: 0px;
+    line-height: 2;
 
-.container p {
-  margin-bottom: 3px;
+    &:last-child {
+      margin-bottom: 15px;
+    }
+  }
 }
 
 .btn-error {
-  padding: 8px 25px;
-  border-radius: 5px;
-  cursor: pointer;
-  color: $text-color;
-  background-color: $error-btn-bg-color;
-  border-color: $btn-bg-color;
-  transition: $transition-btn;
-  border-top: 10px;
+  display: inline-block;
+  padding: 17px 16px 16px;
+  color: #e7e7e7;
+  background-color: #2e353e;
+  transition: all 0.2s ease-in-out;
+  width: 92%;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  height: 24px;
+  line-height: 1.5;
+
   &,
   &:visited {
     color: $text-color;
@@ -465,7 +466,7 @@ dl {
   &:hover {
     color: $btn-text-hover-color;
     text-decoration: none;
-    background-color: $error-btn-hover-color;
-    border-color: $error-btn-hover-color;
+    background-color: $btn-color-hover;
+    border-color: $btn-color-hover;
   }
 }
