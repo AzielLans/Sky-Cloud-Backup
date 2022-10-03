@@ -116,8 +116,8 @@ $link-hover-color: lighten($link-color, 33%) !default;
 // Table
 // 
 $table-text-color: $text-color  !default;
-$table-zebra-color: lighten($primary_color, 2%) !default;
-$table-header-bg-color: lighten($primary_color, 3%) !default;
+$table-zebra-color: lighten($primary_color, 3%) !default;
+$table-header-bg-color: lighten($primary_color, 5%) !default;
 
 $Github: #f0f6fc !default;
 

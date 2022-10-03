@@ -475,7 +475,7 @@ dl dd { margin-inline-start: 40px; }
 
 .post-list .post .post-info .post-info-date::before { content: "calendar_today"; font-family: "Material Icons Round"; font-size: 12px; line-height: 1; padding-right: 5px; }
 
-.post-list .post .post-info .post-info-pin { background-color: #001c23; color: #958091; border-radius: 5px; padding: 2px 5px 2px 5px; cursor: default; user-select: none; -moz-user-select: none; -khtml-user-select: none; -webkit-user-select: none; -o-user-select: none; display: flex; align-items: center; gap: 4px; }
+.post-list .post .post-info .post-info-pin { background-color: #00242e; color: #958091; border-radius: 5px; padding: 2px 5px 2px 5px; cursor: default; user-select: none; -moz-user-select: none; -khtml-user-select: none; -webkit-user-select: none; -o-user-select: none; display: flex; align-items: center; gap: 4px; }
 
 .post-list .post .post-info .post-info-pin > span { transform: rotate(45deg); font-size: 15px; line-height: 1.4rem; height: 1.3rem; }
 
@@ -493,7 +493,7 @@ dl dd { margin-inline-start: 40px; }
 
 .post-info .post-info-date::before { content: "calendar_today"; font-family: "Material Icons Round"; font-size: 12px; line-height: 1; padding-right: 5px; }
 
-.post-info .post-info-pin { background-color: #001c23; color: #958091; border-radius: 5px; padding: 2px 5px 2px 5px; cursor: default; user-select: none; -moz-user-select: none; -khtml-user-select: none; -webkit-user-select: none; -o-user-select: none; display: flex; align-items: center; gap: 4px; }
+.post-info .post-info-pin { background-color: #00242e; color: #958091; border-radius: 5px; padding: 2px 5px 2px 5px; cursor: default; user-select: none; -moz-user-select: none; -khtml-user-select: none; -webkit-user-select: none; -o-user-select: none; display: flex; align-items: center; gap: 4px; }
 
 .post-info .post-info-pin > span { transform: rotate(45deg); font-size: 15px; line-height: 1.4rem; height: 1.3rem; }
 
@@ -583,13 +583,13 @@ table::-webkit-scrollbar-thumb { background: rgba(128, 134, 139, 0.2); backgroun
 
 table::-webkit-scrollbar-thumb:hover { background: rgba(128, 134, 139, 0.4); box-sizing: border-box; background-clip: padding-box; }
 
-table tr:nth-child(even) { background-color: #00181e; }
+table tr:nth-child(even) { background-color: #001c23; }
 
 table th { padding: 10px 15px; border-bottom: 3px solid #E6E1E5; border-left: 1px solid #001c23; border-right: 1px solid #001c23; }
 
 table td { padding: 10px 15px; border-left: 1px solid #001c23; border-right: 1px solid #001c23; }
 
-table th { background-color: #001c23; }
+table th { background-color: #00242e; }
 
 .btn { padding: 8px 25px; border: none; border-radius: 5px; cursor: pointer; color: #E6E1E5; background-color: #00313d; transition: all 0.2s ease-in-out; }
 
