@@ -54,8 +54,8 @@ figure,
 //
 body {
   font: $font-weight #{$font-size}/#{$line-height} $font-family;
-  color: $text-color;
-  background-color: $primary_color;
+  color: $md-sys-color-on-background-dark;
+  background-color: $md-sys-color-background-dark;
   -webkit-text-size-adjust: 100%;
   font-kerning: normal;
   display: flex;
@@ -252,10 +252,9 @@ blockquote {
 pre,
 code {
   font-size: inherit;
-  border: 1px solid $code-background-color;
+  border: 1px solid transparent;
   border-radius: 4px;
   font-weight: 700;
-  background-color: $code-background-color;
   color: $code-text-color;
 
   @include horizontal-scroll();
@@ -263,6 +262,7 @@ code {
 
 code {
   padding: 1px 5px;
+  @include elevation($md-sys-color-background-dark);
 
   a {
     color: inherit !important;
@@ -343,7 +343,7 @@ pre {
   }
 
   .highlighter-rouge & {
-    background: $code-background-color;
+    @include elevation($md-sys-color-background-dark);
   }
 }
 

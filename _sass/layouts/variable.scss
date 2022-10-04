@@ -117,6 +117,10 @@ $medium-width: 442px !default;
   }
 }
 
+@mixin elevation($color) {
+  background: linear-gradient(0deg,rgba(11,87,208,.08),rgba(11,87,208,.08)),linear-gradient(0deg,hsla(0,0%,46%,.02),hsla(0,0%,46%,.02)), $color;
+}
+
 @mixin horizontal-scroll {
   &::-webkit-scrollbar {
     height: 16px;

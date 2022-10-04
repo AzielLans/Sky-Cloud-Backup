@@ -2,7 +2,7 @@
 // Site Header
 //
 .site-nav {
-  background: $site-header-bg;
+  @include elevation($md-sys-color-surface-dark);
   height: 80px;
   width: 100%;
   z-index: 100;
@@ -14,7 +14,7 @@
   a {
     line-height: 80px;
     margin: 0 5px;
-    color: $link-color;
+    color: $md-sys-color-on-surface-dark;
     font-size: 17px;
     padding: 7px 13px;
     border-radius: 3px;
@@ -22,7 +22,7 @@
     transition: $transition-links;
 
     &:hover {
-      color: $text-mute-color;
+      color: $md-ref-palette-secondary-100;
     }
 
     // Download btn
@@ -84,7 +84,7 @@
       position: fixed;
       width: 100%;
       height: 100vh;
-      background: $primary_color;
+      background: $md-sys-color-surface-dark;
       top: 80px;
       left: 100%;
       text-align: center;
@@ -126,12 +126,12 @@
 //
 .header-home-mod {
   position: static;
-  background-color: $home-header-title-color;
+  @include elevation($md-sys-color-surface-dark);
 }
 .site-banner {
   padding: 40px 15px 40px 15px;
   color: $text-color;
-  background-color: $home-header-title-color;
+  @include elevation($md-sys-color-surface-dark);
   text-align: center;
   justify-content: space-around;
   line-height: 1.5;
@@ -186,10 +186,10 @@
     .page-header-title {
       border-top: 8px;
       margin-bottom: 0%;
-      font-size: $site-banner-title-fnt-sze;
-      color: $header-bg-color;
+      font-size: $md-sys-typescale-display-large-size;
+      color: $md-sys-color-on-surface-dark;
       text-align: center;
-      font-weight: bold;
+      font-weight: 700;
       font-family: $font-family;
       padding-bottom: 7px;
       line-height: 1.5;
@@ -199,19 +199,17 @@
     .site-banner-description {
       border-top: 8px;
       margin-bottom: 0%;
-      font-size: $site-banner-description-fnt-sze;
-      color: $link-color;
+      font-size: $md-sys-typescale-body-large-size;
+      color: $md-sys-color-on-surface-dark;
       text-align: center;
-      font-weight: bold;
       font-family: $font-family;
       padding-bottom: 7px;
       @include animation-fade-in(1);
     }
   }
-
   // For Large Screens
   @media screen and (min-width: $mobile-width) {
-    border-bottom: 100px solid $home-header-title-color;
+    padding-bottom: 100px;
 
     .banner-content {
       > a {
@@ -222,7 +220,7 @@
 
   @media screen and (min-width: 993px) {
     display: flex;
-    padding: 40px 10px 40px 10px;
+    padding: 40px 10px 140px 10px;
 
     .img {
       width: $site-banner-picture-sze_wdth;
