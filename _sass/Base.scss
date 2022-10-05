@@ -140,33 +140,80 @@ hr {
 // Headers
 //
 h1 {
-  font-size: $font-size + 31;
-  line-height: 1.5;
+  font-family: var(--md-sys-typescale-display-large-font);
+  font-weight: var(--md-sys-typescale-display-large-weight);
+  font-size: var(--md-sys-typescale-display-large-size);
+  font-style: var(--md-sys-typescale-display-large-font-style);
+  letter-spacing: var(--md-sys-typescale-display-large-tracking);
+  line-height: var(--md-sys-typescale-display-large-line-height);
+  text-transform: var(--md-sys-typescale-display-large-text-transform);
+  text-decoration: var(--md-sys-typescale-display-large-text-decoration);
 }
 
 h2 {
-  font-size: $font-size + 26;
-  line-height: 1.5;
+  font-family: var(--md-sys-typescale-display-medium-font);
+  font-weight: var(--md-sys-typescale-display-medium-weight);
+  font-size: var(--md-sys-typescale-display-medium-size);
+  font-style: var(--md-sys-typescale-display-medium-font-style);
+  letter-spacing: var(--md-sys-typescale-display-medium-tracking);
+  line-height: var(--md-sys-typescale-display-medium-line-height);
+  text-transform: var(--md-sys-typescale-display-medium-text-transform);
+  text-decoration: var(--md-sys-typescale-display-medium-text-decoration);
 }
 
 h3 {
-  font-size: $font-size + 21;
-  line-height: 1.5;
+  font-family: var(--md-sys-typescale-display-small-font);
+  font-weight: var(--md-sys-typescale-display-small-weight);
+  font-size: var(--md-sys-typescale-display-small-size);
+  font-style: var(--md-sys-typescale-display-small-font-style);
+  letter-spacing: var(--md-sys-typescale-display-small-tracking);
+  line-height: var(--md-sys-typescale-display-small-line-height);
+  text-transform: var(--md-sys-typescale-display-small-text-transform);
+  text-decoration: var(--md-sys-typescale-display-small-text-decoration);
 }
 
 h4 {
-  font-size: $font-size + 16;
-  line-height: 1.5;
+  font-family: var(--md-sys-typescale-headline-large-font);
+  font-weight: var(--md-sys-typescale-headline-large-weight);
+  font-size: var(--md-sys-typescale-headline-large-size);
+  font-style: var(--md-sys-typescale-headline-large-font-style);
+  letter-spacing: var(--md-sys-typescale-headline-large-tracking);
+  line-height: var(--md-sys-typescale-headline-large-line-height);
+  text-transform: var(--md-sys-typescale-headline-large-text-transform);
+  text-decoration: var(--md-sys-typescale-headline-large-text-decoration);
 }
 
 h5 {
-  font-size: $font-size + 11;
-  line-height: 1.5;
+  font-family: var(--md-sys-typescale-headline-medium-font);
+  font-weight: var(--md-sys-typescale-headline-medium-weight);
+  font-size: var(--md-sys-typescale-headline-medium-size);
+  font-style: var(--md-sys-typescale-headline-medium-font-style);
+  letter-spacing: var(--md-sys-typescale-headline-medium-tracking);
+  line-height: var(--md-sys-typescale-headline-medium-line-height);
+  text-transform: var(--md-sys-typescale-headline-medium-text-transform);
+  text-decoration: var(--md-sys-typescale-headline-medium-text-decoration);
 }
 
 h6 {
-  font-size: $font-size + 6;
-  line-height: 1.5;
+  font-family: var(--md-sys-typescale-headline-small-font);
+  font-weight: var(--md-sys-typescale-headline-small-weight);
+  font-size: var(--md-sys-typescale-headline-small-size);
+  font-style: var(--md-sys-typescale-headline-small-font-style);
+  letter-spacing: var(--md-sys-typescale-headline-small-tracking);
+  line-height: var(--md-sys-typescale-headline-small-line-height);
+  text-transform: var(--md-sys-typescale-headline-small-text-transform);
+  text-decoration: var(--md-sys-typescale-headline-small-text-decoration);
+}
+
+p {
+  font-family: var(--md-sys-typescale-body-large-font);
+  font-weight: var(--md-sys-typescale-body-large-weight);
+  font-size: var(--md-sys-typescale-body-large-size);
+  font-style: var(--md-sys-typescale-body-large-font-style);
+  letter-spacing: var(--md-sys-typescale-body-large-tracking);
+  line-height: var(--md-sys-typescale-body-large-line-height);
+  text-transform: var(--md-sys-typescale-body-large-text-transform);
+  text-decoration: var(--md-sys-typescale-body-large-text-decoration);
 }
 
 //
@@ -262,7 +309,7 @@ code {
 
 code {
   padding: 1px 5px;
-  @include elevation($md-sys-color-background-dark);
+  background: $md-sys-elevation-level2;
 
   a {
     color: inherit !important;
@@ -343,7 +390,7 @@ pre {
   }
 
   .highlighter-rouge & {
-    @include elevation($md-sys-color-background-dark);
+    background-color: $md-sys-elevation-level2;
   }
 }
 

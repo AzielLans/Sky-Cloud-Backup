@@ -2,7 +2,7 @@
 // Site Header
 //
 .site-nav {
-  @include elevation($md-sys-color-surface-dark);
+  background: $md-sys-elevation-level2;
   height: 80px;
   width: 100%;
   z-index: 100;
@@ -27,14 +27,19 @@
 
     // Download btn
     &:first-child {
-      color: rgba(0, 0, 0, 0.54);
-      background-color: $link-color;
-      transition: $transition-links;
+      color: $md-sys-color-primary ;
+      background: $md-sys-elevation-level4;
+      transition-timing-function: cubic-bezier(
+        $md-sys-motion-easing-emphasized-x0,
+        $md-sys-motion-easing-emphasized-y0,
+        $md-sys-motion-easing-emphasized-x1,
+        $md-sys-motion-easing-emphasized-y1);
       padding: 11px 19px 13px;
       border-radius: 40px;
 
       &:hover {
-        background-color: $btn-color-hover;
+        border-radius: 10px;
+        background: $md-sys-elevation-level5;
       }
     }
   }
@@ -97,12 +102,12 @@
         &:first-child {
           background-color: transparent;
           border-radius: 3px;
-          color: $link-color;
+          color: $md-sys-color-primary;
         }
 
         &:hover {
-          background: $btn-bg-color;
-          color: rgba(0, 0, 0, 0.54);
+          background: $md-sys-elevation-level5;
+          color: $md-sys-color-primary;
         }
         &.active {
           background: $btn-bg-color;
@@ -126,12 +131,12 @@
 //
 .header-home-mod {
   position: static;
-  @include elevation($md-sys-color-surface-dark);
+  background: $md-sys-elevation-level2;
 }
 .site-banner {
   padding: 40px 15px 40px 15px;
   color: $text-color;
-  @include elevation($md-sys-color-surface-dark);
+  background: $md-sys-elevation-level2;
   text-align: center;
   justify-content: space-around;
   line-height: 1.5;
@@ -260,7 +265,14 @@
 }
 
 .post-title {
-  @include relative-font-size(2.925);
+  font-family: var(--md-sys-typescale-display-large-font);
+  font-weight: 700;
+  font-size: var(--md-sys-typescale-display-large-size);
+  font-style: var(--md-sys-typescale-display-large-font-style);
+  letter-spacing: var(--md-sys-typescale-display-large-tracking);
+  line-height: var(--md-sys-typescale-display-large-line-height);
+  text-transform: var(--md-sys-typescale-display-large-text-transform);
+  text-decoration: var(--md-sys-typescale-display-large-text-decoration);
   line-height: 1.15;
   margin-bottom: 5px;
 
@@ -274,9 +286,21 @@
   list-style: none;
 
   .post {
-    border-bottom: 2px solid $border-color;
-    padding-bottom: 10px;
-    padding-top: 10px;
+    margin-bottom: $font-spacing;
+    padding: 20px 30px 20px 30px;
+    background: $md-sys-elevation-level2;
+    border-radius: 40px;
+    transition-timing-function: cubic-bezier(
+      $md-sys-motion-easing-emphasized-x0,
+      $md-sys-motion-easing-emphasized-y0,
+      $md-sys-motion-easing-emphasized-x1,
+      $md-sys-motion-easing-emphasized-y1);
+    transition: $transition-btn;
+
+    &:hover {
+      border-radius: 10px;
+      background: $md-sys-elevation-level5;
+    }
 
     .post-meta {
       font-size: $small-font-size;
@@ -285,8 +309,15 @@
     }
 
     .post-link {
-      @include relative-font-size(3);
-      line-height: 1.5;
+      font-family: var(--md-sys-typescale-display-large-font);
+      font-weight: 700;
+      font-size: var(--md-sys-typescale-display-large-size);
+      font-style: var(--md-sys-typescale-display-large-font-style);
+      letter-spacing: var(--md-sys-typescale-display-large-tracking);
+      line-height: var(--md-sys-typescale-display-large-line-height);
+      text-transform: var(--md-sys-typescale-display-large-text-transform);
+      text-decoration: var(--md-sys-typescale-display-large-text-decoration);
+      color: $md-sys-color-primary;
     }
 
     .post-info {
@@ -342,6 +373,7 @@
           margin-bottom: 0;
           display: none;
           text-transform: capitalize;
+          color: $md-sys-color-on-surface-variant-dark;
         }
 
         @media screen and (min-width: $mobile-width) {

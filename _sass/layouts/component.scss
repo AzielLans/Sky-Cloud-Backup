@@ -55,7 +55,6 @@ table {
   text-align: $table-text-align;
   color: $table-text-color;
   border-collapse: collapse;
-
   @include horizontal-scroll();
 
   tr {
@@ -69,16 +68,13 @@ table {
     border-bottom: 3px solid $text-color;
     border-left: 1px solid $md-sys-color-outline-dark;
     border-right: 1px solid $md-sys-color-outline-dark;
+    background-color: $md-sys-color-primary-container-dark;
   }
 
   td {
     padding: ($font-spacing / 3) ($font-spacing / 2);
     border-left: 1px solid $md-sys-color-outline-dark;
     border-right: 1px solid $md-sys-color-outline-dark;
-  }
-
-  th {
-    background-color: $md-sys-color-primary-container-dark;
   }
 }
 
