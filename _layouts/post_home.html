@@ -49,17 +49,17 @@ layout: default
         <div class="post-list">
             {%- assign date_format = site.date_format | default: "%b %-d, %Y" -%}
             {%- for post in posts -%}
-            <a href="{{ post.url | relative_url }}">
                 <div class="post">
-                    <p class="post-link" href="{{ post.url | relative_url }}">
+                    <a href="{{ post.url | relative_url }}">
+                    <a class="post-link" href="{{ post.url | relative_url }}">
                         {{ post.title | escape }}
-                    </p>
+                    </a>
                     <div class="post-info">
                         {%- assign date_format_tooltip = site.fica.date_format | default: "%b%-d, %Y" -%}
                         <span class="post-info-date">{{ post.date | date: date_format }}</span>
                         {% if post.pin %}
                             <span class="post-info-pin">
-                                <span class="material-icons-round">
+                                <span class="material-symbols-rounded">
                                     push_pin
                                 </span>
                                 <p>pinned</p>
@@ -67,10 +67,10 @@ layout: default
                         {%- endif -%}
                     </div>
                     {%- if site.show_descriptions -%}
-                        {{ post.excerpt }}
+                    {{ post.excerpt}}
                     {%- endif -%}
+                    </a>
                 </div>
-            </a>
             {%- endfor -%}
         </div>
 
@@ -79,13 +79,13 @@ layout: default
                 <li>
                     {% if paginator.previous_page %}
                         <a href="{{ paginator.previous_page_path | relative_url }}">
-                            <span class="material-icons-round post-nav-svg">
+                            <span class="material-symbols-rounded post-nav-svg">
                                 arrow_back_ios
                             </span>
                         </a>
                     {% else %}
                         <a>
-                            <span class="material-icons-round post-nav-svg disable-svg">
+                            <span class="material-symbols-rounded post-nav-svg disable-svg">
                                 chevron_left
                             </span>
                         </a>
@@ -97,13 +97,13 @@ layout: default
                 <li>
                     {%- if paginator.next_page %}
                         <a href="{{ paginator.next_page_path | relative_url }}">
-                            <span class="material-icons-round post-nav-svg">
+                            <span class="material-symbols-rounded post-nav-svg">
                                 arrow_forward_ios
                             </span>
                         </a>
                     {%- else %}
                         <a>
-                            <span class="material-icons-round post-nav-svg disable-svg">
+                            <span class="material-symbols-rounded post-nav-svg disable-svg">
                                 chevron_right
                             </span>
                         </a>

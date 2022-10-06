@@ -320,69 +320,6 @@
       color: $md-sys-color-primary;
     }
 
-    .post-info {
-      display: flex;
-      justify-content: space-between;
-      padding-bottom: 15px;
-      cursor: default;
-      user-select: none;
-      -moz-user-select: none;
-      -khtml-user-select: none;
-      -webkit-user-select: none;
-      -o-user-select: none;
-      align-items: baseline;
-      line-height: 1.5;
-
-      .post-info-date {
-        color: $text-mute-color;
-        font-size: $small-font-size;
-        word-spacing: 1px;
-
-        &::before {
-          content: "calendar_today";
-          font-family: "Material Icons Round";
-          font-size: 12px;
-          line-height: 1;
-          padding-right: 5px;
-        }
-      }
-
-      .post-info-pin {
-        background-color: $table-header-bg-color;
-        color: $text-mute-color;
-        border-radius: 5px;
-        padding: 2px 5px 2px 5px;
-        cursor: default;
-        user-select: none;
-        -moz-user-select: none;
-        -khtml-user-select: none;
-        -webkit-user-select: none;
-        -o-user-select: none;
-        display: flex;
-        align-items: center;
-        gap: 4px;
-
-        > span {
-          transform: rotate(45deg);
-          font-size: 15px;
-          line-height: 1.4rem;
-          height: 1.3rem;
-        }
-
-        > p {
-          margin-bottom: 0;
-          display: none;
-          text-transform: capitalize;
-          color: $md-sys-color-on-surface-variant-dark;
-        }
-
-        @media screen and (min-width: $mobile-width) {
-          > p {
-            display: inline-block;
-          }
-        }
-      }
-    }
 
     > p {
       //  Make the description shorter
@@ -415,26 +352,29 @@
   -khtml-user-select: none;
   -webkit-user-select: none;
   -o-user-select: none;
-  align-items: baseline;
 
   .post-info-date {
     color: $text-mute-color;
-    font-size: $small-font-size;
-    word-spacing: 1px;
+    line-height: 0.99;
+    display: flex;
 
     &::before {
+      word-spacing: 1;
+      padding: 0px 5px 0px 0px;
       content: "calendar_today";
-      font-family: "Material Icons Round";
-      font-size: 12px;
-      line-height: 1;
-      padding-right: 5px;
+      font-family: "Material Symbols Rounded";
+      font-variation-settings:
+      'FILL' 1,
+      'wght' 700,
+      'GRAD' 1,
+      'opsz' 48;
     }
   }
 
   .post-info-pin {
     background-color: $table-header-bg-color;
     color: $text-mute-color;
-    border-radius: 5px;
+    border-radius: 40px;
     padding: 2px 5px 2px 5px;
     cursor: default;
     user-select: none;
@@ -442,9 +382,8 @@
     -khtml-user-select: none;
     -webkit-user-select: none;
     -o-user-select: none;
+    line-height: 0.99;
     display: flex;
-    align-items: center;
-    gap: 4px;
 
     > span {
       transform: rotate(45deg);
@@ -471,7 +410,7 @@
 // Site footer
 //
 .site-footer {
-  background-color: $footer-bg-color;
+  background: $md-sys-elevation-level2;
   padding-top: $font-spacing;
   padding-bottom: 10px;
 
@@ -489,12 +428,20 @@
       width: calc(100% - (#{$font-spacing} / 2));
       transition: $transition-links;
       word-break: break-all;
+      display: inline-block;
 
       &:first-child {
+        font-family: var(--md-sys-typescale-headline-large-font);
         font-weight: 700;
-        letter-spacing: 1px;
+        font-size: var(--md-sys-typescale-headline-large-size);
+        font-style: var(--md-sys-typescale-headline-large-font-style);
+        letter-spacing: var(--md-sys-typescale-headline-large-tracking);
+        line-height: var(--md-sys-typescale-headline-large-line-height);
+        text-transform: var(--md-sys-typescale-headline-large-text-transform);
+        text-decoration: var(--md-sys-typescale-headline-large-text-decoration);
         text-transform: uppercase;
         margin-bottom: 10px;
+        color: $md-sys-color-primary;
       }
 
       &:not(:first-child) {
@@ -502,11 +449,11 @@
       }
 
       > a {
-        color: rgba(128, 134, 139, 0.57);
+        color: $md-sys-color-primary;
         font-weight: 500;
 
         &:visited {
-          color: rgba(128, 134, 139, 0.57);
+          color: $md-sys-color-primary;
         }
 
         &:hover {
@@ -517,18 +464,24 @@
 
     .footer-product {
       list-style: none;
-      color: $text-color;
+      color: $md-sys-color-primary;
       width: calc(100% - (#{$font-spacing} / 2));
       padding: 0 ($font-spacing / 2);
 
       &:first-child {
-        padding: 1px 0px 0px;
-        font-size: 2rem;
+        padding: 20px 0px 0px;
+        font-family: var(--md-sys-typescale-display-small-font);
         font-weight: 900;
+        font-size: var(--md-sys-typescale-display-small-size);
+        font-style: var(--md-sys-typescale-display-small-font-style);
+        letter-spacing: var(--md-sys-typescale-display-small-tracking);
+        line-height: var(--md-sys-typescale-display-small-line-height);
+        text-transform: var(--md-sys-typescale-display-small-text-transform);
+        text-decoration: var(--md-sys-typescale-display-small-text-decoration);
       }
 
       &:hover {
-        color: $text-color;
+        color: $md-sys-color-primary;
         text-decoration: none;
       }
     }
