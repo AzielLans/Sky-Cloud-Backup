@@ -383,6 +383,9 @@ pre {
   }
 
   table {
+    tr{
+      background-color: initial;
+    }
     td pre {
       overflow: visible; // Fixed iOS safari overflow-x
       word-break: normal; // Fixed iOS safari linenos code break
@@ -390,7 +393,7 @@ pre {
   }
 
   .highlighter-rouge & {
-    background-color: $md-sys-elevation-level2;
+    background: $md-sys-elevation-level2;
   }
 }
 

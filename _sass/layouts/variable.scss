@@ -96,6 +96,24 @@ $medium-width: 442px !default;
   }
 }
 
+@mixin btn {
+      color: $md-sys-color-primary-dark;
+      font-size: $md-sys-typescale-headline-small-size;
+      font-weight: $md-sys-typescale-label-large-weight;
+      background: $md-sys-elevation-level4;
+      transition-timing-function: cubic-bezier(
+        $md-sys-motion-easing-emphasized-x0,
+        $md-sys-motion-easing-emphasized-y0,
+        $md-sys-motion-easing-emphasized-x1,
+        $md-sys-motion-easing-emphasized-y1);
+      border-radius: 40px;
+
+      &:hover {
+        border-radius: 10px;
+        background: $md-sys-elevation-level5;
+      }
+}
+
 @mixin prompt($gf-icon, $gf-color, $bg-color, $fnt-fam) {
   border-radius: 5px;
   padding: 0.8rem 1.2rem;

@@ -6,7 +6,7 @@
     "tips_and_updates",
     $prompt-tip-icon-color,
     $prompt-tip-bg-color,
-    "Material Icons Outlined"
+    "material symbols rounded"
   );
 }
 
@@ -15,7 +15,7 @@
     "tips_and_updates",
     $prompt-tip-icon-color,
     $prompt-tip-bg-color,
-    "Material Icons Outlined"
+    "material symbols rounded"
   );
 }
 
@@ -24,7 +24,7 @@
     "info",
     $prompt-info-icon-color,
     $prompt-info-bg-color,
-    "Material Icons Outlined"
+    "material symbols rounded"
   );
 }
 
@@ -33,7 +33,7 @@
     "warning",
     $prompt-warning-icon-color,
     $prompt-warning-bg-color,
-    "Material Icons Round"
+    "material symbols rounded"
   );
 }
 
@@ -42,7 +42,7 @@
     "dangerous",
     $prompt-danger-icon-color,
     $prompt-danger-bg-color,
-    "Material Icons Round"
+    "material symbols rounded"
   );
 }
 
@@ -53,52 +53,44 @@ table {
   margin-bottom: $font-spacing;
   width: 100%;
   text-align: $table-text-align;
-  color: $table-text-color;
+  color: $md-sys-color-on-secondary-container-dark;
   border-collapse: collapse;
   @include horizontal-scroll();
 
   tr {
     &:nth-child(even) {
-      background-color: $table-zebra-color;
+      background-color: $md-sys-color-secondary-dark;
+      color: $md-sys-color-on-secondary-dark;
+      font-weight: 600;
+    }
+
+    &:nth-child(odd) {
+      background-color: $md-sys-color-tertiary-dark;
+      color: $md-sys-color-on-tertiary-dark;
+      font-weight: 600;
     }
   }
 
   th {
     padding: ($font-spacing / 3) ($font-spacing / 2);
-    border-bottom: 3px solid $text-color;
-    border-left: 1px solid $md-sys-color-outline-dark;
-    border-right: 1px solid $md-sys-color-outline-dark;
-    background-color: $md-sys-color-primary-container-dark;
+    border-bottom: 3px solid $md-sys-color-surface-variant-dark;
+    border-left: 1px solid $md-sys-color-surface-variant-dark;
+    border-right: 1px solid $md-sys-color-surface-variant-dark;
+    background-color: $md-ref-palette-secondary-80;
+    color: $md-sys-color-on-secondary-dark;
   }
 
   td {
     padding: ($font-spacing / 3) ($font-spacing / 2);
-    border-left: 1px solid $md-sys-color-outline-dark;
-    border-right: 1px solid $md-sys-color-outline-dark;
+    border-left: 1px solid $md-sys-color-surface-variant-dark;
+    border-right: 1px solid $md-sys-color-surface-variant-dark;
   }
 }
 
 
 .btn {
   padding: 8px 25px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  color: $text-color;
-  background-color: $btn-bg-color;
-  transition: $transition-btn;
-
-  &,
-  &:visited {
-    color: $text-color;
-  }
-
-  &:hover {
-    color: $btn-text-hover-color;
-    text-decoration: none;
-    background-color: $btn-color-hover;
-    border-color: $btn-color-hover;
-  }
+  @include btn;
 }
 
 //
@@ -111,18 +103,17 @@ table {
   right: 20px;
   width: 50px;
   height: 50px;
-  background-color: $BTT-bg-color;
-  color: $BTT-svg-color;
-  border: 2px solid $BTT-bg-color;
+  background: $md-sys-elevation-level3;
+  color: $md-sys-color-primary-dark;
+  padding: 2px;
   cursor: pointer;
-  text-align: center;
   border-radius: 50%;
-  text-align: center;
   transition: $transition-btn;
   z-index: 2;
+  align-items: center;
 
   > i {
-    // padding-top: 3px;
+    padding-left: 1px;
     font-size: 48px;
     font-weight: 700;
   }
@@ -163,8 +154,9 @@ table {
 .post-nav-svg {
   color: $footer-links-color;
   transition: $tansitions-page-bar;
-  padding: 8px;
+  padding: 8px 8px 8px 8px;
   border-radius: 50px;
+  display: flex;
 
   &:hover {
     background-color: rgba(255, 255, 255, 0.1);

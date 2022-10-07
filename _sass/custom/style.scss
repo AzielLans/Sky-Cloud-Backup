@@ -24,6 +24,11 @@
   }
 }
 
+.material-style {
+  @include material-icons;
+  font-size: font;
+}
+
 .logo-moblie {
   display: inline-block;
   position: relative;
@@ -74,9 +79,6 @@
       color: $header-link-color;
     }
   }
-}
-.material-style {
-display: flex;
 }
 .container {
   > span {
