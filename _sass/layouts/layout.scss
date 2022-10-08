@@ -27,14 +27,8 @@
 
     // Download btn
     &:first-child {
-      @include btn;
+      @include btn($md-sys-color-on-secondary-dark,  $md-sys-color-secondary-dark, $md-sys-color-secondary-dark  );
       padding: 11px 19px 13px;
-      background-color: $md-sys-color-secondary-dark;
-      color: $md-sys-color-on-secondary-dark;
-
-      &:hover {
-        background: $md-sys-color-secondary-dark;
-      }
     }
   }
 
@@ -47,8 +41,7 @@
     font-weight: bold;
 
     &:hover {
-      //CHANGE: hover state
-      color: $text-mute-color;
+      color: $md-ref-palette-neutral-100;
       background-color: transparent;
     }
 
@@ -163,8 +156,10 @@
       display: block;
       margin-top: 30px;
       padding: 15px 81px;
-      @include btn;
-      @include animation-fade-in(1.65);
+      @include btn($md-sys-color-primary-dark, $md-sys-color-surface-dark, $md-sys-color-surface-variant-dark  );
+      @include animation-fade-in(1.65); 
+
+      
     }
 
     .page-header-title {
@@ -244,16 +239,7 @@
 }
 
 .post-title {
-  //CHANGE: include display-large mixin 
-  font-family: var(--md-sys-typescale-display-large-font);
-  font-weight: 700;
-  font-size: var(--md-sys-typescale-display-large-size);
-  font-style: var(--md-sys-typescale-display-large-font-style);
-  letter-spacing: var(--md-sys-typescale-display-large-tracking);
-  line-height: var(--md-sys-typescale-display-large-line-height);
-  text-transform: var(--md-sys-typescale-display-large-text-transform);
-  text-decoration: var(--md-sys-typescale-display-large-text-decoration);
-  line-height: 1.15;
+  @include display-large;
   margin-bottom: 5px;
 
   @media screen and (min-width: $pc-width) {
@@ -309,7 +295,8 @@
     h3,
     h4,
     h5,
-    h6 {
+    h6,
+    b1 {
       font-size: $font-size;
       line-height: 1;
       color: $md-sys-color-on-background-dark;
@@ -320,16 +307,7 @@
 
   }
   .post-link {
-    width: 50rem;
-    //CHANGE: include display-large mixin 
-    font-family: var(--md-sys-typescale-display-large-font);
-    font-weight: 500;
-    font-size: var(--md-sys-typescale-display-large-size);
-    font-style: var(--md-sys-typescale-display-large-font-style);
-    letter-spacing: var(--md-sys-typescale-display-large-tracking);
-    line-height: var(--md-sys-typescale-display-large-line-height);
-    text-transform: var(--md-sys-typescale-display-large-text-transform);
-    text-decoration: var(--md-sys-typescale-display-large-text-decoration);
+    @include display-large;
     color: $md-sys-color-primary-dark;
   }
 }
@@ -428,15 +406,7 @@
       transition: $transition-links;
 
       &:first-child {
-        //CHANGE: include headline-large mixin 
-        font-family: var(--md-sys-typescale-headline-large-font);
-        font-weight: 700;
-        font-size: var(--md-sys-typescale-headline-large-size);
-        font-style: var(--md-sys-typescale-headline-large-font-style);
-        letter-spacing: var(--md-sys-typescale-headline-large-tracking);
-        line-height: var(--md-sys-typescale-headline-large-line-height);
-        text-transform: var(--md-sys-typescale-headline-large-text-transform);
-        text-decoration: var(--md-sys-typescale-headline-large-text-decoration);
+        @include headline-large;
         text-transform: uppercase;
         margin-bottom: 10px;
         color: $md-sys-color-primary-dark;
@@ -471,15 +441,7 @@
 
       &:first-child {
         padding: 20px 0px 0px;
-        //CHANGE: include display-large mixin 
-        font-family: var(--md-sys-typescale-display-small-font);
-        font-weight: 900;
-        font-size: var(--md-sys-typescale-display-small-size);
-        font-style: var(--md-sys-typescale-display-small-font-style);
-        letter-spacing: var(--md-sys-typescale-display-small-tracking);
-        line-height: var(--md-sys-typescale-display-small-line-height);
-        text-transform: var(--md-sys-typescale-display-small-text-transform);
-        text-decoration: var(--md-sys-typescale-display-small-text-decoration);
+        @include display-small;
       }
 
       &:hover {
@@ -541,60 +503,11 @@
   }
 }
 
-//
-// Post Nav
-//
 
-.post-nav {
-  padding-top: 5px;
-  display: inline;
-  list-style: none;
-  display: flex;
-  justify-content: space-evenly;
-  gap: 80px;
-  -ms-flex-align: center;
-  align-items: center;
-  margin: 0px;
-
-  @media screen and (min-width: $mobile-width) {
-    gap: 100px;
-  }
-}
-
-.post-nav-svg {
-  //CHANGE: Add material theme
-  color: $footer-links-color;
-  transition: $tansitions-page-bar;
-  padding: 8px;
-  border-radius: 50px;
-
-  &:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-  }
-}
-
-.disable-svg {
-  cursor: not-allowed;
-  color: $text-mute-color;
-}
-
-.post-nav-num {
-  user-select: none;
-  -moz-user-select: none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-  -o-user-select: none;
-  cursor: default;
-  display: inline;
-  @include text-muted;
-}
-
-//
 // Post footer
 //
 .post-footer {
-  //CHANGE: Add material theme
   padding-top: 13px;
-  border-top: 3px solid $border-color;
+  border-top: 3px solid $md-sys-color-outline-dark;
   margin: 0px;
 }

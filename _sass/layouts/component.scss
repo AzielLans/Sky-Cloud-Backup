@@ -90,7 +90,7 @@ table {
 
 .btn {
   padding: 8px 25px;
-  @include btn;
+  @include btn($md-sys-color-primary-dark, $md-sys-elevation-level2, $md-sys-elevation-level5);
 }
 
 //
@@ -152,14 +152,19 @@ table {
 }
 
 .post-nav-svg {
-  color: $footer-links-color;
+  color: $md-sys-color-primary-dark;
+  background: $md-sys-color-surface-dark;
+  box-shadow:  1px 1px 6px 1px $md-ref-palette-neutral-0;
   transition: $tansitions-page-bar;
   padding: 8px 8px 8px 8px;
   border-radius: 50px;
   display: flex;
+  transition: font-variation-settings cubic-bezier(0.4, 0, 0.2, 1) 250ms;
+  font-variation-settings: "wght" 500;
 
   &:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background: $md-sys-elevation-level5;
+    font-variation-settings: "wght" 700;
   }
 }
 
