@@ -1,132 +1,45 @@
-<!DOCTYPE html>
-<html><head>
-  <link rel="stylesheet" href="/jekyll-theme-fica/assets/css/Style.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" />
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" /><script defer src="https://www.googletagmanager.com/gtag/js?id="></script>
-<script>
-  document.addEventListener("DOMContentLoaded", function(event) {
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-
-    gtag('js', new Date());
-    gtag('config', '');
-  });
-</script><title>Sky Cloud Backup | A Minecraft Backup that supports both Bedrock and Java.</title></head>
-<body><nav class="header-home-mod site-nav" id="nav"><input type="checkbox" id="check" />
-  <label for="check">
-    <span class="material-symbols-rounded checkbtn"> menu </span>
-  </label>
-  <a class="logo" href="/jekyll-theme-fica/">Sky Cloud Backup</a>
-  <div class="nav-links">
-    <a href="https://github.com/Involts/jekyll-theme-fica/zipball/master">Download</a>
-    <a href="/jekyll-theme-fica/Releases/">Releases</a> 
-    <a href="/jekyll-theme-fica/About/">About</a>
-  </div>
-</nav>
-<header class="site-banner" role="banner">
-    <div class="banner-content" id="banner-content">
-      <p class="page-header-title">Sky Cloud Backup</p>
-      <p class="site-banner-description">A Minecraft Backup that supports both Bedrock and Java.</p>
-      <a href="https://github.com/Involts/jekyll-theme-fica/zipball/master">Download</a>
-    </div>
-    <div class="img">
-      <img src="/jekyll-theme-fica/assets/img/homepage-pic.png">
-    </div>
-  </header>
-
-  <main class="content">
-    <div class="wrapper"><!-- CHANGE: add scb homepage -->
-<p><img src="https://user-images.githubusercontent.com/100028421/160099110-7571a93c-a1a1-4f45-b969-d7f4dccc3b4c.png" /></p>
+I"�%<p>//CHANGE: hover state
+<img src="https://user-images.githubusercontent.com/100028421/160099110-7571a93c-a1a1-4f45-b969-d7f4dccc3b4c.png" /></p>
 
 <p>You can preview the theme to <a href="https://involts.github.io/jekyll-theme-fica/">see what it looks like</a> or
 <a href="https://github.com/Involts/jekyll-theme-fica/zipball/master">download it today!</a></p>
 
 <p><a href="https://badge.fury.io/rb/jekyll-theme-fica"><img src="https://badge.fury.io/rb/jekyll-theme-fica.svg" alt="Gem Version" /></a></p>
-      <h1 id="installation">
-        
-        
-          Installation <a href="#installation">#</a>
-        
-        
-      </h1>
-    
-      <h3 id="step-1">
-        
-        
-          Step 1: <a href="#step-1">#</a>
-        
-        
-      </h3>
-    
+
+<h1 id="installation">Installation</h1>
+
+<h3 id="step-1">Step 1:</h3>
 
 <p>Add <code class="language-plaintext highlighter-rouge">gem 'jekyll-theme-fica', '~&gt; 0.2.0'</code> to your <code class="language-plaintext highlighter-rouge">Gemfile</code></p>
-      <h3 id="step-2">
-        
-        
-          Step 2: <a href="#step-2">#</a>
-        
-        
-      </h3>
-    
+
+<h3 id="step-2">Step 2:</h3>
 
 <p>Add <code class="language-plaintext highlighter-rouge">theme: jekyll-theme-fica</code>, if you run it locally and</p>
 
 <p><code class="language-plaintext highlighter-rouge">remote_theme: Involts/jekyll-theme-fica</code>, if you using GitHub-Pages to your <code class="language-plaintext highlighter-rouge">_config.yml</code>.</p>
-      <h3 id="step-3">
-        
-        
-          Step 3: <a href="#step-3">#</a>
-        
-        
-      </h3>
-    
+
+<h3 id="step-3">Step 3:</h3>
 
 <p>Run <code class="language-plaintext highlighter-rouge">$ bin/run insdep</code>, if you download it on Github and</p>
 
 <p><code class="language-plaintext highlighter-rouge">$ bundle install</code>, if you download it on RubyGems.org</p>
-      <h3 id="step-4">
-        
-        
-          Step 4: <a href="#step-4">#</a>
-        
-        
-      </h3>
-    
+
+<h3 id="step-4">Step 4:</h3>
 
 <p>Run <code class="language-plaintext highlighter-rouge">$ bin/run server</code>, if you download it on Github and</p>
 
 <p><code class="language-plaintext highlighter-rouge">$ bundle exec jekyll serve</code> if you download it on RubyGems.org</p>
-      <h2 id="reminders">
-        
-        
-          Reminders: <a href="#reminders">#</a>
-        
-        
-      </h2>
-    
+
+<h2 id="reminders">Reminders:</h2>
 
 <blockquote class="prompt-info">
   <p>Before publishing the site to github-pages, replace the varable of baseurl <code class="language-plaintext highlighter-rouge">baseurl: /jekyll-fica-theme</code> in the <code class="language-plaintext highlighter-rouge">_config.yml</code> in <code class="language-plaintext highlighter-rouge">_config.yml</code> .
 if you have brought a doman remove the varable <code class="language-plaintext highlighter-rouge">baseurl: /jekyll-fica-theme</code> in the <code class="language-plaintext highlighter-rouge">_config.yml</code></p>
 </blockquote>
-      <h1 id="customiztion">
-        
-        
-          Customiztion <a href="#customiztion">#</a>
-        
-        
-      </h1>
-    
-      <h2 id="customizing-_configyml">
-        
-        
-          Customizing <code class="language-plaintext highlighter-rouge">_config.yml</code> <a href="#customizing-_configyml">#</a>
-        
-        
-      </h2>
-    
+
+<h1 id="customiztion">Customiztion</h1>
+
+<h2 id="customizing-_configyml">Customizing <code class="language-plaintext highlighter-rouge">_config.yml</code></h2>
 
 <p>Fica Theme will respect the following variables, in your <code class="language-plaintext highlighter-rouge">_config.yml</code> file:</p>
 
@@ -175,22 +88,10 @@ if you have brought a doman remove the varable <code class="language-plaintext h
   <span class="na">header_name_3</span><span class="pi">:</span> <span class="s">About</span>
   <span class="na">header_link_3</span><span class="pi">:</span> <span class="s">/About/</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
-      <h2 id="binrun-testing-command-suite">
-        
-        
-          <code class="language-plaintext highlighter-rouge">bin/run</code> testing command suite: <a href="#binrun-testing-command-suite">#</a>
-        
-        
-      </h2>
-    
-      <h3 id="usage">
-        
-        
-          Usage: <a href="#usage">#</a>
-        
-        
-      </h3>
-    
+
+<h2 id="binrun-testing-command-suite"><code class="language-plaintext highlighter-rouge">bin/run</code> testing command suite:</h2>
+
+<h3 id="usage">Usage:</h3>
 
 <p><code class="language-plaintext highlighter-rouge">bin/run</code> <strong>subcommand</strong></p>
 
@@ -228,14 +129,8 @@ if you have brought a doman remove the varable <code class="language-plaintext h
     </tr>
   </tbody>
 </table>
-      <h2 id="customizing-the-styles-vriables-and-color-scheme">
-        
-        
-          Customizing the Styles, Vriables and Color Scheme: <a href="#customizing-the-styles-vriables-and-color-scheme">#</a>
-        
-        
-      </h2>
-    
+
+<h2 id="customizing-the-styles-vriables-and-color-scheme">Customizing the Styles, Vriables and Color Scheme:</h2>
 
 <p>if you like to override the default styles of the theme, go to <code class="language-plaintext highlighter-rouge">_sass/Custom/Styles.scss</code>.</p>
 
@@ -246,45 +141,21 @@ if you have brought a doman remove the varable <code class="language-plaintext h
 <p>if you like to change the colors of the Light Theme in the site, go to <code class="language-plaintext highlighter-rouge">_sass/themes/dark theme/Light_Theme.scss</code>.</p>
 
 <p>Want to change <a href="#how-to-change-dark-mode-to-light-mode">the themes?</a></p>
-      <h2 id="how-to-replace-the-logo-on-the-header-">
-        
-        
-          How to replace the logo on the header ? <a href="#how-to-replace-the-logo-on-the-header-">#</a>
-        
-        
-      </h2>
-    
+
+<h2 id="how-to-replace-the-logo-on-the-header-">How to replace the logo on the header ?</h2>
 
 <p>Replace logo.png at the top of your site.
 Make sure that the logo is 36x36 pixels to avoid overlapping the title.</p>
-      <h2 id="how-to-replace-the-pictue-at-the-homepage-">
-        
-        
-          how to replace the pictue at the homepage ? <a href="#how-to-replace-the-pictue-at-the-homepage-">#</a>
-        
-        
-      </h2>
-    
+
+<h2 id="how-to-replace-the-pictue-at-the-homepage-">how to replace the pictue at the homepage ?</h2>
 
 <p>Replace <code class="language-plaintext highlighter-rouge">assets/img/homepage-pic.png</code></p>
-      <h1 id="customizing-google-analytics-code">
-        
-        
-          Customizing Google Analytics code <a href="#customizing-google-analytics-code">#</a>
-        
-        
-      </h1>
-    
+
+<h1 id="customizing-google-analytics-code">Customizing Google Analytics code</h1>
 
 <p>Google has released several iterations to their Google Analytics code over the years since this theme was first created. If you would like to take advantage of the latest code, paste it into <code class="language-plaintext highlighter-rouge">_includes/Google-Analytics.html</code> in your Jekyll site.</p>
-      <h2 id="how-to-change-dark-mode-to-light-mode">
-        
-        
-          how to change dark mode to light mode <a href="#how-to-change-dark-mode-to-light-mode">#</a>
-        
-        
-      </h2>
-    
+
+<h2 id="how-to-change-dark-mode-to-light-mode">how to change dark mode to light mode</h2>
 
 <p>Replace:</p>
 
@@ -295,97 +166,10 @@ Make sure that the logo is 36x36 pixels to avoid overlapping the title.</p>
 </span></pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>in <code class="language-plaintext highlighter-rouge">_sass/jekyll-theme-fica.scss</code>.</p>
-      <h2 id="contributing">
-        
-        
-          Contributing <a href="#contributing">#</a>
-        
-        
-      </h2>
-    
+
+<h2 id="contributing">Contributing</h2>
 
 <p>Interested in contributing to Fica Theme? We’d love your help. Fica Theme is an open source project, built one contribution at a time by users like you. See <a href="docs/contributing.md">the contributing file</a> for instructions on how to contribute.</p>
 
-<p>The theme is available as open source under the terms of the <a href="https://opensource.org/licenses/MIT">MIT License</a>.</p></div>
-  </main><!-- BTT = Back To Top -->
-
-<buttton id="back-to-top">
-    <i class="material-symbols-rounded" style="font-family: 'Material Symbols Rounded' ;">keyboard_arrow_up</i>
-</buttton>
-
-<script src="/jekyll-theme-fica/js/back-to-top.js"></script>
-<script src="/jekyll-theme-fica/js/Main.js"></script>
-<footer class="site-footer">
-  <div class="footer-wrapper">
-    <div class="site-footer-wrapper">
-      <div class="footer-col">
-        <li class="footer-product">Sky Cloud Backup</li>
-        <li class="footer-product">A Minecraft Backup that supports both Bedrock and Java.</li>
-      </div>
-      <div class="footer-col">
-        <li class="links-footer">
-          <span>On Github</span>
-        </li>
-        <li class="links-footer">
-          <a href="https://github.com/Involts/Sky-Cloud-Backup">
-            <svg class="svg-icon github">
-              <use xlink:href="/jekyll-theme-fica/assets/fica-icons.svg#github"></use></svg
-            ><span class="Links-space">Repository</span>
-          </a>
-        </li>
-        <li class="links-footer">
-          <a href="">
-            <span class=" material-style"> new_releases </span>
-            <span class="Links-space">Releases</span>
-          </a>
-        </li>
-        <li class="links-footer">
-          <a href="https://github.com/Involts/Sky-Cloud-Backup/issues">
-            <span class=" material-style"> bug_report </span>
-            <span>Report Bugs</span>
-          </a>
-        </li>
-      </div>
-      <div class="footer-col">
-        <li class="links-footer">
-          <span>Sky Cloud Backup</span>
-        </li>
-        <li class="links-footer">
-          <a href="https://github.com/Involts/jekyll-theme-fica/zipball/master">
-            <span class=" material-style"> download </span>
-            <span>Download</span>
-          </a>
-        </li>
-        <li class="links-footer">
-          <a href="">
-            <span class=" material-style"> menu_book </span>
-            <span class="Links-space">Wiki</span>
-          </a>
-        </li>
-        <li class="links-footer">
-          <a href="">
-            <svg class="svg-icon github">
-              <use xlink:href="/jekyll-theme-fica/assets/fica-icons.svg#github"></use></svg
-            ><span class="Links-space">About</span>
-          </a>
-        </li>
-      </div>
-    </div>
-  </div><div class="footer-info text-muted">
-    <span>
-      © 2022 
-      <a href="https://github.com/Involts"> Involts</a>
-      Some rights reserved.
-    </span>
-    <span>
-      Powered by
-      <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a>
-      with
-      <a href="https://github.com/Involts/jekyll-theme-fica" target="_blank" rel="noopener"
-        >jekyll-theme-fica</a
-      >
-    </span>
-  </div></footer>
-</body>
-
-</html>
+<p>The theme is available as open source under the terms of the <a href="https://opensource.org/licenses/MIT">MIT License</a>.</p>
+:ET
