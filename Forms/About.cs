@@ -32,11 +32,11 @@ namespace Sky_Cloud_Backup
             MessageBox.Show(text, "Sky Cloud Backup", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        private void Bugs_Click( object sender, EventArgs e )
+        private void Bugs_Click ( object sender, EventArgs e )
         {
             try
             {
-               System.Diagnostics.Process.Start("https://github.com/Involts/Sky-Cloud-Backup/issues");
+                System.Diagnostics.Process.Start("https://github.com/Involts/Sky-Cloud-Backup/issues");
             }
             catch (Exception ex)
             {

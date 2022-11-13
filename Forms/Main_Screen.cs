@@ -393,8 +393,8 @@ namespace Sky_Cloud_Backup
             jsonload_comp();
             Application.Exit();
         }
-        
-        private void jsonload_comp()
+
+        private void jsonload_comp ()
         {
             setsetting sjs = new setsetting()
             {
@@ -670,56 +670,47 @@ namespace Sky_Cloud_Backup
             string pth_db = @"Temp\db";
             string pth_level_data = @"Temp\level.dat";
             string pth_level_data_old = @"Temp\level.dat_old";
-            if (File.Exists(pth_name))
-            {
-                if (Directory.Exists(pth_db))
-                {
-                    if (File.Exists(pth_level_data))
-                    {
-                        if (File.Exists(pth_level_data_old))
-                        {
-                            notify_Backup_Bedrock.BalloonTipTitle = "Bedrock Backup";
-                            notify_Backup_Bedrock.BalloonTipText = "You're Bedrock world is Backuping";
-                            notify_Backup_Bedrock.Visible = true;
-                            ProcessStartInfo startInfo = new ProcessStartInfo();
-                            startInfo.FileName = "Backup_Loading_Screen.exe";
-                            Process process = new Process();
-                            process.StartInfo = startInfo;
-                            process.StartInfo.Arguments = "false";
-                            process.Start();
-                            add.filedelete(@"Temp", true);
-                            Arcfilecreat();
-                            notify_Backup_Bedrock.Visible = false;
-                            process.Kill();
-                            add.filedelete(@"Temp", true);
-                            MaterialSnackBar finish_Bedrock = new MaterialSnackBar("You're Bedrock world is backup", "OK", true);
-                            finish_Bedrock.Show(this);
-                        }
-                        else
-                        {
-                            string txt = "The File Selected isn't a valid Bedrock Minecraft World, Please try again";
-                            Backup_error(txt);
-
-                        }
-
-                    }
-                    else
-                    {
-                        string txt = "The File Selected isn't a valid Bedrock Minecraft World, Please try again";
-                        Backup_error(txt);
-                    }
-                }
-                else
-                {
-                    string txt = "The File Selected isn't a valid Bedrock Minecraft World, Please try again";
-                    Backup_error(txt);
-                }
-            }
-            else
+            if (!File.Exists(pth_name))
             {
                 string txt = "The File Selected isn't a valid Bedrock Minecraft World, Please try again";
                 Backup_error(txt);
+                return;
             }
+            if (!Directory.Exists(pth_db))
+            {
+                string txt = "The File Selected isn't a valid Bedrock Minecraft World, Please try again";
+                Backup_error(txt);
+                return;
+            }
+            if (!File.Exists(pth_level_data))
+            {
+                string txt = "The File Selected isn't a valid Bedrock Minecraft World, Please try again";
+                Backup_error(txt);
+                return;
+            }
+            if (!File.Exists(pth_level_data_old))
+            {
+                string txt = "The File Selected isn't a valid Bedrock Minecraft World, Please try again";
+                Backup_error(txt);
+                return;
+            }
+            jsonload_comp();
+            notify_Backup_Bedrock.BalloonTipTitle = "Bedrock Backup";
+            notify_Backup_Bedrock.BalloonTipText = "You're Bedrock world is Backuping";
+            notify_Backup_Bedrock.Visible = true;
+            ProcessStartInfo startInfo = new ProcessStartInfo();
+            startInfo.FileName = "Backup_Loading_Screen.exe";
+            Process process = new Process();
+            process.StartInfo = startInfo;
+            process.StartInfo.Arguments = "false";
+            process.Start();
+            add.filedelete(@"Temp", true);
+            Arcfilecreat();
+            notify_Backup_Bedrock.Visible = false;
+            process.Kill();
+            add.filedelete(@"Temp", true);
+            MaterialSnackBar finish_Bedrock = new MaterialSnackBar("You're Bedrock world is backup", "OK", true);
+            finish_Bedrock.Show(this);
         }
 
         private void Chk_World_Java ()
@@ -728,55 +719,47 @@ namespace Sky_Cloud_Backup
             string pth_level = @"Temp\level.dat";
             string pth_level_dat = @"Temp\level.dat_old";
             string pth_session_lock = @"Temp\session.lock";
-            if (File.Exists(pth_icon))
-            {
-                if (File.Exists(pth_level))
-                {
-                    if (File.Exists(pth_level_dat))
-                    {
-                        if (File.Exists(pth_session_lock))
-                        {
-                            notify_Backup_Java.BalloonTipTitle = "Java Backup";
-                            notify_Backup_Java.BalloonTipText = "You're Java world is Backuping";
-                            notify_Backup_Java.Visible = true;
-                            notify_Backup_Java.ShowBalloonTip(500);
-                            ProcessStartInfo startInfo = new ProcessStartInfo();
-                            startInfo.FileName = "Backup_Loading_Screen.exe";
-                            Process process = new Process();
-                            process.StartInfo = startInfo;
-                            process.StartInfo.Arguments = "false";
-                            process.Start();
-                            add.filedelete(@"Temp", true);
-                            notify_Backup_Java.Visible = false;
-                            Arcfilecreat_Java();
-                            process.Kill();
-                            add.filedelete(@"Temp", true);
-                            MaterialSnackBar finish_Java = new MaterialSnackBar("You're Java world is backup", "OK", true);
-                            finish_Java.Show(this);
-                        }
-                        else
-                        {
-                            string txt = "The File Selected isn't a valid Java Minecraft World, Please try again";
-                            Backup_error(txt);
-                        }
-                    }
-                    else
-                    {
-                        string txt = "The File Selected isn't a valid Java Minecraft World, Please try again";
-                        Backup_error(txt);
-                    }
-                }
-                else
-                {
-                    string txt = "The File Selected isn't a valid Java Minecraft World, Please try again";
-                    Backup_error(txt);
-                }
-            }
-            else
+            if (!File.Exists(pth_icon))
             {
                 string txt = "The File Selected isn't a valid Java Minecraft World, Please try again";
                 Backup_error(txt);
+                return;
             }
+            if (!Directory.Exists(pth_level))
+            {
+                string txt = "The File Selected isn't a valid Java Minecraft World, Please try again";
+                Backup_error(txt);
+                return;
+            }
+            if (!File.Exists(pth_level_dat))
+            {
+                string txt = "The File Selected isn't a valid Java Minecraft World, Please try again";
+                Backup_error(txt);
+                return;
+            }
+            if (!File.Exists(pth_session_lock))
+            {
+                string txt = "The File Selected isn't a valid Java Minecraft World, Please try again";
+                Backup_error(txt);
+                return;
+            }
+            notify_Backup_Java.BalloonTipTitle = "Java Backup";
+            notify_Backup_Java.BalloonTipText = "You're Java world is Backuping";
+            notify_Backup_Java.Visible = true;
+            notify_Backup_Java.ShowBalloonTip(500);
+            ProcessStartInfo startInfo = new ProcessStartInfo();
+            startInfo.FileName = "Backup_Loading_Screen.exe";
+            Process process = new Process();
+            process.StartInfo = startInfo;
+            process.StartInfo.Arguments = "false";
+            process.Start();
+            add.filedelete(@"Temp", true);
+            notify_Backup_Java.Visible = false;
+            Arcfilecreat_Java();
+            process.Kill();
+            add.filedelete(@"Temp", true);
+            MaterialSnackBar finish_Java = new MaterialSnackBar("You're Java world is backup", "OK", true);
+            finish_Java.Show(this);
 
         }
         /////////////////////////////////////CustomRename///////////////////////////////////////////////////////////////////////
@@ -784,24 +767,22 @@ namespace Sky_Cloud_Backup
         {
             if (!string.IsNullOrEmpty(Backup_Name.Text))
             {
-                if (Backup_name_for.Checked)
-                {
-                    if (!string.IsNullOrEmpty(Backup_Name.Text))
-                    {
-                        if (Edtitions.Checked)
-                        {
-                            Rename_Backup_Custom_Java(Properties.Settings.Default.Defualt_name_textbox = Backup_Name.Text);
-                        }
-                    }
-                }
-                else
+                if (!Backup_name_for.Checked)
                 {
                     if (!string.IsNullOrEmpty(Backup_Name.Text))
                     {
                         Rename_Backup_Custom_Bedrock(Properties.Settings.Default.Defualt_name_textbox = Backup_Name.Text);
                     }
                 }
+                if (!string.IsNullOrEmpty(Backup_Name.Text))
+                {
+                    if (Edtitions.Checked)
+                    {
+                        Rename_Backup_Custom_Java(Properties.Settings.Default.Defualt_name_textbox = Backup_Name.Text);
+                    }
+                }
             }
+
         }
 
         public void Rename_Backup_Custom_Bedrock ( string name )

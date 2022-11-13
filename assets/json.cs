@@ -1,7 +1,4 @@
-﻿using Newtonsoft.Json;
-using System.IO;
-
-namespace Sky_Cloud_Backup.assets
+﻿namespace Sky_Cloud_Backup.assets
 {
     class setsetting
     {
