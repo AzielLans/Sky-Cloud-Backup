@@ -251,6 +251,12 @@ namespace Sky_Cloud_Backup
             if (Edtitions.Checked)
             {
                 Java_Backup();
+                ProcessStartInfo startInfo = new ProcessStartInfo();
+                startInfo.FileName = "Backup_Loading_Screen.exe";
+                Process process = new Process();
+                process.StartInfo = startInfo;
+                process.StartInfo.Arguments = "true";
+                process.Start();
                 foreach (var filename in Directory.GetFiles(@"upload"))
                 {
                     var newFilename = string.Format("{0}.zip", "Backup Java world");
@@ -267,11 +273,17 @@ namespace Sky_Cloud_Backup
                 });
 
                 google_drive.Upload_to_Drive(service, "Backup Java world" + DateTime.Now.ToString("dddd, dd MMMM yyyy"), @"upload");
+                process.Kill();
             }
             else
             {
                 Bedrock_Backup();
-
+                ProcessStartInfo startInfo = new ProcessStartInfo();
+                startInfo.FileName = "Backup_Loading_Screen.exe";
+                Process process = new Process();
+                process.StartInfo = startInfo;
+                process.StartInfo.Arguments = "true";
+                process.Start();
                 string name = "Backup Bedrock world";
                 foreach (var filename in Directory.GetFiles(@"upload"))
                 {
@@ -287,6 +299,7 @@ namespace Sky_Cloud_Backup
                     ApplicationName = google_drive.ApplicationName,
                 });
                 google_drive.Upload_to_Drive(service, "Backup Bedrock world " + DateTime.Now.ToString("dddd, dd MMMM yyyy"), @"upload/Backup Bedrock world.zip");
+                process.Kill();
 
             }
             add.filedelete(@"upload", true);
@@ -654,6 +667,7 @@ namespace Sky_Cloud_Backup
                             startInfo.FileName = "Backup_Loading_Screen.exe";
                             Process process = new Process();
                             process.StartInfo = startInfo;
+                            process.StartInfo.Arguments = "false";
                             process.Start();
                             add.filedelete(@"Temp", true);
                             Bedrock_Compress();
@@ -712,6 +726,7 @@ namespace Sky_Cloud_Backup
                             startInfo.FileName = "Backup_Loading_Screen.exe";
                             Process process = new Process();
                             process.StartInfo = startInfo;
+                            process.StartInfo.Arguments = "false";
                             process.Start();
                             add.filedelete(@"Temp", true);
                             Java_Bedrock_Notifier.Visible = false;
@@ -1057,7 +1072,7 @@ namespace Sky_Cloud_Backup
 
             if (!File.Exists(path))
             {
-                MaterialDialog Com = new MaterialDialog(this, "Sky Cloud Backup", "Are you sure that you Continue to sign in to google drive, Google didn't verifed by Google", "OK", true, "Never mind", true);
+                MaterialDialog Com = new MaterialDialog(this, "Sky Cloud Backup", "Are you sure that you Continue to sign in to google drive, Google didn't verifed it", "OK", true, "Never mind", true);
                 DialogResult result = Com.ShowDialog(this);
                 if (result == DialogResult.OK)
                 {

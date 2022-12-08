@@ -237,7 +237,6 @@
     <None Include="Resources\SCB-Icon.png" />
     <Content Include="SCB.ico" />
     <None Include="Resources\SCB-B41.png" />
-    <None Include="Resources\SCB-B4.png" />
     <None Include="Resources\wiki-a1_Alpha_0.41.png" />
     <None Include="Resources\wiki-a1_Alpha_0.4.png" />
     <None Include="Resources\Splash_Screen_Alpha_0.4.png" />
