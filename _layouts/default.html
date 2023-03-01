@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {%- include head.html -%}
+</head>
+<body>
+    {%- include header.html -%}
+    {%- include assets/noscript.html -%}
+    <main class="content">
+        {%- include assets/site-top-bar.html -%}
+        <div class="wrapper" id="wrapper">
+            {% if page.hide_banner %}
+                {%-  include assets/site-banner.html-%}
+            {% endif %}
+            {{ content }}
+            {% unless page.hide_footer %}
+               {%- include footer.html -%}
+            {% endunless %}    
+        </div>
+    </main>    
+    <script src="{{ "assets/js/main.js" | relative_url }}"></script>
+</body>
+</html>

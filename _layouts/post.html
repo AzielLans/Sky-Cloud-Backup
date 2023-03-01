@@ -1,35 +1,56 @@
----
-layout: default
----
-<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+<!DOCTYPE html>
+<html lang="en">
 
-  <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
-    <p class="post-meta">
-      {%- assign date_format = site.fica.date_format | default: "%b %-d, %Y" -%}
-      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-        {{ page.date | date: date_format }}
-      </time>
-      {%- if page.modified_date -%}
-        ~ 
-        {%- assign mdate = page.modified_date | date_to_xmlschema -%}
-        <time class="dt-modified" datetime="{{ mdate }}" itemprop="dateModified">
-          {{ mdate | date: date_format }}
-        </time>
-      {%- endif -%}
-      {%- if page.author -%}
-        • {% for author in page.author %}
-          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <span class="p-author h-card" itemprop="name">{{ author }}</span></span>
-            {%- if forloop.last == false %}, {% endif -%}
-        {% endfor %}
-      {%- endif -%}</p>
-  </header>
-  <div class="post-content e-content" itemprop="articleBody">
-    {%- include help_foat.html -%}
-    {{ content }}
+<head>
+  {%- include head.html -%}
+</head>
+<body>
+  {%- include header.html -%}
+  {%- include assets/noscript.html -%}
+  <main class="post-content">
+    {%- include assets/site-top-bar.html -%}
+    <div class="wrapper-post">
+      <header class="post-header">
+        <div class="post-info-date">
+          <div class="post-meta">
+            {%- assign date_format = site.fica.date_format | default: "%b %-d, %Y" -%}
+            <time class="text-unmuted" datetime="{{ page.date | date_to_xmlschema }}">
+              {{ page.date | date: date_format }}
+            </time>
+          </div>
+          {%- if page.modified_date -%}
+          <div class="post-change-date post-meta">
+            {%- assign mdate = page.modified_date |
+            date_to_xmlschema -%}
+            <span class="material-symbols-rounded">
+              edit
+            </span>
+            <time class="text-unmuted" datetime="{{ mdate }}">
+              {{ mdate | date: date_format }}
+            </time>
+          </div>
+          {%- endif -%}
+        </div>
+
+        <h1 class="post-title">{{ page.title | escape }}</h1>
+        <div class="post-author post-meta">
+          {% if site.post_author %} {% assign author = site.post_author %} {% endif %} {% if
+            page.author %} {% assign author = page.author %} {% endif %} 
+          <span itemprop="name">{{ author }}</span>
+        </div>
+      </header>
+      {% include assets/anchor-headings.html html=content anchorBody="link" anchorClass="material-symbols-rounded"   %}
+      <div class="post-footer-info-wrapper">
         <a class="btn" href="https://github.com/Involts/Sky-Cloud-Backup/releases/tag/{{page.version}}">More information</a>
-        <a class="btn" href="https://github.com/Involts/Sky-Cloud-Backup/releases/download/{{page.version}}/Sky.Cloud.Backup.{{page.download_version}}.zip">Download</a>
-        <a class="btn" href="{{site.baseurl}}/Releases">Back</a>
-  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
-</article>
+        <a  class="btn" href="https://github.com/Involts/Sky-Cloud-Backup/releases/download/{{page.version}}/Sky.Cloud.Backup.{{page.download_version}}.zip">Download</a>
+      </div>
+    </div>
+    <div class="post-toc" id="toc">
+      {% include assets/toc.html html=content h_min=1 h_max=3 %}
+    </div>
+    {% include assets/btt.html %}
+  </main>
+  <script src="{{ "assets/js/main.js" | relative_url }}"></script>
+</body>
+
+</html>

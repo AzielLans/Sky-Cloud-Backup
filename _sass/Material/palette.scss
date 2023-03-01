@@ -1,0 +1,118 @@
+//  Copyright 2016 Google Inc. All rights reserved.
+
+//  Licensed under the Apache License, Version 2.0 (the "License");
+//  you may not use this file except in compliance with the License.
+//  You may obtain a copy of the License at
+
+//      http://www.apache.org/licenses/LICENSE-2.0
+
+//  Unless required by applicable law or agreed to in writing, software
+//  distributed under the License is distributed on an "AS IS" BASIS,
+//  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//  See the License for the specific language governing permissions and
+//  limitations under the License.
+
+
+$md-sys-color-primary: #159947;
+  /* primary */
+ $md-ref-palette-primary-0: #000000;
+ $md-ref-palette-primary-10: #002109;
+ $md-ref-palette-primary-20: #003915;
+ $md-ref-palette-primary-25: #00461b;
+ $md-ref-palette-primary-30: #005322;
+ $md-ref-palette-primary-35: #006028;
+ $md-ref-palette-primary-40: #006e2f;
+ $md-ref-palette-primary-50: #008a3d;
+ $md-ref-palette-primary-60: #2aa552;
+ $md-ref-palette-primary-70: #4bc16a;
+ $md-ref-palette-primary-80: #69de82;
+ $md-ref-palette-primary-90: #85fb9c;
+ $md-ref-palette-primary-95: #c5ffc9;
+ $md-ref-palette-primary-98: #ebffe8;
+ $md-ref-palette-primary-99: #f6fff2;
+ $md-ref-palette-primary-100: #ffffff;
+  /* secondary */
+ $md-ref-palette-secondary-0: #000000;
+ $md-ref-palette-secondary-10: #00201e;
+ $md-ref-palette-secondary-20: #003734;
+ $md-ref-palette-secondary-25: #004340;
+ $md-ref-palette-secondary-30: #00504c;
+ $md-ref-palette-secondary-35: #005d58;
+ $md-ref-palette-secondary-40: #006a65;
+ $md-ref-palette-secondary-50: #00857f;
+ $md-ref-palette-secondary-60: #00a29b;
+ $md-ref-palette-secondary-70: #24beb6;
+ $md-ref-palette-secondary-80: #4fdad2;
+ $md-ref-palette-secondary-90: #70f7ee;
+ $md-ref-palette-secondary-95: #b1fff8;
+ $md-ref-palette-secondary-98: #e3fffb;
+ $md-ref-palette-secondary-99: #f2fffd;
+ $md-ref-palette-secondary-100: #ffffff;
+  /* tertiary */
+ $md-ref-palette-tertiary-0: #000000;
+ $md-ref-palette-tertiary-10: #002022;
+ $md-ref-palette-tertiary-20: #00373a;
+ $md-ref-palette-tertiary-25: #004346;
+ $md-ref-palette-tertiary-30: #004f53;
+ $md-ref-palette-tertiary-35: #005c61;
+ $md-ref-palette-tertiary-40: #00696f;
+ $md-ref-palette-tertiary-50: #00848b;
+ $md-ref-palette-tertiary-60: #00a0a9;
+ $md-ref-palette-tertiary-70: #1dbdc6;
+ $md-ref-palette-tertiary-80: #4cd9e2;
+ $md-ref-palette-tertiary-90: #6ff6ff;
+ $md-ref-palette-tertiary-95: #c3fbff;
+ $md-ref-palette-tertiary-98: #e8feff;
+ $md-ref-palette-tertiary-99: #f3feff;
+ $md-ref-palette-tertiary-100: #ffffff;
+  /* neutral */
+ $md-ref-palette-neutral-0: #000000;
+ $md-ref-palette-neutral-10: #1a1c19;
+ $md-ref-palette-neutral-20: #2e312e;
+ $md-ref-palette-neutral-25: #393c38;
+ $md-ref-palette-neutral-30: #454744;
+ $md-ref-palette-neutral-35: #51534f;
+ $md-ref-palette-neutral-40: #5d5f5b;
+ $md-ref-palette-neutral-50: #757873;
+ $md-ref-palette-neutral-60: #8f918d;
+ $md-ref-palette-neutral-70: #aaaca7;
+ $md-ref-palette-neutral-80: #c5c7c2;
+ $md-ref-palette-neutral-90: #e2e3dd;
+ $md-ref-palette-neutral-95: #f0f1ec;
+ $md-ref-palette-neutral-98: #f9faf4;
+ $md-ref-palette-neutral-99: #fcfdf7;
+ $md-ref-palette-neutral-100: #ffffff;
+  /* neutral-variant */
+ $md-ref-palette-neutral-variant-0: #000000;
+ $md-ref-palette-neutral-variant-10: #171d17;
+ $md-ref-palette-neutral-variant-20: #2b322b;
+ $md-ref-palette-neutral-variant-25: #363d36;
+ $md-ref-palette-neutral-variant-30: #414941;
+ $md-ref-palette-neutral-variant-35: #4d544c;
+ $md-ref-palette-neutral-variant-40: #596058;
+ $md-ref-palette-neutral-variant-50: #727970;
+ $md-ref-palette-neutral-variant-60: #8b9389;
+ $md-ref-palette-neutral-variant-70: #a6ada3;
+ $md-ref-palette-neutral-variant-80: #c1c9be;
+ $md-ref-palette-neutral-variant-90: #dde5da;
+ $md-ref-palette-neutral-variant-95: #ecf3e8;
+ $md-ref-palette-neutral-variant-98: #f4fcf0;
+ $md-ref-palette-neutral-variant-99: #f7fef3;
+ $md-ref-palette-neutral-variant-100: #ffffff;
+  /* error */
+ $md-ref-palette-error-0: #000000;
+ $md-ref-palette-error-10: #410002;
+ $md-ref-palette-error-20: #690005;
+ $md-ref-palette-error-25: #7e0007;
+ $md-ref-palette-error-30: #93000a;
+ $md-ref-palette-error-35: #a80710;
+ $md-ref-palette-error-40: #ba1a1a;
+ $md-ref-palette-error-50: #de3730;
+ $md-ref-palette-error-60: #ff5449;
+ $md-ref-palette-error-70: #ff897d;
+ $md-ref-palette-error-80: #ffb4ab;
+ $md-ref-palette-error-90: #ffdad6;
+ $md-ref-palette-error-95: #ffedea;
+ $md-ref-palette-error-98: #fff8f7;
+ $md-ref-palette-error-99: #fffbff;
+ $md-ref-palette-error-100: #ffffff;

@@ -1,18 +1,22 @@
 ---
-permalink: /404.html
 layout: default
-site-title: 404
-index: 404 Error
+permalink: /404.html
+site-title: Page not found
+hide_footer: true
 ---
 
-<div class="container">
-  <svg >
-    <use xlink:href="{{ 'assets/ghost.svg#404_error' | relative_url }}"></use>
-  </svg>
-  <!-- <img src="{{site.baseurl}}/assets/img/ghost.png" width="120px" height="120px"> -->
- <h1>Whoops!</h1>
- <p>It seems like we couldn't</p>
- <p>find the page you were</p>
- <p>looking for</p>
- <a class="btn-error" href="{{site.baseurl}}/">Home</a>
+<div class="wrapper-404">
+    <article class="content-wrapper">
+        <h1>We have a Problem...</h1>
+        <p>The Page Does not exist</p>
+        <p>Head back to Home</p>
+        <a href="{{ site.baseurl}}/" class="btn">Home</a>
+    </article>
+    <div class="svgcontainer">
+        <svg>
+            <use xlink:href="{{ 'assets/image/404.svg#404' | relative_url }}"></use>
+        </svg>
+    </div>
+
 </div>
+
