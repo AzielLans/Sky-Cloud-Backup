@@ -1,0 +1,49 @@
+<nav class="site-nav-side-bar " id="nav-side-bar">
+  <input type="checkbox" id="nav-side-bar-closebtn">
+  <label for="nav-side-bar-closebtn">
+    <span class="material-symbols-rounded">
+      menu_open
+    </span>
+  </label>
+  <div class="nav-links-container">
+    <a class="nav-links" href="{{site.header.header_1_link | relative_url }}">
+      <span class="material-symbols-rounded">
+        {{ site.header.header_1_icon }}
+      </span>
+      <p>{{ site.header.header_1_name}}</p>
+    </a>
+    <a href="{{site.header.header_home_link | relative_url }}" class="nav-links">
+      <span class="material-symbols-rounded">
+        home
+      </span>
+      <p>Home</p>
+    </a>
+    <a class="nav-links" href="{{site.header.header_2_link | relative_url }}">
+      <span class="material-symbols-rounded">
+        {{ site.header.header_2_icon }}
+      </span>
+      <p>{{ site.header.header_2_name}}</p>
+    </a>
+    <a class="nav-links" href="{{site.header.header_3_link | relative_url }}">
+      <span class="material-symbols-rounded">
+        {{ site.header.header_3_icon }}
+      </span>
+      <p>{{ site.header.header_3_name}}</p>
+    </a>
+    <a class="nav-links" href="{{site.header.header_4_link | relative_url }}">
+      <span class="material-symbols-rounded">
+        {{ site.header.header_4_icon }}
+      </span>
+      <p>{{ site.header.header_4_name}}</p>
+    </a>
+  </div>
+  <div class="nav-theme-toggle">
+    <div class="toggle">
+      <span class="material-symbols-rounded" id="nav-theme-toggle-icon">
+        light_mode
+      </span>
+      <p id="mode_text">Switch to light Mode</p>
+    </div>
+  </div>
+</nav>
+<div class="site-nav-scrim" id="nav-scrim"></div>

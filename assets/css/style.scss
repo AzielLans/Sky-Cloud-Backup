@@ -1,0 +1,10 @@
+---
+---
+
+@import "jekyll-theme-unity";
+
+.site-banner {
+    @include shape-extra-large;
+    background-image: url("{{site.baseurl}}/assets/image/bg-banner.jpg");
+
+}

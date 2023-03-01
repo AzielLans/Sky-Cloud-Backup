@@ -1,0 +1,134 @@
+# jekyll-theme-unity Configuration
+
+
+remote_theme: Involts/Sky-Cloud-Backup
+
+title: Sky Cloud Backup
+description: A Minecraft Backup that supports both Bedrock and Java.
+
+# Change the following value to '/PROJECT_NAME' ONLY IF your site type is GitHub Pages Project sites
+# and doesn't have a custom domain.
+baseurl: '/Sky-Cloud-Backup'
+# Change the value to 'https://GITHUB_USERNAME.github.io/'
+url: 'https://involts.github.io/' 
+
+# The author of the post
+post_author: Involts
+
+show_post_descriptions: true # if false, it disables Post descriptions
+
+google_analytics: 
+  enabled: true # if false, it disables Google Analytics
+  id:           # fill in your Google Analytics ID    
+
+# icons are from https://fonts.google.com/icons
+header:
+  header_1_name: Download
+  header_1_icon: file_download
+  header_1_link: https://github.com/Involts/Sky-Cloud-Backup/releases/download/Alpha_0.4/Sky.Cloud.Backup.Apha.0.4.zip
+
+  header_2_name: Release
+  header_2_icon: format_list_bulleted
+  header_2_link: /Releases/
+
+  header_3_name: Wiki
+  header_3_icon: live_help
+  header_3_link: /Wiki
+
+  header_4_name: About
+  header_4_icon: info
+  header_4_link: /About
+
+  header_home_link: /home
+
+footer:
+#  Section 1
+ footer_section_1_title: Github
+ footer_section_1_links_1_name: Repository
+ footer_section_1_links_1_link: https://github.com/Involts/Sky-Cloud-Backup
+
+ footer_section_1_links_2_name: Release
+ footer_section_1_links_2_link: /Releases
+
+ footer_section_1_links_3_name: Report Bugs
+ footer_section_1_links_3_link: https://github.com/Involts/Sky-Cloud-Backup/issues
+
+#  Section 2
+ footer_section_2_title: Sky Cloud Backup
+ footer_section_2_links_1_name: Download
+ footer_section_2_links_1_link: https://github.com/Involts/Sky-Cloud-Backup/releases/download/Alpha_0.4/Sky.Cloud.Backup.Apha.0.4.zip
+
+ footer_section_2_links_2_name: Wiki
+ footer_section_2_links_2_link: /Wiki
+
+ footer_section_2_links_3_name: About
+ footer_section_2_links_3_link: /About
+
+# Section 3
+#  footer_section_3_title: Customize
+#  footer_section_3_links_1_name: Lorem
+#  footer_section_3_links_1_link: /home
+
+#  footer_section_3_links_2_name: ispum
+#  footer_section_3_links_2_link: /home
+
+#  footer_section_3_links_3_name: dolor
+#  footer_section_3_links_3_link: /home
+
+footer_copyright: 
+ show-footer-copyright: true # if false, it disables copyright in footer
+ show-theme-name: true  # if false, it disables theme name
+
+ footer_copyright_1_name: Involts
+ footer_copyright_1_link: https://github.com/involts
+
+ footer_copyright_2_name: Repositories
+ footer_copyright_2_link: https://github.com/Involts?tab=repositories
+
+ footer_copyright_3_name: RubyGems
+ footer_copyright_3_link: https://rubygems.org/profiles/Involts
+
+ footer_copyright_4_name: Bugs
+ footer_copyright_4_link: https://github.com/Involts/Sky-Cloud-Backup/issues/new
+
+permalink: /Release/:title/
+
+# Paginate
+paginate: true
+paginate: 6
+paginate_path: "/Releases/page:num/"
+
+date_format: "%b %-d, %Y"
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-paginate
+  - jekyll-redirect-from
+
+whitelist:
+  - jekyll-redirect-from
+
+
+
+exclude:
+  - "*.gem"
+  - "*.gemspec"
+  - README.md
+  - LICENSE
+  - RubyGems
+  - gm_bld
+  - gitignore
+
+  #---------------The options BELLOW are not recommended to be modified------------------#
+
+kramdown:
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:   # Rouge Options › https://github.com/jneen/rouge#full-options
+    css_class: highlight
+    # default_lang: console
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1

@@ -1,0 +1,105 @@
+---
+layout: default
+---
+
+<h1 class="post-title">{{ page.site-title }}</h1>
+
+{%- if site.paginate -%}
+{% assign pinned = site.posts | where: "pin", "true" %}
+{% assign default = site.posts | where_exp: "item", "item.pin != true" %}
+
+{% assign posts = "" | split: "" %}
+
+<!-- Get pinned posts -->
+
+{% assign offset = paginator.page | minus: 1 | times: paginator.per_page %}
+{% assign pinned_num = pinned.size | minus: offset %}
+
+{% if pinned_num > 0 %}
+    {% for i in (offset..pinned.size) limit: pinned_num %}
+        {% assign posts = posts | push: pinned[i] %}
+    {% endfor %}
+{% else %}
+    {% assign pinned_num = 0 %}
+{% endif %}
+
+
+<!-- Get default posts -->
+
+{% assign default_beg = offset | minus: pinned.size %}
+
+{% if default_beg < 0 %}
+    {% assign default_beg = 0 %}
+{% endif %}
+
+{% assign default_num = paginator.posts | size | minus: pinned_num  %}
+{% assign default_end = default_beg | plus: default_num | minus: 1 %}
+
+{% if default_num > 0 %}
+    {% for i in (default_beg..default_end) %}
+        {% assign posts = posts | push: default[i] %}
+    {% endfor %}
+{% endif %}
+{% else %}
+{% assign posts = site.posts %}
+{% endif %}
+<div class="site-post-list">
+  {%- assign date_format = site.date_format | default: "%b %-d, %Y" -%}
+  <div class="posts-container">
+    {%- for post in posts -%} {% if post.pin %}
+    <a class="site-post pin" href="{{ post.url | relative_url }}">
+      <p class="post-title">{{ post.title | escape }}</p>
+      <div class="post-info">
+        {%- assign date_format_tooltip = site.date_format | default: "%b%-d, %Y" -%}
+        <span class="post-info-date">{{ post.date | date: date_format }}</span>
+        {% if post.pin %}
+        <span class="post-info-pin">
+          <span class="material-symbols-rounded"> push_pin </span>
+        </span>
+      {%- endif -%}
+      </div>
+      {%- if site.show_post_descriptions -%} {{ post.excerpt }} {%- endif -%}
+    </a>
+    {% endif %} {%- endfor -%}
+  </div>
+  {% if posts %}
+  <div class="posts-container">
+    {%- for post in posts -%} {% unless post.pin %}
+    <a class="site-post" href="{{ post.url | relative_url }}">
+      <p class="post-title">{{ post.title | escape }}</p>
+      <div class="post-info">
+        {%- assign date_format_tooltip = site.fica.date_format | default: "%b%-d, %Y" -%}
+        <span class="post-info-date">{{ post.date | date: date_format }}</span>
+        {% if post.pin %}
+        <span class="post-info-pin">
+          <span class="material-symbols-rounded"> push_pin </span>
+          <p>pinned</p>
+        </span>
+        {%- endif -%}
+      </div>
+      {%- if site.show_post_descriptions -%} {{ post.excerpt }} {%- endif -%}
+    </a>
+    {% endunless %} {%- endfor -%}
+  </div>
+  {% endif %}
+</div>
+
+{%- if site.paginate -%}
+<ul class="site-post-nav">
+  <li>
+    {% if paginator.previous_page %}
+      <a href="{{ paginator.previous_page_path | relative_url }}" class="material-symbols-rounded"> arrow_back_ios </a>
+    {% else %}
+      <a class="material-symbols-rounded disable"> arrow_back_ios </a>
+    {% endif %}
+  </li>
+  <li class="post-nav-num">{{ paginator.page }} / {{ paginator.total_pages }}</li>
+  <li>
+    {%- if paginator.next_page %}
+      <a href="{{ paginator.next_page_path | relative_url }}" class="material-symbols-rounded "> arrow_forward_ios </a>
+    {%- else %}
+      <a class="material-symbols-rounded disable"> arrow_forward_ios </a>
+    {%- endif %}
+  </li>
+</ul>
+{%- endif %} 

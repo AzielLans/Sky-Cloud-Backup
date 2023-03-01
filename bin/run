@@ -1,0 +1,196 @@
+#!/usr/bin/env bash
+
+#
+# Name of the theme
+#
+THEME="jekyll-theme-unity"
+
+#
+# the name of the script
+#
+SCRIPT="bin/"$( basename "$0" )
+
+#
+# Current version
+#
+VERSION="0.1.0"
+
+#
+# Colors
+#
+RED='\033[0;31m'
+YELLOW='\033[0;33m'
+CYAN='\033[0;36m'
+NC='\033[0m' # No Color
+
+#
+# help option
+#
+function usage
+{
+    echo -e "$CYAN$THEME$NC Based on Material 3 design principles"
+    echo -e ""
+    echo -e "Usage:"
+    echo -e    "$SCRIPT $CYAN[subcommand]$NC"
+    echo -e ""
+    echo -e ""
+    echo -e "Subcommand:"
+    # echo -e "  $YELLOW upgrade, u $NC       Upgrades $THEME to the latest version"
+    echo -e "  $YELLOW help, h  $NC         displays all the subcommand available and how to use it"
+    echo -e "  $YELLOW version, v   $NC     show the version of the theme"
+    echo -e "  $YELLOW server, s $NC        Runs the server locally"
+    echo -e "  $YELLOW insdep, ip $NC       Installs all the dependencies"
+    echo -e "  $YELLOW chktheme, ct $NC     Checks the theme for errors"
+    echo -e "  $YELLOW bldgem, bm $NC       builds the theme and uploads it to RubyGems"
+}
+
+#
+# Upgrade the theme to the latest version
+# 
+# Not supported
+# function Upgrade
+# {
+#     echo "Upgrading $THEME to $VERSION"
+#     sed -i "s/gem 'jekyll-theme-unity', '~> 0.1.0'/gem 'jekyll-theme-unity', '~> 0.1.0'/gi" ./Gemfile
+#     echo "Upgrade Complete!"
+#     # insdep
+# }
+
+#
+# Runing the server locally
+#
+function server
+{
+    echo "Starting Server....."
+    bundle exec jekyll serve
+}
+
+#
+# Installs all dependencies
+#
+function install_dependencies
+{
+    echo "Installing Dependencies of $THEME"
+    gem install bundler
+    bundle install
+}
+
+function error
+{
+    printf "${RED}Subcommand not recognized.${NC}"
+    echo ""
+    usage
+}
+
+function version
+{
+    printf "$CYAN$THEME$NC v$VERSION"
+}
+
+#
+# Theme check
+#
+function chktheme
+{
+    echo ""
+    printf "Running ${YELLOW}Bundle ${NC}"
+    echo ""
+    bundle clean --force
+    install_dependencies
+    echo ""
+    printf "Running ${YELLOW}jekyll doctor ${NC}"
+    echo ""
+    jekyll doctor
+    echo ""
+    printf "Running ${YELLOW}jekyll build ${NC}"
+    echo ""
+    jekyll build
+}
+
+#
+# gem build and upload
+#
+function gm_bld
+{
+    echo Building gemspec.....
+    gem build jekyll-theme-unity.gemspec
+    echo Build complete
+    
+    while true; do
+        
+        read -p "Do you need to upload the the gem to RubyGem.org ? (y/n) " yn
+        
+        case $yn in
+            [yY] ) echo ok, we will proceed;
+                echo upload Gem file
+                read gm_uld
+                gem push $gm_uld
+            exit;;
+            [nN] ) echo exiting...;
+            exit;;
+            * ) echo invalid response;
+        esac
+        
+        
+    done
+}
+
+#
+# Process subcommands
+#
+
+while (( $# ))
+do
+    case "$1" in
+        
+        
+        bldgem  | bm)
+            gm_bld
+            exit 0
+        ;;
+        
+        Upgrade  | u)
+            Upgrade
+            install_dependencies
+            exit 0
+        ;;
+        
+        insdep | ip)
+            install_dependencies
+            exit 0
+        ;;
+        
+        server | s)
+            server
+            exit 0
+        ;;
+        
+        help | h)
+            usage
+            exit 0
+        ;;
+        
+        version | v)
+            version
+            exit 0
+        ;;
+        
+        chktheme | ct)
+            chktheme
+            exit 0
+        ;;
+        
+        
+        *)
+            error
+            exit 1
+        ;;
+        
+    esac
+done
+
+
+
+printf "${RED}A subcommand is required.${NC}"
+echo ""
+usage

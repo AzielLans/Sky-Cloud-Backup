@@ -1,0 +1,525 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @include body-medium;
+  @include background;
+  @include horizontal-scroll;
+  -webkit-text-size-adjust: 100%;
+  font-kerning: normal;
+  min-height: 100vh;
+  flex-direction: column;
+  overflow-wrap: break-word;
+  display: flex;
+  line-height: 40px;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+hr,
+dl,
+dd,
+ol,
+ul,
+figure {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 15px;
+}
+
+p {
+  line-height: 26px;
+}
+
+* {
+  @include horizontal-scroll;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 3rem;
+  a {
+    @include shape-extra-large;
+    opacity: 0;
+    color: var(--md-sys-color-on-surface);
+    padding: 5px;
+    background: var(--md-sys-color-on-surface-variant-2);
+  }
+  &:hover {
+    a {
+      text-decoration: none;
+      opacity: 1;
+    }
+  }
+}
+
+h1 {
+  @include headline-large;
+}
+h2 {
+  @include headline-medium;
+}
+h3 {
+  @include headline-small;
+}
+h4 {
+  @include title-large;
+}
+h5 {
+  @include title-medium;
+}
+h6 {
+  @include title-small;
+}
+
+a {
+  @include link(
+    var(--md-sys-color-secondary),
+    var(--md-sys-color-on-surface),
+    auto
+  );
+  &:hover {
+    text-decoration: underline;
+  }
+}
+img {
+  @include shape-extra-large;
+  max-width: 100%;
+}
+strong {
+  font-family: $md-ref-typeface-brand;
+}
+table {
+  width: 100%;
+  margin-bottom: 20px;
+  border-collapse: collapse;
+  border: 1px solid var(--md-sys-color-surface-variant);
+  th {
+    background: var(--md-sys-elevation-level1);
+    color: var(--md-sys-color-on-surface-variant);
+  }
+  td,
+  th {
+    padding: 16px 24px;
+    border: 1px solid var(--md-sys-color-surface-variant);
+    vertical-align: middle;
+  }
+}
+pre,
+code {
+  @include shape-small;
+  border: 1px solid var(--md-sys-color-outline);
+  font-weight: 700;
+  background: var(--md-sys-elevation-level1);
+  padding: 1px 5px;
+  color: var(--md-sys-color-on-background);
+
+  a {
+    color: inherit !important;
+    border-bottom: none !important;
+    pointer-events: none;
+  }
+}
+pre {
+  overflow-x: auto;
+  border: 0;
+
+  code {
+    border: 0;
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+div {
+  &[class^="highlighter-rouge"],
+  &.language-plaintext.highlighter-rouge,
+  &.language-console.highlighter-rouge,
+  &.language-terminal.highlighter-rouge,
+  &.nolineno {
+    pre.lineno {
+      display: none;
+    }
+    .code-header  {
+      span {
+        padding: 0px;
+      }
+      
+    }
+
+    td.rouge-code {
+      padding: 8px 12px;
+    }
+
+    pre.highlight {
+      padding: 0px;
+      padding-bottom: 0px;
+    }
+  }
+}
+li {
+  ul,
+  ol {
+    margin-bottom: 0;
+  }
+}
+ul,
+ol {
+  margin-left: 20px;
+}
+
+button {
+  @include label-large;
+  @include btn;
+  border: 0px;
+  background: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+  p {
+    margin: 0px;
+  }  
+  &:hover {
+    @include elevation5(var(--md-sys-color-primary));
+    @include shape-medium;
+    color: initial;
+  }
+}
+span {
+  &[style^="display: inline !important;"] {
+    @include shape-small;
+    &::before {
+      display: flex;
+      content: "warning";
+      font-family: "Material Symbols Rounded";
+      color: var(--md-sys-color-on-warning);
+      font-size: 34px;
+      line-height: 1;
+      padding-right: 10px;
+      padding-top: 13px;
+    }
+    a {
+      color: var(--md-sys-color-on-background);
+      font-weight: bold;
+    }
+    display: block;
+    background-color: var(--md-sys-color-warning);
+    color: var(--md-sys-color-on-warning);
+    padding: 10px;
+    margin-left: 7rem;
+    @media (max-width: 1000px) {
+      margin-left: 0px;
+    }
+  }
+  
+}
+
+.rouge-table {
+  width: 0%;
+  border: 0px;
+  margin-bottom: 0px;
+  td.rouge-code {
+    padding-left: 1rem;
+    border: 0px;
+  }
+  .rouge-gutter {
+    padding: 0px;
+    border: 0px;
+  }
+}
+.code-header {
+  // width: 100%;
+  position: absolute;
+  left: initial;
+  right: 20px;
+  top: 10px;
+  display: flex;
+  justify-content: flex-end;
+  user-select: none;
+  cursor: pointer;
+  span {
+    @include link(
+      var(--md-sys-color-on-surface),
+      inherit,
+      var(--md-sys-color-on-surface-variant-2)
+    );
+    @include shape-extra-large;
+    transition: all 0.3s ease;
+    padding: 16px;
+  }
+}
+.highlight {
+  @include shape-medium;
+  margin-bottom: 15px;
+  position: relative;
+  // display: block;
+  // To preventing bordering all pre element
+  > pre {
+    border: 1px solid var(--md-sys-color-outline);
+  }
+
+  pre {
+    margin-bottom: 0;
+    line-height: 1.5rem;
+    word-wrap: normal;
+    background: var(--md-sys-color-surface);
+    /* Fixed Safari overflow-x */
+  }
+  table {
+    td pre {
+      overflow: visible; // Fixed iOS safari overflow-x
+      word-break: normal; // Fixed iOS safari linenos code break
+    }
+  }
+
+  .lineno {
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 7px;
+    padding-right: 0px;
+    width: 1%;
+    min-width: 20px;
+    text-align: right;
+    color: $md-ref-palette-neutral-50;
+    // TODO: add mixin select none
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+  }
+
+  //  set the dollar sign to non-selectable
+  .nv {
+    user-select: none;
+  }
+
+  &:focus {
+    border-color: var(--md-sys-color-primary);
+  }
+}
+.wrapper {
+  padding: 30px 30px 0 0;
+  margin: 0 auto 0 7rem;
+  max-width: 1168px;
+  animation-duration: 0.2s;
+  animation-fill-mode: both;
+  animation-name: wrapper-animation;
+  @media (max-width: 1000px) {
+    margin: 0 auto 0 2rem;
+    max-width: 1168px;
+    padding-top: 6rem;
+  }
+}
+.wrapper-animation {
+  @include duration-550;
+  @include easing-standard;
+}
+.wrapper-post {
+  padding: 30px 30px 0 0;
+  animation-duration: 0.2s;
+  animation-fill-mode: both;
+  animation-name: wrapper-animation;
+  margin: 0 auto 0 7rem;
+  max-width: 850px;
+  @media (max-width: 1309px) {
+    max-width: 1168px;
+  }
+  @media (max-width: 1000px) {
+    margin: 0 auto 0 2rem;
+    max-width: 1168px;
+    padding-top: 6rem;
+  }
+}
+.wrapper-404 {
+  display: flex;
+  word-break: break-word;
+  gap: 15px;
+  padding: clamp(95px, 2%, 400px) 0px 0px clamp(95px, 2%, 400px);
+  animation-duration: 0.2s;
+  animation-fill-mode: both;
+  animation-name: wrapper-animation;
+  
+  @media (max-width: $pc-width) {
+    flex-direction: column-reverse;
+  }
+  @media (max-width: $mobile-width) {
+    padding: 0px;
+  }  
+  .content-wrapper {
+    p {
+      margin: 0;
+    }
+    .btn {
+      @include duration-550;
+      @include easing-standard;
+      @include title-large;
+      width: 195px;
+      height: 82px;
+      margin-top: 15px;
+      padding: 0px;
+    }
+  }
+  .svgcontainer {
+    @include shape-extra-large;
+    fill: var(--md-sys-color-on-error);
+    background-color: var(--md-sys-color-error);
+    padding: 16px;
+    width: 10rem;
+    display: flex;
+  }
+
+}
+span {
+  font-size: 24px;
+}
+.btn {
+  @include label-large;
+  @include btn;
+  background: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+  p {
+    margin: 0px;
+  }  
+  &:hover {
+    @include elevation5(var(--md-sys-color-primary));
+    @include shape-medium;
+    color: initial;
+  }
+}
+.post-toc {
+  position: sticky;
+  top: 2rem;
+  align-self: start;
+  padding-left: 0;
+  border-left: 1px solid var(--md-sys-color-outline);
+  // min-height: 100vh;
+  overflow-wrap: break-word;
+
+  li {
+    margin-left: 1rem;
+    margin: 7px;
+    padding-left: 1rem;
+    list-style: none;
+  }
+  ul,
+  ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  li.active > a {
+    @include shape-medium;
+    display: flex;
+    border: 1px solid var(--md-sys-color-outline);
+    animation-duration: 0.3s;
+    animation-fill-mode: both;
+    animation-name: TOC-Entrance;
+  }
+  li.decative {
+    a {
+      animation-duration: 0.3s;
+      animation-fill-mode: both;
+      animation-name: TOC-Exit;
+      opacity: 0.5;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+    ul {
+      display: none;
+    }
+  }
+
+  a {
+    color: var(--md-sys-color-on-surface);
+    transition: all 50ms ease-in-out;
+    padding-left: 1rem;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  @media (max-width: 1309px) {
+    display: none;
+    width: 0px;
+  }
+}
+
+.back-to-top {
+  @include shape-medium;
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  background: var(--md-sys-color-tertiary);
+  color: var(--md-sys-color-on-tertiary);
+  box-shadow: 0px 4px 8px 3px rgba(0, 0, 0, 0.15), 0px 1px 3px rgba(0, 0, 0, 0.3);
+  user-select: none;
+  &:hover {
+    @include elevation5(var(--md-sys-color-tertiary));
+    box-shadow: 0px 6px 10px 4px rgba(0, 0, 0, 0.15), 0px 2px 3px rgba(0, 0, 0, 0.3);
+  }
+}
+.BTT-Entrance {
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+  animation-name: opacitychange;
+}
+
+.BTT-Exit {
+  animation-duration: 0.25s;
+  animation-fill-mode: both;
+  animation-name: opacityrestore;
+}
+
+.prompt-tip {
+  @include prompt(var(--md-sys-color-tip), var(--md-sys-color-on-tip) ,"tips_and_updates", var(--md-sys-color-on-tip), "Material Symbols Rounded" );
+}
+
+.prompt-info {
+  @include prompt(var(--md-sys-color-info), var(--md-sys-color-on-info) ,"info", var(--md-sys-color-on-info), "Material Symbols Rounded" );
+}
+
+.prompt-warning {
+  @include prompt(var(--md-sys-color-warning), var(--md-sys-color-on-warning) ,"warning", var(--md-sys-color-on-warning), "Material Symbols Rounded" );
+}
+
+.prompt-danger {
+  @include prompt(var(--md-sys-color-danger), var(--md-sys-color-on-danger) ,"dangerous", var(--md-sys-color-on-danger), "Material Symbols Rounded" );
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  margin-top: 36px;
+  margin-bottom: 36px;
+}
+
+.video-container iframe {
+  @include shape-medium;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+

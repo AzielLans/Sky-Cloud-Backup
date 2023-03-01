@@ -1,0 +1,9 @@
+<div class="site-banner">
+  <div class="banner-content">
+    <p class="banner-title">{{ page.banner_title }}</p>
+    <p class="banner-description">{{ page.banner_description }}</p>
+    {%- unless page.hide_banner_btn -%}
+    <a href="{{site.header.header_1_link | relative_url }}" class="btn">Download</a>
+    {%- endunless -%}
+  </div>
+</div>
