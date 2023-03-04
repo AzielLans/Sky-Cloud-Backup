@@ -6,19 +6,17 @@ home: true
 banner_title: Sky Cloud Backup
 banner_description: A Minecraft Backup that supports both Bedrock and Java.
 ---
-> The app is in Alpha stage of development, features may **ADDED OR REMOVE**.
+> The App is in Beta stage of development, features may **ADDED OR REMOVE**.
+{: .prompt-tip }
+> New Feature: Google Drive
 {: .prompt-tip }
 
 # About
-A Minecraft Backup that supports both Bedrock and Java. It is easy to backup your world with one click. You can
-personalize the app, using dark mode or light mode, currently the theme colors has 4 colors(Red, Green, Blue the default
-color , Pink Amber, Orange and Deep Purple) and the is more to come.
+A Minecraft Backup that supports the two versions of Minecraft( Bedrock and Java ). It is easy to backup your world with one click. You can personalize the app, using dark mode or light mode, currently the theme colors has 7 colors(Red, Green, Blue the default color, Pink, Amber, Orange and Deep Purple). Backup up to the Cloud with Google Drive and the is more to come.
 
 
-If the app doesn't work you need to download [.net
-4.6.1](https://www.microsoft.com/en-us/download/details.aspx?id=49982) to use the app.
+If the app doesn't work you need to download [.net 4.6.1](https://www.microsoft.com/en-us/download/details.aspx?id=49982) to use the app.
 
-Upload to Google drive is still in development.
 
 
 # Feature Overview
@@ -28,6 +26,7 @@ Upload to Google drive is still in development.
 - Continue what you're doing, using Always on top checkbox.
 - Save it later, using Minimize to tray Check box.
 - Start the app with Windows
+- Backup to the Cloud with Google Drive
 
 <div class="zebra-wrapper">
     <div class="zebra">
