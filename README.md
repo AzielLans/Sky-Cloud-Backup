@@ -3,12 +3,12 @@
 # Sky Cloud Backup
 A Minecraft Backup that supports Bedrock and Java.
 
-Download the all in one Minecraft Backup [today](https://github.com/Involts/Sky-Cloud-Backup/releases/download/Alpha_0.5/Sky.Cloud.Backup.Alpha.0.5.zip)!
+Download the all in one Minecraft Backup [today](https://github.com/Involts/Sky-Cloud-Backup/releases/download/Beta_0.5/Sky.Cloud.Backup.Beta.0.5.zip)!
 
 # About
 A Minecraft Backup that supports the two versions of Minecraft( Bedrock and Java ). It is easy to backup your world with one click. You can personalize the app, using dark mode or light mode, currently the theme colors has 7 colors(Red, Green, Blue the default color, Pink, Amber, Orange and Deep Purple). Backup up to the Cloud with Google Drive and the is more to come.
 
-Note: The app is in Alpha stage of development, features may ADDED OR REMOVE. 
+Note: The app is in Beta stage of development, features may ADDED OR REMOVE. 
 
 If the app doesn't work you need to download [.net 4.6.1](https://www.microsoft.com/en-us/download/details.aspx?id=49982) to use the app.
 
