@@ -33,7 +33,7 @@ namespace Sky_Cloud_Backup
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.Next_Button = new MaterialSkin.Controls.MaterialButton();
-            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
+            this.versionlabel = new MaterialSkin.Controls.MaterialLabel();
             this.Pink_Button = new MaterialSkin.Controls.MaterialRadioButton();
             this.Red_Button = new MaterialSkin.Controls.MaterialRadioButton();
             this.Default_Button = new MaterialSkin.Controls.MaterialRadioButton();
@@ -48,10 +48,11 @@ namespace Sky_Cloud_Backup
             // pictureBox1
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox1.Image = global::Sky_Cloud_Backup.Properties.Resources.logo_258;
+            this.pictureBox1.Image = global::Sky_Cloud_Backup.Properties.Resources.SCB;
             this.pictureBox1.Location = new System.Drawing.Point(302, 41);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(265, 222);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
@@ -93,19 +94,19 @@ namespace Sky_Cloud_Backup
             this.Next_Button.UseVisualStyleBackColor = true;
             this.Next_Button.Click += new System.EventHandler(this.Next_Button_Click);
             // 
-            // materialLabel3
+            // versionlabel
             // 
-            this.materialLabel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialLabel3.AutoSize = true;
-            this.materialLabel3.Depth = 0;
-            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel3.Location = new System.Drawing.Point(783, 475);
-            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel3.Name = "materialLabel3";
-            this.materialLabel3.Size = new System.Drawing.Size(68, 19);
-            this.materialLabel3.TabIndex = 5;
-            this.materialLabel3.Text = "Alpha 0.4";
-            this.materialLabel3.Click += new System.EventHandler(this.materialLabel3_Click);
+            this.versionlabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.versionlabel.AutoSize = true;
+            this.versionlabel.Depth = 0;
+            this.versionlabel.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.versionlabel.Location = new System.Drawing.Point(783, 475);
+            this.versionlabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.versionlabel.Name = "versionlabel";
+            this.versionlabel.Size = new System.Drawing.Size(68, 19);
+            this.versionlabel.TabIndex = 5;
+            this.versionlabel.Text = "Alpha 0.4";
+            this.versionlabel.Click += new System.EventHandler(this.materialLabel3_Click);
             // 
             // Pink_Button
             // 
@@ -200,6 +201,7 @@ namespace Sky_Cloud_Backup
             // 
             // panel1
             // 
+            this.panel1.AutoScroll = true;
             this.panel1.Controls.Add(this.Help_Button);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.Default_Button);
@@ -207,7 +209,7 @@ namespace Sky_Cloud_Backup
             this.panel1.Controls.Add(this.Red_Button);
             this.panel1.Controls.Add(this.Pink_Button);
             this.panel1.Controls.Add(this.materialLabel1);
-            this.panel1.Controls.Add(this.materialLabel3);
+            this.panel1.Controls.Add(this.versionlabel);
             this.panel1.Controls.Add(this.Next_Button);
             this.panel1.Controls.Add(this.Dark_mode_switch);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -218,6 +220,7 @@ namespace Sky_Cloud_Backup
             // 
             // Help_Button
             // 
+            this.Help_Button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Help_Button.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Help_Button.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Dense;
             this.Help_Button.Depth = 0;
@@ -264,7 +267,7 @@ namespace Sky_Cloud_Backup
         private System.Windows.Forms.PictureBox pictureBox1;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialButton Next_Button;
-        private MaterialSkin.Controls.MaterialLabel materialLabel3;
+        private MaterialSkin.Controls.MaterialLabel versionlabel;
         private MaterialSkin.Controls.MaterialRadioButton Pink_Button;
         private MaterialSkin.Controls.MaterialRadioButton Red_Button;
         private MaterialSkin.Controls.MaterialRadioButton Default_Button;

@@ -1,6 +1,7 @@
 ﻿using MaterialSkin;
 using MaterialSkin.Controls;
 using System;
+using System.Reflection;
 using System.Windows.Forms;
 
 namespace Sky_Cloud_Backup
@@ -12,6 +13,8 @@ namespace Sky_Cloud_Backup
             InitializeComponent();
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
+
+            versionlabel.Text = "Beta " + Assembly.GetExecutingAssembly().GetName().Version.Build.ToString() + "." + Assembly.GetExecutingAssembly().GetName().Version.Revision.ToString();
         }
         MaterialSkinManager ThemeManager = MaterialSkinManager.Instance;
 
@@ -32,11 +35,11 @@ namespace Sky_Cloud_Backup
             MessageBox.Show(text, "Sky Cloud Backup", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        private void Bugs_Click( object sender, EventArgs e )
+        private void Bugs_Click ( object sender, EventArgs e )
         {
             try
             {
-               System.Diagnostics.Process.Start("https://github.com/Involts/Sky-Cloud-Backup/issues");
+                System.Diagnostics.Process.Start("https://github.com/Involts/Sky-Cloud-Backup/issues");
             }
             catch (Exception ex)
             {

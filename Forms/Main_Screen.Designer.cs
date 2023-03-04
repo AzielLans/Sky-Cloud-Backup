@@ -34,6 +34,7 @@ namespace Sky_Cloud_Backup
             this.Save_World_TextBox = new MaterialSkin.Controls.MaterialTextBox();
             this.Open_Word_Text = new MaterialSkin.Controls.MaterialTextBox();
             this.Upload_to_Drive_Card = new MaterialSkin.Controls.MaterialCard();
+            this.sign_out_button = new MaterialSkin.Controls.MaterialButton();
             this.Sigin_in_Button = new MaterialSkin.Controls.MaterialButton();
             this.Note = new MaterialSkin.Controls.MaterialLabel();
             this.Upload_to_Drive_CheckBox = new MaterialSkin.Controls.MaterialCheckbox();
@@ -64,12 +65,12 @@ namespace Sky_Cloud_Backup
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.About_Button = new MaterialSkin.Controls.MaterialButton();
-            this.notify_Backup_Bedrock = new System.Windows.Forms.NotifyIcon(this.components);
-            this.notify_Backup_Java = new System.Windows.Forms.NotifyIcon(this.components);
+            this.Bedrock_Backup_Notifier = new System.Windows.Forms.NotifyIcon(this.components);
+            this.Java_Bedrock_Notifier = new System.Windows.Forms.NotifyIcon(this.components);
             this.Help_Button = new MaterialSkin.Controls.MaterialButton();
             this.Add_Settings = new MaterialSkin.Controls.MaterialCard();
             this.Backup_name_for = new MaterialSkin.Controls.MaterialSwitch();
-            this.Deafualt_Backup_name = new MaterialSkin.Controls.MaterialCheckbox();
+            this.Default_Backup_name = new MaterialSkin.Controls.MaterialCheckbox();
             this.Backup_Name = new MaterialSkin.Controls.MaterialTextBox();
             this.zip_mcworld = new MaterialSkin.Controls.MaterialSwitch();
             this.Reset_Btn = new MaterialSkin.Controls.MaterialButton();
@@ -86,8 +87,9 @@ namespace Sky_Cloud_Backup
             // 
             // Open_World_Card
             // 
-            this.Open_World_Card.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Open_World_Card.AutoSize = true;
+            this.Open_World_Card.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Open_World_Card.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Open_World_Card.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.Open_World_Card.Controls.Add(this.Save_World_Button);
             this.Open_World_Card.Controls.Add(this.Open_World_Button);
@@ -100,7 +102,7 @@ namespace Sky_Cloud_Backup
             this.Open_World_Card.MouseState = MaterialSkin.MouseState.HOVER;
             this.Open_World_Card.Name = "Open_World_Card";
             this.Open_World_Card.Padding = new System.Windows.Forms.Padding(14);
-            this.Open_World_Card.Size = new System.Drawing.Size(534, 152);
+            this.Open_World_Card.Size = new System.Drawing.Size(534, 151);
             this.Open_World_Card.TabIndex = 0;
             // 
             // Save_World_Button
@@ -112,7 +114,7 @@ namespace Sky_Cloud_Backup
             this.Save_World_Button.DrawShadows = false;
             this.Save_World_Button.HighEmphasis = false;
             this.Save_World_Button.Icon = null;
-            this.Save_World_Button.Location = new System.Drawing.Point(405, 80);
+            this.Save_World_Button.Location = new System.Drawing.Point(405, 84);
             this.Save_World_Button.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Save_World_Button.MouseState = MaterialSkin.MouseState.HOVER;
             this.Save_World_Button.Name = "Save_World_Button";
@@ -134,7 +136,7 @@ namespace Sky_Cloud_Backup
             this.Open_World_Button.DrawShadows = false;
             this.Open_World_Button.HighEmphasis = false;
             this.Open_World_Button.Icon = null;
-            this.Open_World_Button.Location = new System.Drawing.Point(405, 17);
+            this.Open_World_Button.Location = new System.Drawing.Point(405, 31);
             this.Open_World_Button.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Open_World_Button.MouseState = MaterialSkin.MouseState.HOVER;
             this.Open_World_Button.Name = "Open_World_Button";
@@ -159,7 +161,7 @@ namespace Sky_Cloud_Backup
             this.Save_World_TextBox.Hint = "Save World";
             this.Save_World_TextBox.LeadingIcon = global::Sky_Cloud_Backup.Properties.Resources.round_save_white_24dp;
             this.Save_World_TextBox.LeaveOnEnterKey = true;
-            this.Save_World_TextBox.Location = new System.Drawing.Point(5, 80);
+            this.Save_World_TextBox.Location = new System.Drawing.Point(5, 84);
             this.Save_World_TextBox.MaxLength = 10000;
             this.Save_World_TextBox.MouseState = MaterialSkin.MouseState.OUT;
             this.Save_World_TextBox.Multiline = false;
@@ -182,7 +184,7 @@ namespace Sky_Cloud_Backup
             this.Open_Word_Text.Hint = "Open World";
             this.Open_Word_Text.LeadingIcon = global::Sky_Cloud_Backup.Properties.Resources.round_folder_open_white_24dp;
             this.Open_Word_Text.LeaveOnEnterKey = true;
-            this.Open_Word_Text.Location = new System.Drawing.Point(5, 17);
+            this.Open_Word_Text.Location = new System.Drawing.Point(5, 30);
             this.Open_Word_Text.MaxLength = 10000;
             this.Open_Word_Text.MouseState = MaterialSkin.MouseState.OUT;
             this.Open_Word_Text.Multiline = false;
@@ -196,10 +198,10 @@ namespace Sky_Cloud_Backup
             // 
             // Upload_to_Drive_Card
             // 
-            this.Upload_to_Drive_Card.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Upload_to_Drive_Card.AutoSize = true;
+            this.Upload_to_Drive_Card.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Upload_to_Drive_Card.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Upload_to_Drive_Card.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.Upload_to_Drive_Card.Controls.Add(this.sign_out_button);
             this.Upload_to_Drive_Card.Controls.Add(this.Sigin_in_Button);
             this.Upload_to_Drive_Card.Controls.Add(this.Note);
             this.Upload_to_Drive_Card.Controls.Add(this.Upload_to_Drive_CheckBox);
@@ -211,12 +213,36 @@ namespace Sky_Cloud_Backup
             this.Upload_to_Drive_Card.MouseState = MaterialSkin.MouseState.HOVER;
             this.Upload_to_Drive_Card.Name = "Upload_to_Drive_Card";
             this.Upload_to_Drive_Card.Padding = new System.Windows.Forms.Padding(14);
-            this.Upload_to_Drive_Card.Size = new System.Drawing.Size(302, 154);
+            this.Upload_to_Drive_Card.Size = new System.Drawing.Size(295, 153);
             this.Upload_to_Drive_Card.TabIndex = 2;
+            // 
+            // sign_out_button
+            // 
+            this.sign_out_button.AutoSize = false;
+            this.sign_out_button.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.sign_out_button.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.sign_out_button.Depth = 0;
+            this.sign_out_button.DrawShadows = false;
+            this.sign_out_button.Enabled = false;
+            this.sign_out_button.HighEmphasis = false;
+            this.sign_out_button.Icon = null;
+            this.sign_out_button.Location = new System.Drawing.Point(146, 97);
+            this.sign_out_button.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.sign_out_button.MouseState = MaterialSkin.MouseState.HOVER;
+            this.sign_out_button.Name = "sign_out_button";
+            this.sign_out_button.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.sign_out_button.Size = new System.Drawing.Size(120, 36);
+            this.sign_out_button.TabIndex = 5;
+            this.sign_out_button.Text = "SIGN OUT";
+            this.sign_out_button.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.sign_out_button.UseAccentColor = true;
+            this.sign_out_button.UseVisualStyleBackColor = true;
+            this.sign_out_button.Click += new System.EventHandler(this.sign_out_btn_Click);
             // 
             // Sigin_in_Button
             // 
             this.Sigin_in_Button.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.Sigin_in_Button.AutoSize = false;
             this.Sigin_in_Button.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Sigin_in_Button.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.Sigin_in_Button.Depth = 0;
@@ -224,14 +250,14 @@ namespace Sky_Cloud_Backup
             this.Sigin_in_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Sigin_in_Button.HighEmphasis = true;
             this.Sigin_in_Button.Icon = null;
-            this.Sigin_in_Button.Location = new System.Drawing.Point(14, 98);
+            this.Sigin_in_Button.Location = new System.Drawing.Point(18, 97);
             this.Sigin_in_Button.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Sigin_in_Button.MouseState = MaterialSkin.MouseState.HOVER;
             this.Sigin_in_Button.Name = "Sigin_in_Button";
             this.Sigin_in_Button.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.Sigin_in_Button.Size = new System.Drawing.Size(270, 36);
+            this.Sigin_in_Button.Size = new System.Drawing.Size(120, 36);
             this.Sigin_in_Button.TabIndex = 2;
-            this.Sigin_in_Button.Text = "Sign in to your Google Account";
+            this.Sigin_in_Button.Text = "Sign in";
             this.Sigin_in_Button.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.Sigin_in_Button.UseAccentColor = true;
             this.Sigin_in_Button.UseVisualStyleBackColor = true;
@@ -274,7 +300,7 @@ namespace Sky_Cloud_Backup
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialLabel1.HighEmphasis = true;
-            this.materialLabel1.Location = new System.Drawing.Point(85, 8);
+            this.materialLabel1.Location = new System.Drawing.Point(85, 7);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(113, 19);
@@ -284,7 +310,8 @@ namespace Sky_Cloud_Backup
             // 
             // Backup_Button
             // 
-            this.Backup_Button.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Backup_Button.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Backup_Button.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Backup_Button.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Dense;
             this.Backup_Button.Depth = 0;
@@ -320,23 +347,27 @@ namespace Sky_Cloud_Backup
             // 
             // Personalization_Card
             // 
-            this.Personalization_Card.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Personalization_Card.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Personalization_Card.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Personalization_Card.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.Personalization_Card.Controls.Add(this.materialCheckedListBox2);
             this.Personalization_Card.Controls.Add(this.materialCheckedListBox1);
             this.Personalization_Card.Controls.Add(this.materialLabel2);
             this.Personalization_Card.Depth = 0;
             this.Personalization_Card.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Personalization_Card.Location = new System.Drawing.Point(370, 283);
+            this.Personalization_Card.Location = new System.Drawing.Point(370, 289);
             this.Personalization_Card.Margin = new System.Windows.Forms.Padding(14);
             this.Personalization_Card.MouseState = MaterialSkin.MouseState.HOVER;
             this.Personalization_Card.Name = "Personalization_Card";
             this.Personalization_Card.Padding = new System.Windows.Forms.Padding(14);
-            this.Personalization_Card.Size = new System.Drawing.Size(407, 245);
+            this.Personalization_Card.Size = new System.Drawing.Size(401, 239);
             this.Personalization_Card.TabIndex = 6;
             // 
             // materialCheckedListBox2
             // 
+            this.materialCheckedListBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.materialCheckedListBox2.AutoScroll = true;
             this.materialCheckedListBox2.AutoScrollMargin = new System.Drawing.Size(2, 0);
             this.materialCheckedListBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -480,9 +511,11 @@ namespace Sky_Cloud_Backup
             // 
             // Dark_mode_switch
             // 
+            this.Dark_mode_switch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Dark_mode_switch.AutoSize = true;
             this.Dark_mode_switch.Depth = 0;
-            this.Dark_mode_switch.Location = new System.Drawing.Point(6, 6);
+            this.Dark_mode_switch.Location = new System.Drawing.Point(7, 6);
             this.Dark_mode_switch.Margin = new System.Windows.Forms.Padding(0);
             this.Dark_mode_switch.MouseLocation = new System.Drawing.Point(-1, -1);
             this.Dark_mode_switch.MouseState = MaterialSkin.MouseState.HOVER;
@@ -496,6 +529,8 @@ namespace Sky_Cloud_Backup
             // 
             // materialCheckedListBox1
             // 
+            this.materialCheckedListBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.materialCheckedListBox1.AutoScroll = true;
             this.materialCheckedListBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.materialCheckedListBox1.Controls.Add(this.Strt_Win);
@@ -512,6 +547,7 @@ namespace Sky_Cloud_Backup
             // 
             // Strt_Win
             // 
+            this.Strt_Win.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.Strt_Win.AutoSize = true;
             this.Strt_Win.Depth = 0;
             this.Strt_Win.Location = new System.Drawing.Point(10, 84);
@@ -529,6 +565,7 @@ namespace Sky_Cloud_Backup
             // 
             // Always_Top
             // 
+            this.Always_Top.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.Always_Top.AutoSize = true;
             this.Always_Top.Depth = 0;
             this.Always_Top.Location = new System.Drawing.Point(10, 10);
@@ -546,6 +583,7 @@ namespace Sky_Cloud_Backup
             // 
             // Minimize_Systray
             // 
+            this.Minimize_Systray.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.Minimize_Systray.AutoSize = true;
             this.Minimize_Systray.Depth = 0;
             this.Minimize_Systray.Location = new System.Drawing.Point(10, 47);
@@ -626,7 +664,6 @@ namespace Sky_Cloud_Backup
             // 
             // About_Button
             // 
-            this.About_Button.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.About_Button.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.About_Button.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.About_Button.Depth = 0;
@@ -646,25 +683,24 @@ namespace Sky_Cloud_Backup
             this.About_Button.UseVisualStyleBackColor = true;
             this.About_Button.Click += new System.EventHandler(this.About_Button_Click);
             // 
-            // notify_Backup_Bedrock
+            // Bedrock_Backup_Notifier
             // 
-            this.notify_Backup_Bedrock.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            this.notify_Backup_Bedrock.BalloonTipText = "You\'re  Bedrock world is Backuping";
-            this.notify_Backup_Bedrock.BalloonTipTitle = "Bedrock Backup ";
-            this.notify_Backup_Bedrock.Icon = ((System.Drawing.Icon)(resources.GetObject("notify_Backup_Bedrock.Icon")));
-            this.notify_Backup_Bedrock.Text = "Sky Cloud Backup";
+            this.Bedrock_Backup_Notifier.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.Bedrock_Backup_Notifier.BalloonTipText = "You\'re  Bedrock world is Backuping";
+            this.Bedrock_Backup_Notifier.BalloonTipTitle = "Bedrock Backup ";
+            this.Bedrock_Backup_Notifier.Icon = ((System.Drawing.Icon)(resources.GetObject("Bedrock_Backup_Notifier.Icon")));
+            this.Bedrock_Backup_Notifier.Text = "Sky Cloud Backup";
             // 
-            // notify_Backup_Java
+            // Java_Bedrock_Notifier
             // 
-            this.notify_Backup_Java.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            this.notify_Backup_Java.BalloonTipText = "You\'re  Java world is Backuping";
-            this.notify_Backup_Java.BalloonTipTitle = "Java Backup ";
-            this.notify_Backup_Java.Icon = ((System.Drawing.Icon)(resources.GetObject("notify_Backup_Java.Icon")));
-            this.notify_Backup_Java.Text = "Sky Cloud Backup";
+            this.Java_Bedrock_Notifier.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.Java_Bedrock_Notifier.BalloonTipText = "You\'re  Java world is Backuping";
+            this.Java_Bedrock_Notifier.BalloonTipTitle = "Java Backup ";
+            this.Java_Bedrock_Notifier.Icon = ((System.Drawing.Icon)(resources.GetObject("Java_Bedrock_Notifier.Icon")));
+            this.Java_Bedrock_Notifier.Text = "Sky Cloud Backup";
             // 
             // Help_Button
             // 
-            this.Help_Button.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Help_Button.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Help_Button.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Dense;
             this.Help_Button.Depth = 0;
@@ -686,11 +722,12 @@ namespace Sky_Cloud_Backup
             // 
             // Add_Settings
             // 
-            this.Add_Settings.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Add_Settings.AutoSize = true;
+            this.Add_Settings.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Add_Settings.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Add_Settings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.Add_Settings.Controls.Add(this.Backup_name_for);
-            this.Add_Settings.Controls.Add(this.Deafualt_Backup_name);
+            this.Add_Settings.Controls.Add(this.Default_Backup_name);
             this.Add_Settings.Controls.Add(this.Backup_Name);
             this.Add_Settings.Controls.Add(this.zip_mcworld);
             this.Add_Settings.Controls.Add(this.Reset_Btn);
@@ -698,19 +735,17 @@ namespace Sky_Cloud_Backup
             this.Add_Settings.Controls.Add(this.Edtitions);
             this.Add_Settings.Depth = 0;
             this.Add_Settings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Add_Settings.Location = new System.Drawing.Point(17, 306);
+            this.Add_Settings.Location = new System.Drawing.Point(17, 308);
             this.Add_Settings.Margin = new System.Windows.Forms.Padding(14);
             this.Add_Settings.MouseState = MaterialSkin.MouseState.HOVER;
             this.Add_Settings.Name = "Add_Settings";
             this.Add_Settings.Padding = new System.Windows.Forms.Padding(14);
-            this.Add_Settings.Size = new System.Drawing.Size(327, 166);
+            this.Add_Settings.Size = new System.Drawing.Size(325, 164);
             this.Add_Settings.TabIndex = 5;
             // 
             // Backup_name_for
             // 
-            this.Backup_name_for.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Backup_name_for.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Backup_name_for.AutoSize = true;
             this.Backup_name_for.Depth = 0;
             this.Backup_name_for.Location = new System.Drawing.Point(12, 79);
@@ -725,27 +760,25 @@ namespace Sky_Cloud_Backup
             this.Backup_name_for.UseVisualStyleBackColor = true;
             this.Backup_name_for.CheckedChanged += new System.EventHandler(this.Backup_name_for_CheckedChanged);
             // 
-            // Deafualt_Backup_name
+            // Default_Backup_name
             // 
-            this.Deafualt_Backup_name.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Deafualt_Backup_name.AutoSize = true;
-            this.Deafualt_Backup_name.Checked = true;
-            this.Deafualt_Backup_name.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.Deafualt_Backup_name.Depth = 0;
-            this.Deafualt_Backup_name.Location = new System.Drawing.Point(154, 79);
-            this.Deafualt_Backup_name.Margin = new System.Windows.Forms.Padding(0);
-            this.Deafualt_Backup_name.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.Deafualt_Backup_name.MouseState = MaterialSkin.MouseState.HOVER;
-            this.Deafualt_Backup_name.Name = "Deafualt_Backup_name";
-            this.Deafualt_Backup_name.ReadOnly = false;
-            this.Deafualt_Backup_name.Ripple = true;
-            this.Deafualt_Backup_name.Size = new System.Drawing.Size(133, 37);
-            this.Deafualt_Backup_name.TabIndex = 15;
-            this.Deafualt_Backup_name.Text = "Default Name";
-            this.Deafualt_Backup_name.UseVisualStyleBackColor = true;
-            this.Deafualt_Backup_name.CheckedChanged += new System.EventHandler(this.Deafualt_Backup_name_CheckedChanged);
+            this.Default_Backup_name.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.Default_Backup_name.AutoSize = true;
+            this.Default_Backup_name.Checked = true;
+            this.Default_Backup_name.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.Default_Backup_name.Depth = 0;
+            this.Default_Backup_name.Location = new System.Drawing.Point(154, 79);
+            this.Default_Backup_name.Margin = new System.Windows.Forms.Padding(0);
+            this.Default_Backup_name.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.Default_Backup_name.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Default_Backup_name.Name = "Default_Backup_name";
+            this.Default_Backup_name.ReadOnly = false;
+            this.Default_Backup_name.Ripple = true;
+            this.Default_Backup_name.Size = new System.Drawing.Size(133, 37);
+            this.Default_Backup_name.TabIndex = 15;
+            this.Default_Backup_name.Text = "Default Name";
+            this.Default_Backup_name.UseVisualStyleBackColor = true;
+            this.Default_Backup_name.CheckedChanged += new System.EventHandler(this.Deafualt_Backup_name_CheckedChanged);
             // 
             // Backup_Name
             // 
@@ -766,7 +799,7 @@ namespace Sky_Cloud_Backup
             this.Backup_Name.MouseState = MaterialSkin.MouseState.OUT;
             this.Backup_Name.Multiline = false;
             this.Backup_Name.Name = "Backup_Name";
-            this.Backup_Name.Size = new System.Drawing.Size(288, 36);
+            this.Backup_Name.Size = new System.Drawing.Size(286, 36);
             this.Backup_Name.TabIndex = 14;
             this.Backup_Name.Text = "";
             this.Backup_Name.TrailingIcon = null;
@@ -774,9 +807,7 @@ namespace Sky_Cloud_Backup
             // 
             // zip_mcworld
             // 
-            this.zip_mcworld.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.zip_mcworld.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.zip_mcworld.AutoSize = true;
             this.zip_mcworld.Depth = 0;
             this.zip_mcworld.Location = new System.Drawing.Point(196, 116);
@@ -793,9 +824,7 @@ namespace Sky_Cloud_Backup
             // 
             // Reset_Btn
             // 
-            this.Reset_Btn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Reset_Btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Reset_Btn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Reset_Btn.CharacterCasing = MaterialSkin.Controls.MaterialButton.CharacterCasingEnum.Normal;
             this.Reset_Btn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Dense;
@@ -814,13 +843,11 @@ namespace Sky_Cloud_Backup
             this.Reset_Btn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.Reset_Btn.UseAccentColor = true;
             this.Reset_Btn.UseVisualStyleBackColor = true;
-            this.Reset_Btn.Click += new System.EventHandler(this.materialButton1_Click);
+            this.Reset_Btn.Click += new System.EventHandler(this.Reset_Btn_Click);
             // 
             // More_label
             // 
-            this.More_label.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.More_label.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.More_label.AutoSize = true;
             this.More_label.Depth = 0;
             this.More_label.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -835,9 +862,7 @@ namespace Sky_Cloud_Backup
             // 
             // Edtitions
             // 
-            this.Edtitions.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Edtitions.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Edtitions.AutoSize = true;
             this.Edtitions.Depth = 0;
             this.Edtitions.Location = new System.Drawing.Point(81, 116);
@@ -854,8 +879,9 @@ namespace Sky_Cloud_Backup
             // 
             // Main_Screen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoScroll = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.ClientSize = new System.Drawing.Size(882, 545);
@@ -871,7 +897,6 @@ namespace Sky_Cloud_Backup
             this.DrawerUseColors = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
-            this.MaximizeBox = false;
             this.Name = "Main_Screen";
             this.Sizable = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
@@ -933,8 +958,8 @@ namespace Sky_Cloud_Backup
         private MaterialSkin.Controls.MaterialCard Add_Settings;
         private MaterialSkin.Controls.MaterialButton Reset_Btn;
         private MaterialSkin.Controls.MaterialLabel More_label;
-        public System.Windows.Forms.NotifyIcon notify_Backup_Bedrock;
-        public System.Windows.Forms.NotifyIcon notify_Backup_Java;
+        public System.Windows.Forms.NotifyIcon Bedrock_Backup_Notifier;
+        public System.Windows.Forms.NotifyIcon Java_Bedrock_Notifier;
         public MaterialSkin.Controls.MaterialTextBox Open_Word_Text;
         public System.Windows.Forms.NotifyIcon notify_tray;
         public MaterialSkin.Controls.MaterialButton Backup_Button;
@@ -942,9 +967,10 @@ namespace Sky_Cloud_Backup
         public MaterialSkin.Controls.MaterialSwitch zip_mcworld;
         public MaterialSkin.Controls.MaterialSwitch Edtitions;
         public MaterialSkin.Controls.MaterialSwitch Backup_name_for;
-        public MaterialSkin.Controls.MaterialCheckbox Deafualt_Backup_name;
+        public MaterialSkin.Controls.MaterialCheckbox Default_Backup_name;
         public MaterialSkin.Controls.MaterialTextBox Backup_Name;
         public MaterialSkin.Controls.MaterialCheckbox Strt_Win;
         public MaterialSkin.Controls.MaterialCheckbox Upload_to_Drive_CheckBox;
+        private MaterialSkin.Controls.MaterialButton sign_out_button;
     }
 }

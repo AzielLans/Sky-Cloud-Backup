@@ -1,30 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using Google.Apis.Auth.OAuth2;
+﻿using Google.Apis.Auth.OAuth2;
 using Google.Apis.Drive.v3;
-using Google.Apis.Drive.v3.Data;
 using Google.Apis.Services;
 using Google.Apis.Util.Store;
+using System;
+using System.IO;
+using System.Threading;
 using File = Google.Apis.Drive.v3.Data.File;
 
 namespace Sky_Cloud_Backup
 {
-    public partial class gle_div
+    public partial class google_drive
     {
-        private static string Folderid = "";
-        private static string ApplicationName = "Sky Cloud Backup";
+        public static string ApplicationName = "Sky Cloud Backup";
         private static string[] Scopes = { DriveService.Scope.Drive };
-        public UserCredential GetUserCredential()
+        public UserCredential GetUserCredential ()
         {
             using (var stream = new FileStream("client_secret.json", FileMode.Open, FileAccess.Read))
             {
                 string creadPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-                creadPath = Path.Combine(creadPath, "driveApiCredentials", "drive-credentials.json");
+                creadPath = Path.Combine(creadPath, "driveApiCredentials");
 
 
                 return GoogleWebAuthorizationBroker.AuthorizeAsync(
@@ -40,29 +34,26 @@ namespace Sky_Cloud_Backup
             return new DriveService(
                new BaseClientService.Initializer
                {
-                   HttpClientInitializer= credential,
+                   HttpClientInitializer = credential,
                    ApplicationName = ApplicationName
                }
                 );
         }
 
-        public string Upload_to_Drive(DriveService service, string filename, string filepath, string contentType)
+        public static void Upload_to_Drive ( DriveService service, string filename, string filepath )
         {
             var fileMatadata = new File();
             fileMatadata.Name = filename;
-            fileMatadata.Parents = new List<string> { Folderid };
+            fileMatadata.MimeType = "application/zip";
+
 
             FilesResource.CreateMediaUpload request;
-
-            using (var stream = new FileStream(filepath, FileMode.Open))
+            using (var stream = new System.IO.FileStream(filepath, System.IO.FileMode.Open))
             {
-                request = service.Files.Create(fileMatadata, stream, contentType);
+                request = service.Files.Create(fileMatadata, stream, "image/jpeg");
+                request.Fields = "id";
                 request.Upload();
             }
-
-            var file = request.ResponseBody;
-
-            return file.Id;
         }
     }
 }

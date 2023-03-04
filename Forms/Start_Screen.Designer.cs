@@ -138,7 +138,8 @@ namespace Sky_Cloud_Backup
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(156)))), ((int)(((byte)(203)))));
-            this.BackgroundImage = global::Sky_Cloud_Backup.Properties.Resources.Splash_Screen_Alpha_0_4;
+            this.BackgroundImage = global::Sky_Cloud_Backup.Properties.Resources.SCB_B4;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(591, 347);
             this.ControlBox = false;
             this.Controls.Add(this.Cancel_backup_info);

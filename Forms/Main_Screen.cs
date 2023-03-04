@@ -1,5 +1,9 @@
-﻿using MaterialSkin;
+﻿using Google.Apis.Auth.OAuth2;
+using Google.Apis.Drive.v3;
+using Google.Apis.Services;
+using MaterialSkin;
 using MaterialSkin.Controls;
+using Sky_Cloud_Backup.assets;
 using System;
 using System.Diagnostics;
 using System.Globalization;
@@ -17,7 +21,7 @@ namespace Sky_Cloud_Backup
         public Main_Screen ()
         {
             InitializeComponent();
-            Chk_atstarp_Backup();
+            Check_atstartup_Backup();
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.EnforceBackcolorOnAllComponents = true;
             materialSkinManager.AddFormToManage(this);
@@ -26,15 +30,21 @@ namespace Sky_Cloud_Backup
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.LightBlue800, Primary.LightBlue900, Primary.LightBlue400, Accent.Cyan700, TextShade.WHITE);
             Sigin_in_Button.Enabled = false;
-            string folderName = "Temp";
-            string pathString = Path.Combine(folderName, "");
-            System.IO.Directory.CreateDirectory(pathString);
+            add.createfile(@"Temp");
             Backup_Button.Enabled = false;
-            Chk_Default_name();
+            Check_Default_name();
+            check_signin();
         }
 
-        private static readonly strtup stup = new strtup();
-        gle_div gle_div = new gle_div();
+
+
+        private static readonly startup stup = new startup();
+        private static readonly additonal add = new additonal();
+        google_drive google_drive = new google_drive();
+
+        public static string environment = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+        public static string file_path = @"driveApiCredentials/Google.Apis.Auth.OAuth2.Responses.TokenResponse-User";
+        public static string path = Path.Combine(environment, file_path);
 
 
         MaterialSkinManager ThemeManager = MaterialSkinManager.Instance;
@@ -44,26 +54,32 @@ namespace Sky_Cloud_Backup
             {
                 Save_World_TextBox.Enabled = false;
                 Save_World_Button.Enabled = false;
-                Sigin_in_Button.Enabled = true;
-                Chk_txtbx_fld_Op();
+                if (!File.Exists(path))
+                {
+                    Sigin_in_Button.Enabled = true;
+                }
+
+                Check_textbox_field_Open();
             }
             else
             {
                 Save_World_TextBox.Enabled = true;
                 Save_World_Button.Enabled = true;
                 Sigin_in_Button.Enabled = false;
-                Chk_atstarp_Backup();
+                Check_atstartup_Backup();
             }
             Properties.Settings.Default.Upload_To_Drive = Upload_to_Drive_CheckBox.Checked;
             Properties.Settings.Default.Save();
 
         }
 
-
-        public void Chk_Default_name ()
+        //
+        // Check SCB stats
+        //
+        public void Check_Default_name ()
         {
             MaterialSkinManager ThemeManager = MaterialSkinManager.Instance;
-            if (Deafualt_Backup_name.Checked)
+            if (Default_Backup_name.Checked)
             {
                 Backup_name_for.Hide();
                 Backup_Name.Hide();
@@ -75,7 +91,7 @@ namespace Sky_Cloud_Backup
             }
         }
 
-        public void Chk_Reset ()
+        public void Check_Reset ()
         {
             if (Properties.Settings.Default.Resets == true)
             {
@@ -86,7 +102,7 @@ namespace Sky_Cloud_Backup
             }
         }
 
-        public void Minto_strt ()
+        public void Minimizeto_start ()
         {
             if (Strt_Win.Checked)
             {
@@ -99,7 +115,7 @@ namespace Sky_Cloud_Backup
             }
         }
 
-        public void Nofrm_strt ()
+        public void Noform_start ()
         {
             Show();
             notify_tray.Visible = false;
@@ -107,7 +123,7 @@ namespace Sky_Cloud_Backup
             Activate();
         }
 
-        public void Chk_txtbx_fld_Op ()
+        public void Check_textbox_field_Open ()
         {
             if (!string.IsNullOrEmpty(Open_Word_Text.Text))
             {
@@ -119,7 +135,7 @@ namespace Sky_Cloud_Backup
             }
         }
 
-        public void Chk_atstarp_Backup ()
+        public void Check_atstartup_Backup ()
         {
             if (!string.IsNullOrEmpty(Open_Word_Text.Text))
             {
@@ -139,12 +155,26 @@ namespace Sky_Cloud_Backup
             }
         }
 
+        public void check_signin ()
+        {
+            if (File.Exists(path))
+            {
+                sign_out_button.Enabled = true;
+                Sigin_in_Button.Enabled = false;
+            }
+            else
+            {
+                sign_out_button.Enabled = false;
+                Sigin_in_Button.Enabled = true;
+            }
+        }
+
         private void Open_World_Button_Click ( object sender, EventArgs e )
         {
             if (Open_World.ShowDialog() == DialogResult.OK)
             {
                 Open_Word_Text.Text = Open_World.SelectedPath;
-                Chk_atstarp_Backup();
+                Check_atstartup_Backup();
                 Properties.Settings.Default.World_Location = Open_Word_Text.Text;
                 Properties.Settings.Default.Save();
             }
@@ -156,7 +186,7 @@ namespace Sky_Cloud_Backup
             if (Save_World.ShowDialog() == DialogResult.OK)
             {
                 Save_World_TextBox.Text = Save_World.SelectedPath;
-                Chk_atstarp_Backup();
+                Check_atstartup_Backup();
                 Properties.Settings.Default.Save_Location = Save_World_TextBox.Text;
                 Properties.Settings.Default.Save();
             }
@@ -180,7 +210,7 @@ namespace Sky_Cloud_Backup
         }
 
 
-
+        UserCredential credential;
         private void Backup_Button_Click ( object sender, EventArgs e )
         {
             if (Open_Word_Text.Text.Length == 0)
@@ -196,21 +226,90 @@ namespace Sky_Cloud_Backup
             }
             else
             {
-                if (Sigin_in_Button.Enabled == false)
+                if (!Upload_to_Drive_CheckBox.Checked)
                 {
                     Backup_Button.Enabled = false;
                     if (Edtitions.Checked)
                     {
-                        Main_Java_Backup();
+                        Java_Backup();
                     }
                     else
                     {
-                        Main_Bedrock_Backup();
+                        Bedrock_Backup();
                     }
                     Backup_Button.Enabled = true;
                 }
+                else
+                {
+                    uploadtodrve();
+                }
             }
         }
+
+        private void uploadtodrve ()
+        {
+            Save_World_TextBox.Text = @"upload";
+            Backup_Button.Enabled = false;
+            if (Edtitions.Checked)
+            {
+                Java_Backup();
+                ProcessStartInfo startInfo = new ProcessStartInfo();
+                startInfo.FileName = "Backup_Loading_Screen.exe";
+                Process process = new Process();
+                process.StartInfo = startInfo;
+                process.StartInfo.Arguments = "true";
+                process.Start();
+                foreach (var filename in Directory.GetFiles(@"upload"))
+                {
+                    var newFilename = string.Format("{0}.zip", "Backup Java world");
+                    var newFullFilename = Path.Combine(@"upload", newFilename);
+                    File.Move(filename, newFullFilename);
+                }
+
+                credential = google_drive.GetUserCredential();
+
+                var service = new DriveService(new BaseClientService.Initializer()
+                {
+                    HttpClientInitializer = credential,
+                    ApplicationName = google_drive.ApplicationName,
+                });
+
+                google_drive.Upload_to_Drive(service, "Backup Java world" + DateTime.Now.ToString("dddd, dd MMMM yyyy"), @"upload");
+                process.Kill();
+            }
+            else
+            {
+                Bedrock_Backup();
+                ProcessStartInfo startInfo = new ProcessStartInfo();
+                startInfo.FileName = "Backup_Loading_Screen.exe";
+                Process process = new Process();
+                process.StartInfo = startInfo;
+                process.StartInfo.Arguments = "true";
+                process.Start();
+                string name = "Backup Bedrock world";
+                foreach (var filename in Directory.GetFiles(@"upload"))
+                {
+                    var newFilename = string.Format("{0}.zip", name);
+                    var newFullFilename = Path.Combine(@"upload", newFilename);
+                    File.Move(filename, newFullFilename);
+                }
+                credential = google_drive.GetUserCredential();
+
+                var service = new DriveService(new BaseClientService.Initializer()
+                {
+                    HttpClientInitializer = credential,
+                    ApplicationName = google_drive.ApplicationName,
+                });
+                google_drive.Upload_to_Drive(service, "Backup Bedrock world " + DateTime.Now.ToString("dddd, dd MMMM yyyy"), @"upload/Backup Bedrock world.zip");
+                process.Kill();
+
+            }
+            add.filedelete(@"upload", true);
+            MaterialDialog messageBox = new MaterialDialog(this, "Sky Cloud Backup", "upload complete");
+            messageBox.ShowDialog(this);
+            Backup_Button.Enabled = true;
+        }
+
 
 
         /////////////////////////////////////Color Schemes///////////////////////////////////////////////////////////////////////
@@ -311,7 +410,7 @@ namespace Sky_Cloud_Backup
             Properties.Settings.Default.strtwin = Strt_Win.Checked;
             Properties.Settings.Default.Chk_zip_mcowrld = zip_mcworld.Checked;
             Properties.Settings.Default.Defualt_name_textbox = Backup_Name.Text;
-            Properties.Settings.Default.Defualt_name_chkbx = Deafualt_Backup_name.Checked;
+            Properties.Settings.Default.Defualt_name_chkbx = Default_Backup_name.Checked;
             Properties.Settings.Default.Backup_name_for = Backup_name_for.Checked;
             Properties.Settings.Default.Save();
             Application.Exit();
@@ -335,35 +434,34 @@ namespace Sky_Cloud_Backup
             Strt_Win.Checked = Properties.Settings.Default.strtwin;
             zip_mcworld.Checked = Properties.Settings.Default.Chk_zip_mcowrld;
             Backup_Name.Text = Properties.Settings.Default.Defualt_name_textbox;
-            Deafualt_Backup_name.Checked = Properties.Settings.Default.Defualt_name_chkbx;
+            Default_Backup_name.Checked = Properties.Settings.Default.Defualt_name_chkbx;
             Backup_name_for.Checked = Properties.Settings.Default.Backup_name_for;
-            Minto_strt();
-            Chk_atstarp_Backup();
-            Chk_Reset();
+            Minimizeto_start();
+            Check_atstartup_Backup();
+            Check_Reset();
 
         }
-
-        private void Main_Bedrock_Backup ()
+        /////////////////////////////////////Bedrock_Backup///////////////////////////////////////////////////////////////////////
+        private void Bedrock_Backup ()
         {
             string sourceDirectory = Properties.Settings.Default.World_Location = Open_Word_Text.Text;
             string targetDirectory = @"Temp";
             Copy(sourceDirectory, targetDirectory);
             if (!Directory.Exists(targetDirectory))
             {
+
                 Copy(sourceDirectory, targetDirectory);
-                Chk_World_Bedrock();
+                Check_World_Bedrock();
             }
             else
             {
-                string folderName = @"Temp";
-                string pathString = Path.Combine(folderName, "");
-                System.IO.Directory.CreateDirectory(pathString);
+                add.createfile(@"Temp");
                 Copy(sourceDirectory, targetDirectory);
-                Chk_World_Bedrock();
+                Check_World_Bedrock();
             }
             Backup_Button.Enabled = true;
         }
-        public void Arcfilecreat ()
+        public void Bedrock_Compress ()
         {
             try
             {
@@ -371,26 +469,26 @@ namespace Sky_Cloud_Backup
                 {
                     if (File.Exists(@"Temp\Backup Bedrock world.zip"))
                     {
-                        Random_Name_Bedrock();
+                        Bedrock_Genrate_Random_Name();
                     }
                     else
                     {
                         string sourceDirectoryName = Properties.Settings.Default.World_Location = Open_Word_Text.Text;
                         string destinationArchiveFileName = @"Temp\Backup Bedrock world.zip";
-                        CreatFrDir(sourceDirectoryName, destinationArchiveFileName);
+                        Bedrock_Compressor(sourceDirectoryName, destinationArchiveFileName);
                     }
                 }
                 else
                 {
                     if (File.Exists(@"Temp\Backup Bedrock world.mcworld"))
                     {
-                        Random_Name_Bedrock();
+                        Bedrock_Genrate_Random_Name();
                     }
                     else
                     {
                         string sourceDirectoryName = Properties.Settings.Default.World_Location = Open_Word_Text.Text;
                         string destinationArchiveFileName = @"Temp\Backup Bedrock world.mcworld";
-                        CreatFrDir(sourceDirectoryName, destinationArchiveFileName);
+                        Bedrock_Compressor(sourceDirectoryName, destinationArchiveFileName);
                     }
                 }
             }
@@ -400,18 +498,18 @@ namespace Sky_Cloud_Backup
                 Dialog_error(Error_txt);
             }
         }
-        private void CreatFrDir ( string sourceDirectoryName, string destinationArchiveFileName )
+        private void Bedrock_Compressor ( string sourceDirectoryName, string destinationArchiveFileName )
         {
             ZipFile.CreateFromDirectory(sourceDirectoryName, destinationArchiveFileName);
-            Random_Name_Bedrock();
+            Bedrock_Genrate_Random_Name();
         }
-        private void Random_Name_Bedrock ()
+        private void Bedrock_Genrate_Random_Name ()
         {
-            Rename_Backup_Customs_Main();
-            RenameMcworldFiles(@"Temp");
+            Custom_Backup_Name();
+            Bedrock_Add_date(@"Temp");
             Copy_Output();
         }
-        private void RenameMcworldFiles ( string path )
+        private void Bedrock_Add_date ( string path )
         {
             if (zip_mcworld.Checked)
             {
@@ -483,9 +581,9 @@ namespace Sky_Cloud_Backup
             var diTarget = new DirectoryInfo(targetDirectory);
             CopyAll(diSource, diTarget);
         }
-        /////////////////////////////////////Java_Backup///////////////////////////////////////////////////////////////////////
 
-        private void Main_Java_Backup ()
+        /////////////////////////////////////Java_Backup///////////////////////////////////////////////////////////////////////
+        private void Java_Backup ()
         {
             string sourceDirectory = Properties.Settings.Default.World_Location = Open_Word_Text.Text;
             string targetDirectory = @"Temp";
@@ -493,19 +591,17 @@ namespace Sky_Cloud_Backup
             if (!Directory.Exists(targetDirectory))
             {
                 Copy(sourceDirectory, targetDirectory);
-                Chk_World_Java();
+                Check_World_Java();
             }
             else
             {
-                string folderName = @"Temp";
-                string pathString = Path.Combine(folderName, "");
-                System.IO.Directory.CreateDirectory(pathString);
+                add.createfile(@"Temp");
                 Copy(sourceDirectory, targetDirectory);
-                Chk_World_Java();
+                Check_World_Java();
             }
             Backup_Button.Enabled = true;
         }
-        private void Arcfilecreat_Java ()
+        private void Java_Compress ()
         {
             try
             {
@@ -517,7 +613,7 @@ namespace Sky_Cloud_Backup
                 {
                     string sourceDirectoryName = Properties.Settings.Default.World_Location = Open_Word_Text.Text;
                     string destinationArchiveFileName = @"Temp\Backup Java world.zip";
-                    CreatFrDir_Java(sourceDirectoryName, destinationArchiveFileName);
+                    Java_Compressor(sourceDirectoryName, destinationArchiveFileName);
                 }
 
             }
@@ -527,19 +623,19 @@ namespace Sky_Cloud_Backup
                 Dialog_error(Error_txt);
             }
         }
-        private void CreatFrDir_Java ( string sourceDirectoryName, string destinationArchiveFileName )
+        private void Java_Compressor ( string sourceDirectoryName, string destinationArchiveFileName )
         {
             ZipFile.CreateFromDirectory(sourceDirectoryName, destinationArchiveFileName);
-            Rename_Backup_Customs_Main();
-            Random_Name_Java();
+            Java_Genrate_Random_Name();
         }
-        private void Random_Name_Java ()
+        private void Java_Genrate_Random_Name ()
         {
-            Rename_Backup_Customs_Main();
-            RenameJavaFiles(@"Temp");
+            Custom_Backup_Name();
+            Java_Add_Date(@"Temp");
             Copy_Output();
+
         }
-        private static void RenameJavaFiles ( string path )
+        private static void Java_Add_Date ( string path )
         {
             foreach (var filename in Directory.GetFiles(path))
             {
@@ -550,8 +646,9 @@ namespace Sky_Cloud_Backup
                 File.Move(filename, newFullFilename);
             }
         }
+
         /////////////////////////////////////Check_Worlds///////////////////////////////////////////////////////////////////////
-        private void Chk_World_Bedrock ()
+        private void Check_World_Bedrock ()
         {
             string pth_name = @"Temp\levelname.txt";
             string pth_db = @"Temp\db";
@@ -565,22 +662,20 @@ namespace Sky_Cloud_Backup
                     {
                         if (File.Exists(pth_level_data_old))
                         {
-                            notify_Backup_Bedrock.BalloonTipTitle = "Bedrock Backup";
-                            notify_Backup_Bedrock.BalloonTipText = "You're Bedrock world is Backuping";
-                            notify_Backup_Bedrock.Visible = true;
+                            Bedrock_Backup_Notifier.BalloonTipTitle = "Bedrock Backup";
+                            Bedrock_Backup_Notifier.BalloonTipText = "You're Bedrock world is Backuping";
+                            Bedrock_Backup_Notifier.Visible = true;
                             ProcessStartInfo startInfo = new ProcessStartInfo();
                             startInfo.FileName = "Backup_Loading_Screen.exe";
                             Process process = new Process();
                             process.StartInfo = startInfo;
+                            process.StartInfo.Arguments = "false";
                             process.Start();
-                            Directory.Delete(@"Temp", true);
-                            string folderName = @"Temp\";
-                            System.IO.Directory.CreateDirectory(folderName);
-                            Arcfilecreat();
-                            notify_Backup_Bedrock.Visible = false;
+                            add.filedelete(@"Temp", true);
+                            Bedrock_Compress();
+                            Bedrock_Backup_Notifier.Visible = false;
                             process.Kill();
-                            Directory.Delete(@"Temp", true);
-                            System.IO.Directory.CreateDirectory(folderName);
+                            add.filedelete(@"Temp", true);
                             MaterialSnackBar finish_Bedrock = new MaterialSnackBar("You're Bedrock world is backup", "OK", true);
                             finish_Bedrock.Show(this);
                         }
@@ -611,7 +706,7 @@ namespace Sky_Cloud_Backup
             }
         }
 
-        private void Chk_World_Java ()
+        private void Check_World_Java ()
         {
             string pth_icon = @"Temp\icon.png";
             string pth_level = @"Temp\level.dat";
@@ -625,23 +720,21 @@ namespace Sky_Cloud_Backup
                     {
                         if (File.Exists(pth_session_lock))
                         {
-                            notify_Backup_Java.BalloonTipTitle = "Java Backup";
-                            notify_Backup_Java.BalloonTipText = "You're Java world is Backuping";
-                            notify_Backup_Java.Visible = true;
-                            notify_Backup_Java.ShowBalloonTip(500);
+                            Java_Bedrock_Notifier.BalloonTipTitle = "Java Backup";
+                            Java_Bedrock_Notifier.BalloonTipText = "You're Java world is Backuping";
+                            Java_Bedrock_Notifier.Visible = true;
+                            Java_Bedrock_Notifier.ShowBalloonTip(500);
                             ProcessStartInfo startInfo = new ProcessStartInfo();
                             startInfo.FileName = "Backup_Loading_Screen.exe";
                             Process process = new Process();
                             process.StartInfo = startInfo;
+                            process.StartInfo.Arguments = "false";
                             process.Start();
-                            Directory.Delete(@"Temp", true);
-                            string folderName = @"Temp\";
-                            System.IO.Directory.CreateDirectory(folderName);
-                            notify_Backup_Java.Visible = false;
-                            Arcfilecreat_Java();
+                            add.filedelete(@"Temp", true);
+                            Java_Bedrock_Notifier.Visible = false;
+                            Java_Compress();
                             process.Kill();
-                            Directory.Delete(@"Temp", true);
-                            System.IO.Directory.CreateDirectory(folderName);
+                            add.filedelete(@"Temp", true);
                             MaterialSnackBar finish_Java = new MaterialSnackBar("You're Java world is backup", "OK", true);
                             finish_Java.Show(this);
                         }
@@ -670,8 +763,8 @@ namespace Sky_Cloud_Backup
             }
 
         }
-        /////////////////////////////////////CustomRename///////////////////////////////////////////////////////////////////////
-        public void Rename_Backup_Customs_Main ()
+        /////////////////////////////////////CustomBackupName///////////////////////////////////////////////////////////////////////
+        public void Custom_Backup_Name ()
         {
             if (!string.IsNullOrEmpty(Backup_Name.Text))
             {
@@ -681,7 +774,7 @@ namespace Sky_Cloud_Backup
                     {
                         if (Edtitions.Checked)
                         {
-                            Rename_Backup_Custom_Java(Properties.Settings.Default.Defualt_name_textbox = Backup_Name.Text);
+                            Java_Custom_Backup_Name(Properties.Settings.Default.Defualt_name_textbox = Backup_Name.Text);
                         }
                     }
                 }
@@ -689,13 +782,13 @@ namespace Sky_Cloud_Backup
                 {
                     if (!string.IsNullOrEmpty(Backup_Name.Text))
                     {
-                        Rename_Backup_Custom_Bedrock(Properties.Settings.Default.Defualt_name_textbox = Backup_Name.Text);
+                        Bedrock_Custom_Backup_Name(Properties.Settings.Default.Defualt_name_textbox = Backup_Name.Text);
                     }
                 }
             }
         }
 
-        public void Rename_Backup_Custom_Bedrock ( string name )
+        public void Bedrock_Custom_Backup_Name ( string name )
         {
             if (zip_mcworld.Checked)
             {
@@ -717,7 +810,7 @@ namespace Sky_Cloud_Backup
             }
         }
 
-        public void Rename_Backup_Custom_Java ( string name )
+        public void Java_Custom_Backup_Name ( string name )
         {
             foreach (var filename in Directory.GetFiles(@"Temp"))
             {
@@ -761,7 +854,7 @@ namespace Sky_Cloud_Backup
             this.ShowInTaskbar = true;
             if (Strt_Win.Checked)
             {
-                Nofrm_strt();
+                Noform_start();
             }
         }
 
@@ -792,7 +885,7 @@ namespace Sky_Cloud_Backup
             notify_tray.Visible = false;
             if (Strt_Win.Checked)
             {
-                Nofrm_strt();
+                Noform_start();
             }
         }
 
@@ -814,27 +907,7 @@ namespace Sky_Cloud_Backup
 
         private void backupToolStripMenuItem_Click ( object sender, EventArgs e )
         {
-            if (Open_Word_Text.Text.Length == 0)
-            {
-                string Error_txt = "The Textbox is empty";
-                Dialog_error(Error_txt);
-            }
-            else
-            {
-                if (Sigin_in_Button.Enabled == false)
-                {
-                    Backup_Button.Enabled = false;
-                    if (Edtitions.Checked)
-                    {
-                        Main_Java_Backup();
-                    }
-                    else
-                    {
-                        Main_Bedrock_Backup();
-                    }
-                    Backup_Button.Enabled = true;
-                }
-            }
+            Backup_Button_Click(sender, e);
         }
 
         private void aboutToolStripMenuItem_Click ( object sender, EventArgs e )
@@ -884,12 +957,12 @@ namespace Sky_Cloud_Backup
 
         private void Open_Word_Text_TabStopChanged ( object sender, EventArgs e )
         {
-            Chk_atstarp_Backup();
+            Check_atstartup_Backup();
         }
 
         private void Save_World_TextBox_TabStopChanged ( object sender, EventArgs e )
         {
-            Chk_atstarp_Backup();
+            Check_atstartup_Backup();
         }
 
         private void About_Button_Click ( object sender, EventArgs e )
@@ -908,7 +981,7 @@ namespace Sky_Cloud_Backup
             }
         }
 
-        private void materialButton1_Click ( object sender, EventArgs e )
+        private void Reset_Btn_Click ( object sender, EventArgs e )
         {
             MaterialDialog Reset = new MaterialDialog(this, "Sky Cloud Backup", "Are you sure that you are Reseting this app", "OK", true, "Never mind", true);
             DialogResult result = Reset.ShowDialog(this);
@@ -937,7 +1010,7 @@ namespace Sky_Cloud_Backup
                         Properties.Settings.Default.first_strtup = false;
                         zip_mcworld.Checked = false;
                         Backup_Name.Clear();
-                        Deafualt_Backup_name.Checked = true;
+                        Default_Backup_name.Checked = true;
                         Backup_name_for.Checked = false;
                         Properties.Settings.Default.Save();
                         this.Show();
@@ -961,7 +1034,7 @@ namespace Sky_Cloud_Backup
                         Properties.Settings.Default.first_strtup = false;
                         zip_mcworld.Checked = false;
                         Backup_Name.Clear();
-                        Deafualt_Backup_name.Checked = true;
+                        Default_Backup_name.Checked = true;
                         Backup_name_for.Checked = false;
                         Properties.Settings.Default.Save();
                         this.Show();
@@ -987,7 +1060,7 @@ namespace Sky_Cloud_Backup
                     Properties.Settings.Default.first_strtup = false;
                     zip_mcworld.Checked = false;
                     Backup_Name.Clear();
-                    Deafualt_Backup_name.Checked = true;
+                    Default_Backup_name.Checked = true;
                     Backup_name_for.Checked = false;
                     Properties.Settings.Default.Save();
                     this.Show();
@@ -998,13 +1071,19 @@ namespace Sky_Cloud_Backup
 
         private void Sigin_in_Button_Click ( object sender, EventArgs e )
         {
-            System.Diagnostics.Process.Start("https://involts.github.io/Sky-Cloud-Backup/Development/");
-            //MaterialDialog Com = new MaterialDialog(this, "Sky Cloud Backup", "Are you sure that you Continue to sign in to google drive, Google didn't verifed by Google", "OK", true, "Never mind", true);
-            //DialogResult result = Com.ShowDialog(this);
-            // if (result == DialogResult.OK)
-            // {
-            //     gle_div.GetUserCredential();
-            // }
+
+            if (!File.Exists(path))
+            {
+                MaterialDialog Com = new MaterialDialog(this, "Sky Cloud Backup", "Are you sure that you Continue to sign in to google drive, Google didn't verifed it", "OK", true, "Never mind", true);
+                DialogResult result = Com.ShowDialog(this);
+                if (result == DialogResult.OK)
+                {
+                    google_drive.GetUserCredential();
+                    check_signin();
+                }
+            }
+            // System.Diagnostics.Process.Start("https://involts.github.io/Sky-Cloud-Backup/Development/");
+
         }
 
         private void zip_mcworld_CheckedChanged ( object sender, EventArgs e )
@@ -1021,7 +1100,7 @@ namespace Sky_Cloud_Backup
 
         private void Deafualt_Backup_name_CheckedChanged ( object sender, EventArgs e )
         {
-            if (Deafualt_Backup_name.Checked)
+            if (Default_Backup_name.Checked)
             {
                 Backup_name_for.Hide();
                 Backup_Name.Hide();
@@ -1063,14 +1142,27 @@ namespace Sky_Cloud_Backup
             string Error_txt = txt;
             Dialog_error(Error_txt);
             Backup_Button.Enabled = false;
-            Directory.Delete(@"Temp", true);
-            string folderName = @"Temp\";
-            System.IO.Directory.CreateDirectory(folderName);
+            add.filedelete(@"Temp", true);
             Hide();
             notify_tray.Visible = true;
             ShowInTaskbar = false;
         }
 
+        private void sign_out_btn_Click ( object sender, EventArgs e )
+        {
+            if (File.Exists(path))
+            {
+                MaterialDialog Com = new MaterialDialog(this, "Sky Cloud Backup", "Are you sure that you want sign out to google drive", "OK", true, "Never mind", true);
+                DialogResult result = Com.ShowDialog(this);
+                if (result == DialogResult.OK)
+                {
+                    File.Delete(path);
+                    check_signin();
+                }
+            }
+        }
     }
+
+    
 }
 

@@ -105,6 +105,11 @@ namespace Sky_Cloud_Backup
                 }
                 else
                 {
+                    string chk_dev = @"Developer_Mode";
+                    if (File.Exists(chk_dev))
+                    {
+                        Load_Panel.Width += 10;
+                    }
                     Load_Panel.Width += 4;
                 }
             }
