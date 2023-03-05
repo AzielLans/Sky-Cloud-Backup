@@ -1,4 +1,6 @@
 ﻿
+using MaterialSkin.Controls;
+
 namespace Sky_Cloud_Backup
 {
     partial class Main_Screen
@@ -969,6 +971,7 @@ namespace Sky_Cloud_Backup
         #endregion
         private MaterialSkin.Controls.MaterialButton Help_Button;
         private MaterialSkin.Controls.MaterialCard Upload_to_Drive_Card;
+        private MaterialButton sign_out_button;
         private MaterialSkin.Controls.MaterialButton Sigin_in_Button;
         private MaterialSkin.Controls.MaterialLabel Note;
         private MaterialSkin.Controls.MaterialButton Save_World_Button;

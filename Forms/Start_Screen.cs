@@ -101,7 +101,7 @@ namespace Sky_Cloud_Backup
             {
                 if (Properties.Settings.Default.first_strtup == false)
                 {
-                    Load_Panel.Width += 2;
+                    Load_Panel.Width += 4;
                 }
                 else
                 {

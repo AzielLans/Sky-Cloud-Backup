@@ -418,7 +418,7 @@ namespace Sky_Cloud_Backup
                 strtwin = Strt_Win.Checked,
                 Chk_zip_mcowrld = zip_mcworld.Checked,
                 Defualt_name_textbox = Backup_Name.Text,
-                Defualt_name_chkbx = Deafualt_Backup_name.Checked,
+                Defualt_name_chkbx = Default_Backup_name.Checked,
                 Backup_name_for = Backup_name_for.Checked,
                 backupdialog = backupdialog.Checked,
                 AutoSave = automaticsave.Checked
@@ -450,14 +450,14 @@ namespace Sky_Cloud_Backup
                 Strt_Win.Checked = account.strtwin;
                 zip_mcworld.Checked = account.Chk_zip_mcowrld;
                 Backup_Name.Text = account.Defualt_name_textbox;
-                Deafualt_Backup_name.Checked = account.Defualt_name_chkbx;
+                Default_Backup_name.Checked = account.Defualt_name_chkbx;
                 Backup_name_for.Checked = account.Backup_name_for;
                 backupdialog.Checked = account.backupdialog;
                 automaticsave.Checked = account.AutoSave;
             }
-            Minto_strt();
-            Chk_atstarp_Backup();
-            Chk_Reset();
+            Minimizeto_start();
+            Check_atstartup_Backup();
+            Check_Reset();
 
         }
         /////////////////////////////////////Bedrock_Backup///////////////////////////////////////////////////////////////////////
@@ -698,9 +698,9 @@ namespace Sky_Cloud_Backup
                 return;
             }
             jsonload_comp();
-            notify_Backup_Bedrock.BalloonTipTitle = "Bedrock Backup";
-            notify_Backup_Bedrock.BalloonTipText = "You're Bedrock world is Backuping";
-            notify_Backup_Bedrock.Visible = true;
+            Bedrock_Backup_Notifier.BalloonTipTitle = "Bedrock Backup";
+            Bedrock_Backup_Notifier.BalloonTipText = "You're Bedrock world is Backuping";
+            Bedrock_Backup_Notifier.Visible = true;
             ProcessStartInfo startInfo = new ProcessStartInfo();
             startInfo.FileName = "Backup_Loading_Screen.exe";
             Process process = new Process();
@@ -708,8 +708,8 @@ namespace Sky_Cloud_Backup
             process.StartInfo.Arguments = "false";
             process.Start();
             add.filedelete(@"Temp", true);
-            Arcfilecreat();
-            notify_Backup_Bedrock.Visible = false;
+            Bedrock_Compress();
+            Bedrock_Backup_Notifier.Visible = false;
             process.Kill();
             add.filedelete(@"Temp", true);
             MaterialSnackBar finish_Bedrock = new MaterialSnackBar("You're Bedrock world is backup", "OK", true);
@@ -746,10 +746,10 @@ namespace Sky_Cloud_Backup
                 Backup_error(txt);
                 return;
             }
-            notify_Backup_Java.BalloonTipTitle = "Java Backup";
-            notify_Backup_Java.BalloonTipText = "You're Java world is Backuping";
-            notify_Backup_Java.Visible = true;
-            notify_Backup_Java.ShowBalloonTip(500);
+            Java_Bedrock_Notifier.BalloonTipTitle = "Java Backup";
+            Java_Bedrock_Notifier.BalloonTipText = "You're Java world is Backuping";
+            Java_Bedrock_Notifier.Visible = true;
+            Java_Bedrock_Notifier.ShowBalloonTip(500);
             ProcessStartInfo startInfo = new ProcessStartInfo();
             startInfo.FileName = "Backup_Loading_Screen.exe";
             Process process = new Process();
@@ -757,8 +757,8 @@ namespace Sky_Cloud_Backup
             process.StartInfo.Arguments = "false";
             process.Start();
             add.filedelete(@"Temp", true);
-            notify_Backup_Java.Visible = false;
-            Arcfilecreat_Java();
+            Java_Bedrock_Notifier.Visible = false;
+            Java_Compress();
             process.Kill();
             add.filedelete(@"Temp", true);
             MaterialSnackBar finish_Java = new MaterialSnackBar("You're Java world is backup", "OK", true);
@@ -781,7 +781,7 @@ namespace Sky_Cloud_Backup
                 {
                     if (Edtitions.Checked)
                     {
-                        Rename_Backup_Custom_Java(Properties.Settings.Default.Defualt_name_textbox = Backup_Name.Text);
+                        Java_Custom_Backup_Name(Properties.Settings.Default.Defualt_name_textbox = Backup_Name.Text);
                     }
                 }
             }
@@ -1007,7 +1007,7 @@ namespace Sky_Cloud_Backup
                     strtwin = Strt_Win.Checked,
                     Chk_zip_mcowrld = zip_mcworld.Checked,
                     Defualt_name_textbox = Backup_Name.Text,
-                    Defualt_name_chkbx = Deafualt_Backup_name.Checked,
+                    Defualt_name_chkbx = Default_Backup_name.Checked,
                     Backup_name_for = Backup_name_for.Checked,
 
                 };

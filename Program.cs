@@ -14,7 +14,7 @@ namespace Sky_Cloud_Backup
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            if (File.Exists(@"Developer_Mode"))
+            if (File.Exists(@"Developer_Modea"))
             {
                 Application.Run(new Main_Screen());
             }
