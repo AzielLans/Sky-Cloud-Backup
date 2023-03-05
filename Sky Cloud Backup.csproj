@@ -56,7 +56,7 @@
     <StartupObject>Sky_Cloud_Backup.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>logo_258.ico</ApplicationIcon>
+    <ApplicationIcon>SCB-Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>6635F1EA35230688462F44BC9F3D64D2A6A672B7</ManifestCertificateThumbprint>
@@ -73,14 +73,15 @@
   <PropertyGroup>
     <TargetZone>LocalIntranet</TargetZone>
   </PropertyGroup>
-  <PropertyGroup>
-    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
-  </PropertyGroup>
+  <PropertyGroup />
   <PropertyGroup>
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>Sky Cloud Backup_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -141,10 +142,10 @@
     <Compile Include="Forms\Main_Screen.Designer.cs">
       <DependentUpon>Main_Screen.cs</DependentUpon>
     </Compile>
-    <Compile Include="assets\gle_div.cs" />
+    <Compile Include="assets\google drive.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="assets\strtup.cs" />
+    <Compile Include="assets\startup.cs" />
     <EmbeddedResource Include="Forms\first_strtup.resx">
       <DependentUpon>first_strtup.cs</DependentUpon>
     </EmbeddedResource>
@@ -233,6 +234,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="logo_258.ico" />
+    <Content Include="SCB-Icon.ico" />
+    <None Include="Resources\SCB.png" />
+    <None Include="Resources\SCB-Icon.png" />
+    <None Include="Resources\SCB-B41.png" />
     <None Include="Resources\wiki-a1_Alpha_0.41.png" />
     <None Include="Resources\wiki-a1_Alpha_0.4.png" />
     <None Include="Resources\Splash_Screen_Alpha_0.4.png" />

@@ -2,6 +2,7 @@
 using MaterialSkin.Controls;
 using System;
 using System.Linq;
+using System.Reflection;
 using System.Windows.Forms;
 
 namespace Sky_Cloud_Backup
@@ -17,6 +18,7 @@ namespace Sky_Cloud_Backup
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.LightBlue800, Primary.LightBlue900, Primary.LightBlue400, Accent.Cyan700, TextShade.WHITE);
             Invalidate();
+            versionlabel.Text = "Beta " + Assembly.GetExecutingAssembly().GetName().Version.Build.ToString() + "." + Assembly.GetExecutingAssembly().GetName().Version.Revision.ToString();
         }
 
         MaterialSkinManager ThemeManager = MaterialSkinManager.Instance;

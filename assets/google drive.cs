@@ -9,7 +9,7 @@ using File = Google.Apis.Drive.v3.Data.File;
 
 namespace Sky_Cloud_Backup
 {
-    public partial class gle_div
+    public partial class google_drive
     {
         public static string ApplicationName = "Sky Cloud Backup";
         private static string[] Scopes = { DriveService.Scope.Drive };

@@ -1,35 +1,27 @@
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/100028421/154840503-cc3b841f-3b86-45b2-993b-72a94f2b008f.png" />
-</p>
-<h1 align="center">Sky-Cloud-Backup</h1>
+<img src="https://user-images.githubusercontent.com/100028421/222885299-a47c6479-26a2-42d6-ba1c-ec75b7bd8ca2.png" alt="Unity" width="200" align="left"/>
 
-* * *
-<p align="center">
-    <a href="https://github.com/Involts/Sky-Cloud-Backup/releases/download/Alpha_0.3/Sky.Cloud.Backup.Alpha.0.3.zip">Download</a> •
-    <a href="https://involts.github.io/Sky-Cloud-Backup/">Website</a> •
-    <a href="https://involts.github.io/Sky-Cloud-Backup/Wiki/">Wiki</a> •
-    <a href="CONTRIBUTING.md">Contributing</a> •
-</p>
+# Sky Cloud Backup
+A Minecraft Backup that supports Bedrock and Java.
 
-* * *
+Download the all in one Minecraft Backup [today](https://github.com/Involts/Sky-Cloud-Backup/releases/download/Alpha_0.5/Sky.Cloud.Backup.Alpha.0.5.zip)!
 
-# About Sky Cloud Backup
-A Minecraft Backup that supports both Bedrock and Java. It is easy to backup your world with one click. You can personalize the app, using dark mode or light mode, currently the theme colors has 4 colors(Red, Green, Blue the default color and Pink) and the is more to come.
+# About
+A Minecraft Backup that supports the two versions of Minecraft( Bedrock and Java ). It is easy to backup your world with one click. You can personalize the app, using dark mode or light mode, currently the theme colors has 7 colors(Red, Green, Blue the default color, Pink, Amber, Orange and Deep Purple). Backup up to the Cloud with Google Drive and the is more to come.
 
 Note: The app is in Alpha stage of development, features may ADDED OR REMOVE. 
 
 If the app doesn't work you need to download [.net 4.6.1](https://www.microsoft.com/en-us/download/details.aspx?id=49982) to use the app.
 
-Upload to Google drive is still in development.
 
 
 # Feature Overview
 
-- Backup Your World/s. It suppors Both Bedrock and Java.
+- Backup Your World/s. It supports Both Bedrock and Java.
 - Make it yours, by customizing it on the Personalization panel.
 - Continue what you're doing, using Always on top checkbox.
 - Save it later, using Minimize to tray Check box.
 - Start the app with Windows
+- Backup to the Cloud with Google Drive
 
 # Contributing
 Welcome to report bugs, improve code quality or submit a new feature. For more information, see [contributing guidelines](CONTRIBUTING.md).

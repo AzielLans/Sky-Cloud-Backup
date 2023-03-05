@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace Sky_Cloud_Backup
 {
-    public partial class strtup
+    public partial class startup
     {
         public void CreateStartupFolderShortcut ()
         {
