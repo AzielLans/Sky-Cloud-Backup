@@ -404,7 +404,7 @@ namespace Sky_Cloud_Backup
                 });
 
                 google_drive.Upload_to_Drive(service, "Backup Java world"+DateTime.Now.ToString("dddd, dd MMMM yyyy"), @"upload");
-                process.Kill();
+                Dailog_Manager("true", true);
             }
             else
             {
