@@ -1,15 +1,18 @@
 ﻿using MaterialSkin;
 using MaterialSkin.Controls;
+using Newtonsoft.Json;
+using Sky_Cloud_Backup.assets;
 using System;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
 
 namespace Sky_Cloud_Backup
 {
-    public partial class first_strtup: MaterialForm
+    public partial class FirstRun: MaterialForm
     {
-        public first_strtup ()
+        public FirstRun ()
         {
             InitializeComponent();
             var materialSkinManager = MaterialSkinManager.Instance;
@@ -104,13 +107,22 @@ namespace Sky_Cloud_Backup
 
         private void Next_Button_Click ( object sender, EventArgs e )
         {
-            Properties.Settings.Default.Mode = Dark_mode_switch.Checked;
-            Properties.Settings.Default.Default_Color = Default_Button.Checked;
-            Properties.Settings.Default.Green = Green_Button.Checked;
-            Properties.Settings.Default.Pink = Pink_Button.Checked;
-            Properties.Settings.Default.Red = Red_Button.Checked;
-            Properties.Settings.Default.first_strtup = true;
+            Properties.Settings.Default.first_strtup = false;
+            setsetting sjs = new setsetting()
+            {
+                Mode = Dark_mode_switch.Checked,
+                Default_Color = Default_Button.Checked,
+                Green = Green_Button.Checked,
+                Pink = Pink_Button.Checked,
+                Red = Red_Button.Checked,
+                DeveloperMode = Properties.Settings.Default.Dev_Mode,
+                FirstRun = false
+
+            };
+            
             Properties.Settings.Default.Save();
+            string stringjson = JsonConvert.SerializeObject(sjs);
+            File.WriteAllText(@"settings.json", stringjson);
             Main_Screen f2 = new Main_Screen();
             f2.Show();
             this.Hide();

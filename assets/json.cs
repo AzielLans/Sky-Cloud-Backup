@@ -32,5 +32,9 @@
         public bool backupdialog { get; set; }
         public bool AutoSave { get; set; }
 
+        public bool DeveloperMode { get; set; }
+        public bool Reset { get; set; }
+        public bool FirstRun { get; set; }
+
     }
 }

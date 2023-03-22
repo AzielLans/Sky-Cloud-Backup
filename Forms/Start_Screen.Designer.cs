@@ -38,7 +38,6 @@ namespace Sky_Cloud_Backup
             this.Dev_Label = new MaterialSkin.Controls.MaterialLabel();
             this.Ues_label = new MaterialSkin.Controls.MaterialLabel();
             this.Reset_label = new MaterialSkin.Controls.MaterialLabel();
-            this.Cancel_timer = new System.Windows.Forms.Timer(this.components);
             this.Cancel_backup_info = new MaterialSkin.Controls.MaterialLabel();
             this.panel_bar.SuspendLayout();
             this.SuspendLayout();
@@ -115,10 +114,6 @@ namespace Sky_Cloud_Backup
             this.Reset_label.Text = "Reset: No";
             this.Reset_label.Visible = false;
             // 
-            // Cancel_timer
-            // 
-            this.Cancel_timer.Tick += new System.EventHandler(this.Cancel_timer_Tick);
-            // 
             // Cancel_backup_info
             // 
             this.Cancel_backup_info.AutoSize = true;
@@ -173,7 +168,6 @@ namespace Sky_Cloud_Backup
         private MaterialSkin.Controls.MaterialLabel Dev_Label;
         private MaterialSkin.Controls.MaterialLabel Ues_label;
         private MaterialSkin.Controls.MaterialLabel Reset_label;
-        private System.Windows.Forms.Timer Cancel_timer;
         private MaterialSkin.Controls.MaterialLabel Cancel_backup_info;
     }
 }

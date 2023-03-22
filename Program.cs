@@ -14,8 +14,10 @@ namespace Sky_Cloud_Backup
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            if (File.Exists(@"Developer_Modea"))
+            string chk_cnl = "Cancel";
+            if (File.Exists(chk_cnl))
             {
+                File.Delete(chk_cnl);
                 Application.Run(new Main_Screen());
             }
             else
