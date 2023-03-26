@@ -788,8 +788,7 @@ namespace Sky_Cloud_Backup
             // 
             // Add_Settings
             // 
-            this.Add_Settings.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.Add_Settings.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Add_Settings.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Add_Settings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -812,7 +811,7 @@ namespace Sky_Cloud_Backup
             // 
             // Backup_name_for
             // 
-            this.Backup_name_for.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.Backup_name_for.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Backup_name_for.AutoSize = true;
             this.Backup_name_for.Depth = 0;
             this.Backup_name_for.Location = new System.Drawing.Point(12, 79);
@@ -829,7 +828,7 @@ namespace Sky_Cloud_Backup
             // 
             // Custom_name
             // 
-            this.Custom_name.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.Custom_name.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Custom_name.AutoSize = true;
             this.Custom_name.Depth = 0;
             this.Custom_name.Location = new System.Drawing.Point(151, 79);
@@ -871,10 +870,10 @@ namespace Sky_Cloud_Backup
             // 
             // zip_mcworld
             // 
-            this.zip_mcworld.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.zip_mcworld.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.zip_mcworld.AutoSize = true;
             this.zip_mcworld.Depth = 0;
-            this.zip_mcworld.Location = new System.Drawing.Point(196, 116);
+            this.zip_mcworld.Location = new System.Drawing.Point(196, 121);
             this.zip_mcworld.Margin = new System.Windows.Forms.Padding(0);
             this.zip_mcworld.MouseLocation = new System.Drawing.Point(-1, -1);
             this.zip_mcworld.MouseState = MaterialSkin.MouseState.HOVER;
@@ -896,7 +895,7 @@ namespace Sky_Cloud_Backup
             this.Reset_Btn.DrawShadows = false;
             this.Reset_Btn.HighEmphasis = true;
             this.Reset_Btn.Icon = null;
-            this.Reset_Btn.Location = new System.Drawing.Point(12, 115);
+            this.Reset_Btn.Location = new System.Drawing.Point(12, 122);
             this.Reset_Btn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Reset_Btn.MouseState = MaterialSkin.MouseState.HOVER;
             this.Reset_Btn.Name = "Reset_Btn";
@@ -911,7 +910,8 @@ namespace Sky_Cloud_Backup
             // 
             // More_label
             // 
-            this.More_label.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.More_label.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.More_label.AutoSize = true;
             this.More_label.Depth = 0;
             this.More_label.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -919,17 +919,17 @@ namespace Sky_Cloud_Backup
             this.More_label.Location = new System.Drawing.Point(111, 14);
             this.More_label.MouseState = MaterialSkin.MouseState.HOVER;
             this.More_label.Name = "More_label";
-            this.More_label.Size = new System.Drawing.Size(99, 19);
+            this.More_label.Size = new System.Drawing.Size(96, 19);
             this.More_label.TabIndex = 8;
-            this.More_label.Text = "More Settings";
+            this.More_label.Text = "More Options";
             this.More_label.UseAccent = true;
             // 
             // Edtitions
             // 
-            this.Edtitions.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.Edtitions.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Edtitions.AutoSize = true;
             this.Edtitions.Depth = 0;
-            this.Edtitions.Location = new System.Drawing.Point(81, 116);
+            this.Edtitions.Location = new System.Drawing.Point(81, 121);
             this.Edtitions.Margin = new System.Windows.Forms.Padding(0);
             this.Edtitions.MouseLocation = new System.Drawing.Point(-1, -1);
             this.Edtitions.MouseState = MaterialSkin.MouseState.HOVER;

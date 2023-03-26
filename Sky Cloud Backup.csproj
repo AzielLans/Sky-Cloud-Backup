@@ -104,8 +104,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="assets\additonal.cs" />
-    <Compile Include="assets\json.cs" />
+    <Compile Include="assets\Additonal.cs" />
+    <Compile Include="assets\Json.cs" />
     <Compile Include="Forms\FirstRun.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,10 +142,10 @@
     <Compile Include="Forms\Main_Screen.Designer.cs">
       <DependentUpon>Main_Screen.cs</DependentUpon>
     </Compile>
-    <Compile Include="assets\google drive.cs" />
+    <Compile Include="assets\Google Drive.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="assets\startup.cs" />
+    <Compile Include="assets\Startup.cs" />
     <EmbeddedResource Include="Forms\FirstRun.resx">
       <DependentUpon>FirstRun.cs</DependentUpon>
     </EmbeddedResource>
@@ -234,6 +234,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="logo_258.ico" />
+    <None Include="Resources\SCB-B4b.png" />
+    <None Include="Resources\SCB-B4b1.png" />
+    <None Include="Resources\SCB-B4b2.png" />
     <Content Include="SCB-Icon.ico" />
     <None Include="Resources\SCB.png" />
     <None Include="Resources\SCB-Icon.png" />

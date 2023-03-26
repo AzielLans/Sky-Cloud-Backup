@@ -3,10 +3,8 @@ using Google.Apis.Drive.v3;
 using Google.Apis.Services;
 using Google.Apis.Util.Store;
 using System;
-using System.Collections;
 using System.IO;
 using System.Threading;
-using static Google.Apis.Drive.v3.DriveService;
 using File = Google.Apis.Drive.v3.Data.File;
 
 namespace Sky_Cloud_Backup
@@ -17,7 +15,7 @@ namespace Sky_Cloud_Backup
         public static string[] Scopes = { DriveService.Scope.Drive };
         public string clientId = "658559336885-8403eb4go15hb0pk623166f85e5sgstk.apps.googleusercontent.com";
         public string clientSecret = "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";
-        public UserCredential GetUserCredential ()
+        public UserCredential GetUserCredential()
         {
             string creadPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
             creadPath = Path.Combine(creadPath, "Sky Cloud Backup");
@@ -26,7 +24,7 @@ namespace Sky_Cloud_Backup
             {
                 ClientId = clientId,
                 ClientSecret = clientSecret
-            }, Scopes, "User" , CancellationToken.None, new FileDataStore(creadPath, true)).Result;
+            }, Scopes, "User", CancellationToken.None, new FileDataStore(creadPath, true)).Result;
 
             DriveService service = new DriveService(new BaseClientService.Initializer()
             {
@@ -49,7 +47,7 @@ namespace Sky_Cloud_Backup
         //    service.HttpClient.Timeout = TimeSpan.FromMinutes(100);
         //}
 
-        public static File Upload_to_Drive ( DriveService service, string filename, string filepath )
+        public static File Upload_to_Drive(DriveService service, string filename, string filepath)
         {
             var fileMatadata = new File();
             fileMatadata.Name = filename;

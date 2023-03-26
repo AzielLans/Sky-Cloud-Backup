@@ -5,9 +5,9 @@ using System.Windows.Forms;
 
 namespace Sky_Cloud_Backup
 {
-    public partial class startup
+    public partial class Startup
     {
-        public void CreateStartupFolderShortcut ()
+        public void CreateStartupFolderShortcut()
         {
             WshShellClass wshShell = new WshShellClass();
             IWshRuntimeLibrary.IWshShortcut shortcut;
@@ -27,7 +27,7 @@ namespace Sky_Cloud_Backup
             shortcut.Save();
         }
 
-        public string GetShortcutTargetFile ( string shortcutFilename )
+        public string GetShortcutTargetFile(string shortcutFilename)
         {
             string pathOnly = Path.GetDirectoryName(shortcutFilename);
             string filenameOnly = Path.GetFileName(shortcutFilename);
@@ -44,7 +44,7 @@ namespace Sky_Cloud_Backup
 
             return String.Empty; // Not found
         }
-        public void DeleteStartupFolderShortcuts ( string targetExeName )
+        public void DeleteStartupFolderShortcuts(string targetExeName)
         {
             string startUpFolderPath =
               Environment.GetFolderPath(Environment.SpecialFolder.Startup);

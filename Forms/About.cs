@@ -6,9 +6,9 @@ using System.Windows.Forms;
 
 namespace Sky_Cloud_Backup
 {
-    public partial class About: MaterialForm
+    public partial class About : MaterialForm
     {
-        public About ()
+        public About()
         {
             InitializeComponent();
             var materialSkinManager = MaterialSkinManager.Instance;
@@ -18,7 +18,7 @@ namespace Sky_Cloud_Backup
         }
         MaterialSkinManager ThemeManager = MaterialSkinManager.Instance;
 
-        private void Github_Click ( object sender, EventArgs e )
+        private void Github_Click(object sender, EventArgs e)
         {
             try
             {
@@ -30,12 +30,12 @@ namespace Sky_Cloud_Backup
             }
         }
 
-        private void Error_10 ( string text )
+        private void Error_10(string text)
         {
             MessageBox.Show(text, "Sky Cloud Backup", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        private void Bugs_Click ( object sender, EventArgs e )
+        private void Bugs_Click(object sender, EventArgs e)
         {
             try
             {
@@ -47,7 +47,7 @@ namespace Sky_Cloud_Backup
             }
         }
 
-        private void License_Click ( object sender, EventArgs e )
+        private void License_Click(object sender, EventArgs e)
         {
             try
             {

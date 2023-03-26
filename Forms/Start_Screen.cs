@@ -8,10 +8,10 @@ using System.Windows.Forms;
 
 namespace Sky_Cloud_Backup
 {
-    public partial class loading_screen: Form
+    public partial class loading_screen : Form
     {
 
-        public loading_screen ()
+        public loading_screen()
         {
             InitializeComponent();
             JsonLoader();
@@ -32,18 +32,18 @@ namespace Sky_Cloud_Backup
                     .GetCustomAttributes(typeof(AssemblyInformationalVersionAttribute), false);
                 return attributes.Length == 0 ?
                     "" :
-                    ( (AssemblyInformationalVersionAttribute)attributes[0] ).InformationalVersion;
+                    ((AssemblyInformationalVersionAttribute)attributes[0]).InformationalVersion;
 
             }
         }
 
         public bool Reset { get; private set; }
-        private void loading_screen_Load ( object sender, EventArgs e )
+        private void loading_screen_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void Dev_Mode_fle_chk ()
+        private void Dev_Mode_fle_chk()
         {
             string chk_cnl = "Cancel";
             if (Properties.Settings.Default.Dev_Mode == true)
@@ -80,7 +80,7 @@ namespace Sky_Cloud_Backup
             }
         }
 
-        private void load_timer_Tick ( object sender, EventArgs e )
+        private void load_timer_Tick(object sender, EventArgs e)
         {
             Load_Panel.Width += 10;
             if (Load_Panel.Width >= 591)
@@ -102,15 +102,15 @@ namespace Sky_Cloud_Backup
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
-        private extern static void ReleaseCapture ();
+        private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
-        private extern static void SendMessage ( System.IntPtr hWnd, int wMsg, int wParam, int lParam );
-        private void loading_screen_MouseDown ( object sender, MouseEventArgs e )
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+        private void loading_screen_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-        private void JsonLoader ()
+        private void JsonLoader()
         {
             if (!File.Exists(@"settings.json"))
             {

@@ -3,9 +3,9 @@ using MaterialSkin.Controls;
 
 namespace Sky_Cloud_Backup
 {
-    public partial class Help: MaterialForm
+    public partial class Help : MaterialForm
     {
-        public Help ()
+        public Help()
         {
             InitializeComponent();
             var materialSkinManager = MaterialSkinManager.Instance;

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Sky_Cloud_Backup
 {
-    public partial class FirstRun: MaterialForm
+    public partial class FirstRun : MaterialForm
     {
-        public FirstRun ()
+        public FirstRun()
         {
             InitializeComponent();
             var materialSkinManager = MaterialSkinManager.Instance;
@@ -26,19 +26,19 @@ namespace Sky_Cloud_Backup
 
         MaterialSkinManager ThemeManager = MaterialSkinManager.Instance;
 
-        private void pictureBox1_Click ( object sender, EventArgs e )
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void materialLabel3_Click ( object sender, EventArgs e )
+        private void materialLabel3_Click(object sender, EventArgs e)
         {
 
         }
         About about = new About();
         Help help = new Help();
 
-        private void Default_Button_CheckedChanged ( object sender, EventArgs e )
+        private void Default_Button_CheckedChanged(object sender, EventArgs e)
         {
             ThemeManager.ColorScheme = new ColorScheme(
                 Primary.LightBlue800,
@@ -51,7 +51,7 @@ namespace Sky_Cloud_Backup
             about.Refresh();
         }
 
-        private void Green_Button_CheckedChanged ( object sender, EventArgs e )
+        private void Green_Button_CheckedChanged(object sender, EventArgs e)
         {
             ThemeManager.ColorScheme = new ColorScheme(
                 Primary.Green800,
@@ -64,7 +64,7 @@ namespace Sky_Cloud_Backup
             about.Refresh();
         }
 
-        private void Pink_Button_CheckedChanged ( object sender, EventArgs e )
+        private void Pink_Button_CheckedChanged(object sender, EventArgs e)
         {
             ThemeManager.ColorScheme = new ColorScheme(
                 Primary.Pink800,
@@ -77,7 +77,7 @@ namespace Sky_Cloud_Backup
             about.Refresh();
         }
 
-        private void Red_Button_CheckedChanged ( object sender, EventArgs e )
+        private void Red_Button_CheckedChanged(object sender, EventArgs e)
         {
             ThemeManager.ColorScheme = new ColorScheme(
                 Primary.Red800,
@@ -91,7 +91,7 @@ namespace Sky_Cloud_Backup
         }
 
 
-        private void Dark_mode_switch_CheckedChanged ( object sender, EventArgs e )
+        private void Dark_mode_switch_CheckedChanged(object sender, EventArgs e)
         {
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.Theme = materialSkinManager.Theme == MaterialSkinManager.Themes.DARK ? MaterialSkinManager.Themes.LIGHT : MaterialSkinManager.Themes.DARK;
@@ -105,7 +105,7 @@ namespace Sky_Cloud_Backup
             }
         }
 
-        private void Next_Button_Click ( object sender, EventArgs e )
+        private void Next_Button_Click(object sender, EventArgs e)
         {
             Properties.Settings.Default.first_strtup = false;
             setsetting sjs = new setsetting()
@@ -119,7 +119,7 @@ namespace Sky_Cloud_Backup
                 FirstRun = false
 
             };
-            
+
             Properties.Settings.Default.Save();
             string stringjson = JsonConvert.SerializeObject(sjs);
             File.WriteAllText(@"settings.json", stringjson);
@@ -128,7 +128,7 @@ namespace Sky_Cloud_Backup
             this.Hide();
         }
 
-        private void Help_Button_Click ( object sender, EventArgs e )
+        private void Help_Button_Click(object sender, EventArgs e)
         {
             if (Application.OpenForms.OfType<Help>().Any())
             {
@@ -144,12 +144,12 @@ namespace Sky_Cloud_Backup
             }
         }
 
-        private void first_strtup_Load ( object sender, EventArgs e )
+        private void first_strtup_Load(object sender, EventArgs e)
         {
             this.Activate();
         }
 
-        private void first_strtup_FormClosing ( object sender, FormClosingEventArgs e )
+        private void first_strtup_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
         }
