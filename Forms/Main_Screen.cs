@@ -1,6 +1,7 @@
 ﻿using Google.Apis.Auth.OAuth2;
 using Google.Apis.Drive.v3;
 using Google.Apis.Services;
+using Google.Apis.Util.Store;
 using MaterialSkin;
 using MaterialSkin.Controls;
 using Newtonsoft.Json;
@@ -11,7 +12,9 @@ using System.Globalization;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
+using System.Threading;
 using System.Windows.Forms;
+using static Google.Apis.Drive.v3.DriveService;
 
 namespace Sky_Cloud_Backup
 {
@@ -45,7 +48,7 @@ namespace Sky_Cloud_Backup
         /// <summary>
         /// Global Strings
         /// </summary>
-        public static string environment = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+        public static string environment = Environment.GetFolderPath(System.Environment.SpecialFolder.CommonApplicationData);
         public static string file_path = @"Sky Cloud Backup/Google.Apis.Auth.OAuth2.Responses.TokenResponse-User";
         public static string Authlocation = Path.Combine(environment, file_path);
         public string TimeFormat = DateTime.Now.ToString(" dddd, dd MMMM yyyy h-mm-tt ").ToString(CultureInfo.InvariantCulture);
@@ -333,7 +336,7 @@ namespace Sky_Cloud_Backup
                     Dialog_error(Error_txt);
                     Notification_Informer.Visible = true;
                     ShowInTaskbar = false;
-                } 
+                }
                 else
                 {
                     Dialog_error(Error_txt);
@@ -454,64 +457,43 @@ namespace Sky_Cloud_Backup
         private void Default_Button_CheckedChanged(object sender, EventArgs e)
         {
             ThemeManager.ColorScheme = new ColorScheme(Primary.LightBlue800, Primary.LightBlue900, Primary.LightBlue400, Accent.Cyan700, TextShade.WHITE);
-            Invalidate();
-            Refresh();
-            help.Refresh();
-            about.Refresh();
+            Global_Refresh_Manager();
         }
 
         private void Green_Button_CheckedChanged(object sender, EventArgs e)
         {
             ThemeManager.ColorScheme = new ColorScheme(Primary.Green800, Primary.Green900, Primary.Green500, Accent.LightGreen400, TextShade.BLACK);
-            Invalidate();
-            Refresh();
-            help.Refresh();
-            about.Refresh();
+            Global_Refresh_Manager();
         }
 
         private void Pink_Button_CheckedChanged(object sender, EventArgs e)
         {
             ThemeManager.ColorScheme = new ColorScheme(Primary.Pink800, Primary.Pink900, Primary.Pink500, Accent.Pink200, TextShade.BLACK);
-            Invalidate();
-            Refresh();
-            help.Refresh();
-            about.Refresh();
+            Global_Refresh_Manager();
         }
 
         private void Red_Button_CheckedChanged(object sender, EventArgs e)
         {
             ThemeManager.ColorScheme = new ColorScheme(Primary.Red800, Primary.Red900, Primary.Red500, Accent.Red200, TextShade.BLACK);
-            Invalidate();
-            Refresh();
-            help.Refresh();
-            about.Refresh();
+            Global_Refresh_Manager();
         }
 
         private void Amber_Button_CheckedChanged(object sender, EventArgs e)
         {
             ThemeManager.ColorScheme = new ColorScheme(Primary.Amber800, Primary.Amber900, Primary.Amber500, Accent.Amber200, TextShade.BLACK);
-            Invalidate();
-            Refresh();
-            help.Refresh();
-            about.Refresh();
+            Global_Refresh_Manager();
         }
 
         private void Orange_Button_CheckedChanged(object sender, EventArgs e)
         {
             ThemeManager.ColorScheme = new ColorScheme(Primary.Orange800, Primary.Orange900, Primary.Orange500, Accent.Orange200, TextShade.BLACK);
-            Invalidate();
-            Refresh();
-            help.Refresh();
-            about.Refresh();
+            Global_Refresh_Manager();
         }
 
         private void Deep_Purple_Button_CheckedChanged(object sender, EventArgs e)
         {
             ThemeManager.ColorScheme = new ColorScheme(Primary.DeepPurple800, Primary.DeepPurple900, Primary.DeepPurple500, Accent.DeepPurple200, TextShade.BLACK);
-            Invalidate();
-            Refresh();
-            help.Refresh();
-            about.Refresh();
+            Global_Refresh_Manager();
         }
 
         private void Always_Top_CheckedChanged(object sender, EventArgs e)
@@ -524,6 +506,16 @@ namespace Sky_Cloud_Backup
             {
                 this.TopMost = false;
             }
+        }
+
+        private void Global_Refresh_Manager()
+        {
+            Invalidate();
+            Refresh();
+            help.Refresh();
+            help.Invalidate();
+            about.Refresh();
+            about.Invalidate();
         }
 
 

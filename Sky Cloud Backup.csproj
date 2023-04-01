@@ -104,8 +104,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="assets\Additonal.cs" />
-    <Compile Include="assets\Json.cs" />
+    <Compile Include="Assets\Additonal.cs" />
+    <Compile Include="Assets\Json.cs" />
     <Compile Include="Forms\FirstRun.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,10 +142,10 @@
     <Compile Include="Forms\Main_Screen.Designer.cs">
       <DependentUpon>Main_Screen.cs</DependentUpon>
     </Compile>
-    <Compile Include="assets\Google Drive.cs" />
+    <Compile Include="Assets\Google Drive.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="assets\Startup.cs" />
+    <Compile Include="Assets\Startup.cs" />
     <EmbeddedResource Include="Forms\FirstRun.resx">
       <DependentUpon>FirstRun.cs</DependentUpon>
     </EmbeddedResource>
@@ -174,7 +174,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="client_secret.json" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -233,7 +232,6 @@
     <None Include="Resources\Splash_Screen1.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="logo_258.ico" />
     <None Include="Resources\SCB-B4b.png" />
     <None Include="Resources\SCB-B4b1.png" />
     <None Include="Resources\SCB-B4b2.png" />

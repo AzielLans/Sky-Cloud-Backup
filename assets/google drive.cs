@@ -1,5 +1,7 @@
-﻿using Google.Apis.Auth.OAuth2;
+﻿using Google.Apis.Auth;
+using Google.Apis.Auth.OAuth2;
 using Google.Apis.Drive.v3;
+using Google.Apis.Http;
 using Google.Apis.Services;
 using Google.Apis.Util.Store;
 using System;
@@ -15,16 +17,17 @@ namespace Sky_Cloud_Backup
         public static string[] Scopes = { DriveService.Scope.Drive };
         public string clientId = "658559336885-8403eb4go15hb0pk623166f85e5sgstk.apps.googleusercontent.com";
         public string clientSecret = "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";
+        public static string EnvPath = Environment.GetFolderPath(System.Environment.SpecialFolder.CommonApplicationData);
+        public string creadPath = Path.Combine(EnvPath, "Sky Cloud Backup");
         public UserCredential GetUserCredential()
         {
-            string creadPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            creadPath = Path.Combine(creadPath, "Sky Cloud Backup");
 
             var credential = GoogleWebAuthorizationBroker.AuthorizeAsync(new ClientSecrets
             {
                 ClientId = clientId,
-                ClientSecret = clientSecret
+                ClientSecret = clientSecret,
             }, Scopes, "User", CancellationToken.None, new FileDataStore(creadPath, true)).Result;
+
 
             DriveService service = new DriveService(new BaseClientService.Initializer()
             {
