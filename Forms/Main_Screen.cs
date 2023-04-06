@@ -88,7 +88,7 @@ namespace Sky_Cloud_Backup
 
         private void Main_Screen_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (Properties.Settings.Default.Resets == false)
+            if (Properties.Settings.Default.GlobalReset == false)
             {
                 Jsonload_comp();
                 Application.Exit();
@@ -127,7 +127,7 @@ namespace Sky_Cloud_Backup
                 Backup_name_for.Checked = account.Backup_name_for;
                 automaticsave.Checked = account.AutoSave;
                 Properties.Settings.Default.Dev_Mode = account.DeveloperMode;
-                Properties.Settings.Default.Resets = account.Reset;
+                Properties.Settings.Default.GlobalReset = account.Reset;
                 BackupDailog_Checkbox.Checked = account.backupdialog;
             }
             Minimizeto_start();
@@ -161,7 +161,7 @@ namespace Sky_Cloud_Backup
                 Backup_name_for = Backup_name_for.Checked,
                 AutoSave = automaticsave.Checked,
                 DeveloperMode = Properties.Settings.Default.Dev_Mode,
-                Reset = Properties.Settings.Default.Resets,
+                Reset = Properties.Settings.Default.GlobalReset,
                 FirstRun = Properties.Settings.Default.first_strtup,
                 backupdialog = BackupDailog_Checkbox.Checked,
 
@@ -189,11 +189,11 @@ namespace Sky_Cloud_Backup
 
         public void Check_Reset()
         {
-            if (Properties.Settings.Default.Resets == true)
+            if (Properties.Settings.Default.GlobalReset == true)
             {
                 MaterialDialog Reset = new MaterialDialog(this, "Reset", "Reset Complete", "OK", true, "Cancel", true);
                 Reset.ShowDialog(this);
-                Properties.Settings.Default.Resets = false;
+                Properties.Settings.Default.GlobalReset = false;
                 Properties.Settings.Default.Save();
             }
         }
@@ -911,7 +911,7 @@ namespace Sky_Cloud_Backup
                     DialogResult Dev_result = Dev_reset.ShowDialog(this);
                     if (Dev_result == DialogResult.Cancel)
                     {
-                        Properties.Settings.Default.Resets = true;
+                        Properties.Settings.Default.GlobalReset = true;
                         Properties.Settings.Default.first_strtup = false;
                         setsetting sjs = new setsetting()
                         {
@@ -934,7 +934,7 @@ namespace Sky_Cloud_Backup
                             Defualt_name_textbox = null,
                             Defualt_name_chkbx = false,
                             Backup_name_for = false,
-                            Reset = Properties.Settings.Default.Resets,
+                            Reset = Properties.Settings.Default.GlobalReset,
                             FirstRun = Properties.Settings.Default.first_strtup,
                             DeveloperMode = Properties.Settings.Default.Dev_Mode,
                             backupdialog = true
@@ -980,7 +980,7 @@ namespace Sky_Cloud_Backup
                 }
                 else
                 {
-                    Properties.Settings.Default.Resets = true;
+                    Properties.Settings.Default.GlobalReset = true;
                     setsetting sjs = new setsetting()
                     {
                         Mode = false,
@@ -1166,6 +1166,18 @@ namespace Sky_Cloud_Backup
             }
 
 
+        }
+
+        private void Privacy_Button_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Process.Start("https://involts.github.io/Sky-Cloud-Backup/Privacy_Policy/");
+            }
+            catch (Exception ex)
+            {
+                Dialog_error(ex.Message);
+            }
         }
     }
 

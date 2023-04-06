@@ -41,7 +41,7 @@
     <Setting Name="first_strtup" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="Reset" Type="System.Boolean" Scope="User">
+    <Setting Name="GlobalReset" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="Chk_zip_mcowrld" Type="System.Boolean" Scope="User">

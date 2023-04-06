@@ -53,7 +53,7 @@ namespace Sky_Cloud_Backup
                 Ues_label.Show();
                 Reset_label.Show();
                 Cancel_backup_info.Show();
-                if (Properties.Settings.Default.Resets == true)
+                if (Properties.Settings.Default.GlobalReset == true)
                 {
                     Reset_label.Text = "Reset: Yes";
                 }
@@ -147,7 +147,7 @@ namespace Sky_Cloud_Backup
             {
                 string json = r.ReadToEnd();
                 setsetting account = JsonConvert.DeserializeObject<setsetting>(json);
-                Properties.Settings.Default.Resets = account.Reset;
+                Properties.Settings.Default.GlobalReset = account.Reset;
                 Properties.Settings.Default.Dev_Mode = account.DeveloperMode;
                 Properties.Settings.Default.first_strtup = account.FirstRun;
             }

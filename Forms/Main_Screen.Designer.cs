@@ -84,6 +84,7 @@ namespace Sky_Cloud_Backup
             this.Edtitions = new MaterialSkin.Controls.MaterialSwitch();
             this.autosave = new System.Windows.Forms.Timer(this.components);
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.Privacy_Button = new MaterialSkin.Controls.MaterialButton();
             this.Open_World_Card.SuspendLayout();
             this.Upload_to_Drive_Card.SuspendLayout();
             this.Personalization_Card.SuspendLayout();
@@ -946,6 +947,27 @@ namespace Sky_Cloud_Backup
             this.autosave.Interval = 3000;
             this.autosave.Tick += new System.EventHandler(this.autosave_Tick);
             // 
+            // Privacy_Button
+            // 
+            this.Privacy_Button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.Privacy_Button.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Privacy_Button.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.Privacy_Button.Depth = 0;
+            this.Privacy_Button.HighEmphasis = true;
+            this.Privacy_Button.Icon = null;
+            this.Privacy_Button.Location = new System.Drawing.Point(17, 500);
+            this.Privacy_Button.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.Privacy_Button.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Privacy_Button.Name = "Privacy_Button";
+            this.Privacy_Button.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.Privacy_Button.Size = new System.Drawing.Size(136, 36);
+            this.Privacy_Button.TabIndex = 9;
+            this.Privacy_Button.Text = "Privacy Policy";
+            this.Privacy_Button.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
+            this.Privacy_Button.UseAccentColor = true;
+            this.Privacy_Button.UseVisualStyleBackColor = true;
+            this.Privacy_Button.Click += new System.EventHandler(this.Privacy_Button_Click);
+            // 
             // Main_Screen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -954,6 +976,7 @@ namespace Sky_Cloud_Backup
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.ClientSize = new System.Drawing.Size(882, 545);
+            this.Controls.Add(this.Privacy_Button);
             this.Controls.Add(this.Add_Settings);
             this.Controls.Add(this.About_Button);
             this.Controls.Add(this.Upload_to_Drive_Card);
@@ -1029,7 +1052,6 @@ namespace Sky_Cloud_Backup
         public MaterialSkin.Controls.MaterialTextBox Backup_Name;
         public MaterialSkin.Controls.MaterialCheckbox Strt_Win;
         public MaterialSkin.Controls.MaterialCheckbox Upload_to_Drive_CheckBox;
-        private MaterialSkin.Controls.MaterialButton sign_out_btn;
         public MaterialSkin.Controls.MaterialSwitch Dark_mode_switch;
         public MaterialSkin.Controls.MaterialRadioButton Red_Button;
         public MaterialSkin.Controls.MaterialRadioButton Pink_Button;
@@ -1048,5 +1070,6 @@ namespace Sky_Cloud_Backup
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private MaterialCheckbox BackupDailog_Checkbox;
+        private MaterialButton Privacy_Button;
     }
 }

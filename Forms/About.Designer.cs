@@ -36,6 +36,7 @@ namespace Sky_Cloud_Backup
             this.GithubButton = new MaterialSkin.Controls.MaterialButton();
             this.BugButton = new MaterialSkin.Controls.MaterialButton();
             this.LicenseButton = new MaterialSkin.Controls.MaterialButton();
+            this.Privacy_button = new MaterialSkin.Controls.MaterialButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,7 +62,7 @@ namespace Sky_Cloud_Backup
             this.versionlabel.Depth = 0;
             this.versionlabel.Font = new System.Drawing.Font("Roboto Medium", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.versionlabel.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
-            this.versionlabel.Location = new System.Drawing.Point(545, 223);
+            this.versionlabel.Location = new System.Drawing.Point(545, 227);
             this.versionlabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.versionlabel.Name = "versionlabel";
             this.versionlabel.Size = new System.Drawing.Size(85, 24);
@@ -124,7 +125,7 @@ namespace Sky_Cloud_Backup
             this.BugButton.Depth = 0;
             this.BugButton.HighEmphasis = true;
             this.BugButton.Icon = null;
-            this.BugButton.Location = new System.Drawing.Point(179, 223);
+            this.BugButton.Location = new System.Drawing.Point(323, 223);
             this.BugButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.BugButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.BugButton.Name = "BugButton";
@@ -145,7 +146,7 @@ namespace Sky_Cloud_Backup
             this.LicenseButton.Depth = 0;
             this.LicenseButton.HighEmphasis = true;
             this.LicenseButton.Icon = null;
-            this.LicenseButton.Location = new System.Drawing.Point(305, 223);
+            this.LicenseButton.Location = new System.Drawing.Point(449, 223);
             this.LicenseButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.LicenseButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.LicenseButton.Name = "LicenseButton";
@@ -158,12 +159,34 @@ namespace Sky_Cloud_Backup
             this.LicenseButton.UseVisualStyleBackColor = true;
             this.LicenseButton.Click += new System.EventHandler(this.License_Click);
             // 
+            // Privacy_button
+            // 
+            this.Privacy_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.Privacy_button.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Privacy_button.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.Privacy_button.Depth = 0;
+            this.Privacy_button.HighEmphasis = true;
+            this.Privacy_button.Icon = null;
+            this.Privacy_button.Location = new System.Drawing.Point(179, 223);
+            this.Privacy_button.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.Privacy_button.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Privacy_button.Name = "Privacy_button";
+            this.Privacy_button.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.Privacy_button.Size = new System.Drawing.Size(136, 36);
+            this.Privacy_button.TabIndex = 13;
+            this.Privacy_button.Text = "Privacy Policy";
+            this.Privacy_button.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
+            this.Privacy_button.UseAccentColor = true;
+            this.Privacy_button.UseVisualStyleBackColor = true;
+            this.Privacy_button.Click += new System.EventHandler(this.Privacy_button_Click);
+            // 
             // About
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(645, 268);
+            this.Controls.Add(this.Privacy_button);
             this.Controls.Add(this.LicenseButton);
             this.Controls.Add(this.BugButton);
             this.Controls.Add(this.GithubButton);
@@ -196,5 +219,6 @@ namespace Sky_Cloud_Backup
         private MaterialSkin.Controls.MaterialButton GithubButton;
         private MaterialSkin.Controls.MaterialButton BugButton;
         private MaterialSkin.Controls.MaterialButton LicenseButton;
+        private MaterialSkin.Controls.MaterialButton Privacy_button;
     }
 }

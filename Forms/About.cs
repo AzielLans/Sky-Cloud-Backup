@@ -58,5 +58,17 @@ namespace Sky_Cloud_Backup
                 Error_10(ex.Message);
             }
         }
+
+        private void Privacy_button_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start("https://involts.github.io/Sky-Cloud-Backup/Privacy_Policy/");
+            }
+            catch (Exception ex)
+            {
+                Error_10(ex.Message);
+            }
+        }
     }
 }
