@@ -32,10 +32,11 @@ namespace Sky_Cloud_Backup
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.versionlabel = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
-            this.Github = new MaterialSkin.Controls.MaterialLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.GithubButton = new MaterialSkin.Controls.MaterialButton();
+            this.BugButton = new MaterialSkin.Controls.MaterialButton();
+            this.LicenseButton = new MaterialSkin.Controls.MaterialButton();
+            this.Privacy_button = new MaterialSkin.Controls.MaterialButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,7 +45,7 @@ namespace Sky_Cloud_Backup
             this.materialLabel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.materialLabel1.AutoSize = true;
             this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 60F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto Light", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialLabel1.FontType = MaterialSkin.MaterialSkinManager.fontType.H2;
             this.materialLabel1.HighEmphasis = true;
             this.materialLabel1.Location = new System.Drawing.Point(158, 44);
@@ -61,7 +62,7 @@ namespace Sky_Cloud_Backup
             this.versionlabel.Depth = 0;
             this.versionlabel.Font = new System.Drawing.Font("Roboto Medium", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.versionlabel.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
-            this.versionlabel.Location = new System.Drawing.Point(545, 223);
+            this.versionlabel.Location = new System.Drawing.Point(545, 227);
             this.versionlabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.versionlabel.Name = "versionlabel";
             this.versionlabel.Size = new System.Drawing.Size(85, 24);
@@ -82,61 +83,6 @@ namespace Sky_Cloud_Backup
             this.materialLabel3.TabIndex = 4;
             this.materialLabel3.Text = "Involts";
             // 
-            // materialLabel5
-            // 
-            this.materialLabel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.materialLabel5.AutoSize = true;
-            this.materialLabel5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.materialLabel5.Depth = 0;
-            this.materialLabel5.Font = new System.Drawing.Font("Roboto Medium", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel5.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
-            this.materialLabel5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.materialLabel5.HighEmphasis = true;
-            this.materialLabel5.Location = new System.Drawing.Point(317, 223);
-            this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel5.Name = "materialLabel5";
-            this.materialLabel5.Size = new System.Drawing.Size(70, 24);
-            this.materialLabel5.TabIndex = 9;
-            this.materialLabel5.Text = "License";
-            this.materialLabel5.UseAccent = true;
-            this.materialLabel5.Click += new System.EventHandler(this.License_Click);
-            // 
-            // materialLabel4
-            // 
-            this.materialLabel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.materialLabel4.AutoSize = true;
-            this.materialLabel4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.materialLabel4.Depth = 0;
-            this.materialLabel4.Font = new System.Drawing.Font("Roboto Medium", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel4.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
-            this.materialLabel4.HighEmphasis = true;
-            this.materialLabel4.Location = new System.Drawing.Point(192, 223);
-            this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel4.Name = "materialLabel4";
-            this.materialLabel4.Size = new System.Drawing.Size(110, 24);
-            this.materialLabel4.TabIndex = 8;
-            this.materialLabel4.Text = "Report Bugs";
-            this.materialLabel4.UseAccent = true;
-            this.materialLabel4.Click += new System.EventHandler(this.Bugs_Click);
-            // 
-            // Github
-            // 
-            this.Github.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.Github.AutoSize = true;
-            this.Github.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Github.Depth = 0;
-            this.Github.Font = new System.Drawing.Font("Roboto Medium", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.Github.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
-            this.Github.HighEmphasis = true;
-            this.Github.Location = new System.Drawing.Point(6, 223);
-            this.Github.MouseState = MaterialSkin.MouseState.HOVER;
-            this.Github.Name = "Github";
-            this.Github.Size = new System.Drawing.Size(160, 24);
-            this.Github.TabIndex = 7;
-            this.Github.Text = "Github Repository";
-            this.Github.UseAccent = true;
-            this.Github.Click += new System.EventHandler(this.Github_Click);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -150,16 +96,101 @@ namespace Sky_Cloud_Backup
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // GithubButton
+            // 
+            this.GithubButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.GithubButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.GithubButton.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.GithubButton.Depth = 0;
+            this.GithubButton.HighEmphasis = true;
+            this.GithubButton.Icon = null;
+            this.GithubButton.Location = new System.Drawing.Point(6, 223);
+            this.GithubButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.GithubButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.GithubButton.Name = "GithubButton";
+            this.GithubButton.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.GithubButton.Size = new System.Drawing.Size(165, 36);
+            this.GithubButton.TabIndex = 10;
+            this.GithubButton.Text = "Github Repository";
+            this.GithubButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.GithubButton.UseAccentColor = true;
+            this.GithubButton.UseVisualStyleBackColor = true;
+            this.GithubButton.Click += new System.EventHandler(this.Github_Click);
+            // 
+            // BugButton
+            // 
+            this.BugButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.BugButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BugButton.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.BugButton.Depth = 0;
+            this.BugButton.HighEmphasis = true;
+            this.BugButton.Icon = null;
+            this.BugButton.Location = new System.Drawing.Point(323, 223);
+            this.BugButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.BugButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.BugButton.Name = "BugButton";
+            this.BugButton.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.BugButton.Size = new System.Drawing.Size(118, 36);
+            this.BugButton.TabIndex = 11;
+            this.BugButton.Text = "Report Bugs";
+            this.BugButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
+            this.BugButton.UseAccentColor = true;
+            this.BugButton.UseVisualStyleBackColor = true;
+            this.BugButton.Click += new System.EventHandler(this.Bugs_Click);
+            // 
+            // LicenseButton
+            // 
+            this.LicenseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.LicenseButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.LicenseButton.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.LicenseButton.Depth = 0;
+            this.LicenseButton.HighEmphasis = true;
+            this.LicenseButton.Icon = null;
+            this.LicenseButton.Location = new System.Drawing.Point(449, 223);
+            this.LicenseButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.LicenseButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.LicenseButton.Name = "LicenseButton";
+            this.LicenseButton.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.LicenseButton.Size = new System.Drawing.Size(79, 36);
+            this.LicenseButton.TabIndex = 12;
+            this.LicenseButton.Text = "License";
+            this.LicenseButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
+            this.LicenseButton.UseAccentColor = true;
+            this.LicenseButton.UseVisualStyleBackColor = true;
+            this.LicenseButton.Click += new System.EventHandler(this.License_Click);
+            // 
+            // Privacy_button
+            // 
+            this.Privacy_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.Privacy_button.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Privacy_button.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.Privacy_button.Depth = 0;
+            this.Privacy_button.HighEmphasis = true;
+            this.Privacy_button.Icon = null;
+            this.Privacy_button.Location = new System.Drawing.Point(179, 223);
+            this.Privacy_button.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.Privacy_button.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Privacy_button.Name = "Privacy_button";
+            this.Privacy_button.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.Privacy_button.Size = new System.Drawing.Size(136, 36);
+            this.Privacy_button.TabIndex = 13;
+            this.Privacy_button.Text = "Privacy Policy";
+            this.Privacy_button.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
+            this.Privacy_button.UseAccentColor = true;
+            this.Privacy_button.UseVisualStyleBackColor = true;
+            this.Privacy_button.Click += new System.EventHandler(this.Privacy_button_Click);
+            // 
             // About
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(645, 268);
-            this.Controls.Add(this.materialLabel5);
-            this.Controls.Add(this.materialLabel4);
+            this.Controls.Add(this.Privacy_button);
+            this.Controls.Add(this.LicenseButton);
+            this.Controls.Add(this.BugButton);
+            this.Controls.Add(this.GithubButton);
             this.Controls.Add(this.materialLabel1);
-            this.Controls.Add(this.Github);
             this.Controls.Add(this.materialLabel3);
             this.Controls.Add(this.versionlabel);
             this.Controls.Add(this.pictureBox1);
@@ -185,8 +216,9 @@ namespace Sky_Cloud_Backup
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialLabel versionlabel;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
-        private MaterialSkin.Controls.MaterialLabel Github;
-        private MaterialSkin.Controls.MaterialLabel materialLabel4;
-        private MaterialSkin.Controls.MaterialLabel materialLabel5;
+        private MaterialSkin.Controls.MaterialButton GithubButton;
+        private MaterialSkin.Controls.MaterialButton BugButton;
+        private MaterialSkin.Controls.MaterialButton LicenseButton;
+        private MaterialSkin.Controls.MaterialButton Privacy_button;
     }
 }

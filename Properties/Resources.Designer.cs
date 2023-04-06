@@ -163,6 +163,26 @@ namespace Sky_Cloud_Backup.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap SCB_B4b {
+            get {
+                object obj = ResourceManager.GetObject("SCB-B4b", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SCB_B4b1 {
+            get {
+                object obj = ResourceManager.GetObject("SCB-B4b1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap SCB_Icon {
             get {
                 object obj = ResourceManager.GetObject("SCB-Icon", resourceCulture);

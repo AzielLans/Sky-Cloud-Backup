@@ -1,7 +1,7 @@
 ﻿
 namespace Sky_Cloud_Backup
 {
-    partial class first_strtup
+    partial class FirstRun
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace Sky_Cloud_Backup
         /// </summary>
         private void InitializeComponent ()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(first_strtup));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FirstRun));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.Next_Button = new MaterialSkin.Controls.MaterialButton();
@@ -113,7 +113,7 @@ namespace Sky_Cloud_Backup
             this.Pink_Button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Pink_Button.AutoSize = true;
             this.Pink_Button.Depth = 0;
-            this.Pink_Button.Location = new System.Drawing.Point(452, 457);
+            this.Pink_Button.Location = new System.Drawing.Point(349, 457);
             this.Pink_Button.Margin = new System.Windows.Forms.Padding(0);
             this.Pink_Button.MouseLocation = new System.Drawing.Point(-1, -1);
             this.Pink_Button.MouseState = MaterialSkin.MouseState.HOVER;
@@ -131,7 +131,7 @@ namespace Sky_Cloud_Backup
             this.Red_Button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Red_Button.AutoSize = true;
             this.Red_Button.Depth = 0;
-            this.Red_Button.Location = new System.Drawing.Point(367, 457);
+            this.Red_Button.Location = new System.Drawing.Point(287, 457);
             this.Red_Button.Margin = new System.Windows.Forms.Padding(0);
             this.Red_Button.MouseLocation = new System.Drawing.Point(-1, -1);
             this.Red_Button.MouseState = MaterialSkin.MouseState.HOVER;
@@ -151,16 +151,16 @@ namespace Sky_Cloud_Backup
             this.Default_Button.Checked = true;
             this.Default_Button.Cursor = System.Windows.Forms.Cursors.Default;
             this.Default_Button.Depth = 0;
-            this.Default_Button.Location = new System.Drawing.Point(153, 458);
+            this.Default_Button.Location = new System.Drawing.Point(145, 456);
             this.Default_Button.Margin = new System.Windows.Forms.Padding(0);
             this.Default_Button.MouseLocation = new System.Drawing.Point(-1, -1);
             this.Default_Button.MouseState = MaterialSkin.MouseState.HOVER;
             this.Default_Button.Name = "Default_Button";
             this.Default_Button.Ripple = true;
-            this.Default_Button.Size = new System.Drawing.Size(87, 37);
+            this.Default_Button.Size = new System.Drawing.Size(66, 37);
             this.Default_Button.TabIndex = 1;
             this.Default_Button.TabStop = true;
-            this.Default_Button.Text = "Default";
+            this.Default_Button.Text = "Blue";
             this.Default_Button.UseVisualStyleBackColor = true;
             this.Default_Button.Click += new System.EventHandler(this.Default_Button_CheckedChanged);
             // 
@@ -169,7 +169,7 @@ namespace Sky_Cloud_Backup
             this.Green_Button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Green_Button.AutoSize = true;
             this.Green_Button.Depth = 0;
-            this.Green_Button.Location = new System.Drawing.Point(261, 458);
+            this.Green_Button.Location = new System.Drawing.Point(211, 457);
             this.Green_Button.Margin = new System.Windows.Forms.Padding(0);
             this.Green_Button.MouseLocation = new System.Drawing.Point(-1, -1);
             this.Green_Button.MouseState = MaterialSkin.MouseState.HOVER;
@@ -187,7 +187,7 @@ namespace Sky_Cloud_Backup
             this.Dark_mode_switch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Dark_mode_switch.AutoSize = true;
             this.Dark_mode_switch.Depth = 0;
-            this.Dark_mode_switch.Location = new System.Drawing.Point(3, 458);
+            this.Dark_mode_switch.Location = new System.Drawing.Point(0, 457);
             this.Dark_mode_switch.Margin = new System.Windows.Forms.Padding(0);
             this.Dark_mode_switch.MouseLocation = new System.Drawing.Point(-1, -1);
             this.Dark_mode_switch.MouseState = MaterialSkin.MouseState.HOVER;
@@ -240,7 +240,7 @@ namespace Sky_Cloud_Backup
             this.Help_Button.UseVisualStyleBackColor = true;
             this.Help_Button.Click += new System.EventHandler(this.Help_Button_Click);
             // 
-            // first_strtup
+            // FirstRun
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -249,7 +249,7 @@ namespace Sky_Cloud_Backup
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "first_strtup";
+            this.Name = "FirstRun";
             this.ShowIcon = false;
             this.Sizable = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;

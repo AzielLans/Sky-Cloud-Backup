@@ -6,7 +6,7 @@
     <OutputType>WinExe</OutputType>
     <NoStandardLibraries>false</NoStandardLibraries>
     <AssemblyName>Sky Cloud Backup</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -104,12 +104,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="assets\additonal.cs" />
-    <Compile Include="Forms\first_strtup.cs">
+    <Compile Include="Assets\Additonal.cs" />
+    <Compile Include="Assets\Json.cs" />
+    <Compile Include="Forms\FirstRun.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\first_strtup.Designer.cs">
-      <DependentUpon>first_strtup.cs</DependentUpon>
+    <Compile Include="Forms\FirstRun.Designer.cs">
+      <DependentUpon>FirstRun.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Help.cs">
       <SubType>Form</SubType>
@@ -141,12 +142,12 @@
     <Compile Include="Forms\Main_Screen.Designer.cs">
       <DependentUpon>Main_Screen.cs</DependentUpon>
     </Compile>
-    <Compile Include="assets\google drive.cs" />
+    <Compile Include="Assets\Google Drive.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="assets\startup.cs" />
-    <EmbeddedResource Include="Forms\first_strtup.resx">
-      <DependentUpon>first_strtup.cs</DependentUpon>
+    <Compile Include="Assets\Startup.cs" />
+    <EmbeddedResource Include="Forms\FirstRun.resx">
+      <DependentUpon>FirstRun.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\About.resx">
       <DependentUpon>About.cs</DependentUpon>
@@ -173,7 +174,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="client_secret.json" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -232,7 +232,9 @@
     <None Include="Resources\Splash_Screen1.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="logo_258.ico" />
+    <None Include="Resources\SCB-B4b.png" />
+    <None Include="Resources\SCB-B4b1.png" />
+    <None Include="Resources\SCB-B4b2.png" />
     <Content Include="SCB-Icon.ico" />
     <None Include="Resources\SCB.png" />
     <None Include="Resources\SCB-Icon.png" />
@@ -275,22 +277,22 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Google.Apis">
-      <Version>1.56.0</Version>
+      <Version>1.60.0</Version>
     </PackageReference>
     <PackageReference Include="Google.Apis.Auth">
-      <Version>1.56.0</Version>
+      <Version>1.60.0</Version>
     </PackageReference>
     <PackageReference Include="Google.Apis.Core">
-      <Version>1.56.0</Version>
+      <Version>1.60.0</Version>
     </PackageReference>
     <PackageReference Include="Google.Apis.Drive.v3">
-      <Version>1.56.0.2601</Version>
+      <Version>1.60.0.2986</Version>
     </PackageReference>
     <PackageReference Include="MaterialSkin.2">
       <Version>2.3.1</Version>
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
-      <Version>13.0.1</Version>
+      <Version>13.0.3</Version>
     </PackageReference>
     <PackageReference Include="System.IO.Compression">
       <Version>4.3.0</Version>

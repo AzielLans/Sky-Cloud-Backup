@@ -10,7 +10,7 @@ A Minecraft Backup that supports the two versions of Minecraft( Bedrock and Java
 
 Note: The app is in Beta stage of development, features may ADDED OR REMOVE. 
 
-If the app doesn't work you need to download [.net 4.6.1](https://www.microsoft.com/en-us/download/details.aspx?id=49982) to use the app.
+If the app doesn't work you need to download [.net 4.8.1](https://dotnet.microsoft.com/en-us/download/dotnet-framework/thank-you/net481-web-installer) to use the app.
 
 
 

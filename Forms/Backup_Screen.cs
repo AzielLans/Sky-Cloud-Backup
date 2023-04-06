@@ -7,9 +7,9 @@ using System.Windows.Forms;
 
 namespace Sky_Cloud_Backup
 {
-    public partial class Copying_files: MaterialForm
+    public partial class Copying_files : MaterialForm
     {
-        public Copying_files ()
+        public Copying_files()
         {
             InitializeComponent();
             var materialSkinManager = MaterialSkinManager.Instance;
@@ -18,7 +18,7 @@ namespace Sky_Cloud_Backup
             wht_txr.Text = "Backuping your world";
         }
 
-        private void Cancel_Button_Click ( object sender, EventArgs e )
+        private void Cancel_Button_Click(object sender, EventArgs e)
         {
             wht_txr.Text = "Canceling Backup";
             int milliseconds = 2000;
