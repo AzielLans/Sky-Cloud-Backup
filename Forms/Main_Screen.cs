@@ -539,10 +539,8 @@ namespace Sky_Cloud_Backup
             Notification_Informer.Visible = true;
             Notification_Informer.ShowBalloonTip(500);
             Dailog_Manager("false", false);
-            add.filedelete(@"Temp", true);
             Bedrock_Compress();
             Notification_Informer.Visible = false;
-            add.filedelete(@"Temp", true);
             Dailog_Manager("false", true);
             MaterialSnackBar finish_Bedrock = new MaterialSnackBar("Bedrock Backup has finish", "OK", true);
             finish_Bedrock.Show(this);
@@ -679,10 +677,8 @@ namespace Sky_Cloud_Backup
             Notification_Informer.Visible = true;
             Notification_Informer.ShowBalloonTip(500);
             Dailog_Manager("false", false);
-            add.filedelete(@"Temp", true);
             Notification_Informer.Visible = false;
             Java_Compress();
-            add.filedelete(@"Temp", true);
             Dailog_Manager("false", true);
             MaterialSnackBar finish_Java = new MaterialSnackBar("The Java Backup has finish", "OK", true);
             finish_Java.Show(this);
